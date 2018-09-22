@@ -412,19 +412,19 @@ nav ul, nav ol
 	display:block; padding:8px 11px; border:1px solid; background-clip:padding-box; font-weight:normal;
 }
 
-#backtotop
+#jump2top
 {
 	z-index:999; display:inline-block; position:fixed; visibility:hidden; bottom:20px; right:20px; width:36px; height:36px; line-height:36px; font-size:16px; text-align:center; opacity:.2;
 }
-#backtotop i
+#jump2top i
 {
 	display:block; width:100%; height:100%; line-height:inherit;
 }
-#backtotop.visible
+#jump2top.visible
 {
 	visibility:visible; opacity:.5;
 }
-#backtotop:hover
+#jump2top:hover
 {
 	opacity:1;
 }
@@ -664,7 +664,7 @@ input:focus, textarea:focus, *:required:focus
 	color:#FFFFFF; background-color:#91268F;
 }
 
-#backtotop
+#jump2top
 {
 	color:#FFFFFF; background-color:#91268F;
 }
