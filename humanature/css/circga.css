@@ -1,0 +1,21 @@
+.main-gallery
+{
+	background:url("../images/mobile-app.jpg");
+}
+
+.strategy
+{
+	background:url("../images/main_old.jpg");
+	background-position:center center;
+	background-attachment:fixed;
+	background-size:cover;
+}
+.strategy .overlay >.container
+{
+	padding:70px 0px;
+}
+
+.team
+{
+	background:url("../images/mobile-app.jpg");
+}
