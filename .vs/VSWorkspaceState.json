@@ -1,8 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\data",
+    "\\entreprenasium",
+    "\\entreprenasium\\image",
+    "\\leerparadijs",
+    "\\scripts",
     "\\styles"
   ],
-  "SelectedNode": "\\styles\\common.css",
+  "SelectedNode": "\\leerparadijs\\images",
   "PreviewInSolutionExplorer": false
 }
