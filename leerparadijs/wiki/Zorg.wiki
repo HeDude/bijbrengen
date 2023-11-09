@@ -1,0 +1,25 @@
+== Educatie ==
+De zorg betekent bij het Leerparadijs niet alleen gezondheidszorg, maar ook educatie. Want ook al heeft een kind een tijdelijke vrijstelling van de leerplicht, elke leerling op het Leerparadijs heeft een sterke begaafdheid tot leren. Soms werkt dat (even) beter buiten de wettelijke eisen voor een schoolse omgeving. De ontwikkeling en opvoeding gaat dus gewoon door, ook al is dat even buiten de formele setting.
+
+== Zorgplan  ==
+Dit formulier dient als een format voor een zorgplan, met een beschrijving van de persoonlijke zorg voor een leerling.
+# Wie ontvangt de zorg?
+#* Naam leerling
+#* Geboortedatum leerling
+#* Naam zorg-coach
+#* Startdatum van de zorg
+#* Datum van de verslaglegging
+# Wat is de situatie?
+#* De ziekte/beperking/handicap
+#* Woonsituatie
+#* De dagelijkse bezigheden thuis en buitenshuis: werk, school enzovoort
+#* Welke belemmeringen ondervindt de leerling hierbij
+#* Bijzonderheden
+# Waarom is er zorg nodig?
+# Hoe is de zorg?
+# Wanneer krijgt de leerling zorg?
+#* Maandag
+#* Dinsdag
+#* Woensdag
+#* Donderdag
+#* Vrijdag

@@ -2,12 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\data",
-    "\\entreprenasium",
     "\\entreprenasium\\image",
-    "\\leerparadijs",
-    "\\scripts",
-    "\\styles"
+    "\\leerparadijs"
   ],
-  "SelectedNode": "\\data\\bijbrengen_matrix.json",
+  "SelectedNode": "\\onderwijsarchitect",
   "PreviewInSolutionExplorer": false
 }

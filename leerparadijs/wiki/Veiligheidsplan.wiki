@@ -1,0 +1,55 @@
+== Sociale veiligheid ==
+=== Coaching ===
+Op het leerparadijs wordt wekelijks uitgebreid met deskundige coaches gesproken met de leerling over maatschappelijk gevoelige onderwerpen zoals vrijheid van meningsuiting, vluchtelingenproblematiek, extremisme en seksuele diversiteit. Samen met de leerlingen worden zo afspraken gemaakt (consensus) over 
+* Wat de visie dient te zijn van de school op sociale veiligheid? 
+* Welke kernwaarden en doelen er nodig zijn voor een positief schoolklimaat?
+* Hoe we goede gedragsregels kunne opstellen en handhaven?
+* Hoe we omgaan met grensoverschrijdend gedrag? 
+* Wie kent nog niet de al eerder afgesproken visie, waarden, doelen, regels, afspraken en protocollen? 
+* Hoe pakken al deze afspraken in de praktijk uit?
+
+=== Incidenten ===
+Een incident is een ongewenste gebeurtenis die geen omvangrijke gevolgen heeft voor een grote groep mensen. Ongewenst gedrag zoals seksuele intimidatie valt hier ook onder. Regels en maatregelen/sancties (o.a. schorsing en verwijdering) betreffende [[onderwijs]] en betreffende leef- en werkomgeving worden in overleg met leerlingen, ouders en coaches opgenomen in het leerlingenstatuut en in de gedragscode. Medewerkers zijn verplicht melding te doen bij het management wanneer zij weet of vermoeden hebben van een strafbaar feit of van seksuele intimidatie en seksueel misbruik. Het bestuur doet, als er na overleg met de vertrouwensinspecteur een redelijk vermoeden van een strafbaar feit bestaat, direct aangifte bij politie of justitie.
+
+
+== Psychische veiligheid ==
+
+Elke leerling op het Leerparadijs krijgt persoonlijke zorg vanwege zijn of haar autisme. Deze zorgt wordt verleend door [http://www.mecoaching.nl/ MeCoaching]. Een leerling heeft een persoonlijk zorgdossier (http://dossier.leerparadijs.nl) dat alleen kan worden ingezien door daartoe bevoegden die geheimhoudingsplicht hebben. Daarnaast heeft de leerling persoonlijke ontwikkelingsdoelen. Deze kunnen in overleg met de leerling met medeleerlingen worden gedeeld (http://elo.leerparadijs.nl) of privé worden gehouden (http://elo.mecoaching.nl). Om de zorg voor onze kinderen goed te organiseren, hebben we een [[Zorgplan|zorgplan]] opgesteld.
+
+== Fysieke veiligheid == 
+
+=== Calamiteiten ===
+Het Leerparadijs maakt gebruik van externe gebouwen en locaties die elk een eigen ontruimings- en calamiteitenplan hebben in welke is vastgelegd welke acties worden ondernomen als een calamiteit plaats vindt.
+
+=== Omgeving ===
+Scholieren mogen op het leerparadijs zelf bepalen waar ze leren, zolang dit bekend is bij de begeleiders. Er is altijd een open communicatie lijn (VoIP en mobiele telefoon). De begeleiders mogen de leerling traceren middels GPS-tracing indien ze dat wensen. Het Leerparadijs is een "digitale" school. Tijdens alle activiteiten spreken we met onze leerlingen over wat zij doen online en geven we tips voor ‘veilig internetten’. We wijzen de leerling over je eigen grenzen stellen, bewust te maken van hun gedrag op internet en hen te wijzen op de gevolgen en gevaren. De coaches checken voortdurend of ze daarmee ook uit eigen beweging voorzichtiger opereren (bijvoorbeeld dat de leerlingen minder vertrouwelijke informatie over zichzelf en anderen online delen).
+
+== Contact ==
+* '''Hulplijn pestweb (ouders/verzorgers en leerlingen)'''
+** Website: www.pestweb.nl
+** Chatten: https://chat-client-schoolenveiligheid.serviant.nl/ (bereikbaar op maandag t/m vrijdag behalve woensdag: 15.00-17.00 en woensdag: 14.00-17.00) Telefoonnummer: (gratis vanaf een vast toestel) 0800-2828280 of mobiel (volgens lokaal tarief) 0900 - 28 28 280
+** (bereikbaar op maandag t/m vrijdag: 13.00-15.00)
+** Forum: http://forum.pestweb.nl/
+* '''Kindertelefoon (leerlingen)'''
+** Advies- of hulpvragen kunnen niet via e-mail worden gesteld.
+** Website: www.kindertelefoon.nl
+** Chatten: https://www.kindertelefoon.nl/over-ons/chat/
+** Telefoonnummer: 0800-0432 (gratis)
+** Forum: https://forum.kindertelefoon.nl/
+* '''Ouders/verzorgers en onderwijs (ouders/verzorgers)'''
+** Website: https://www.oudersonderwijs.nl/
+** Telefoonnummer: 0800-5010 (gratis nummer, bereikbaar op schooldagen van 10.00-15.00 uur)
+* '''Mijn kind online (ouders/verzorgers)'''
+** Website: www.mijnkindonline.nl
+* '''School en veiligheid (informatie en advies over seksuele intimidatie)'''
+** Website: schoolenveiligheid.nl
+** Telefoonnummer: 030-2856616 (schooldagen van 9.00 tot 16.00 uur)
+** Email: helpdesk@schoolenveiligheid.nl
+
+== Protocollen ==
+* [[Incidentmelding]]
+* [[Incidentmelding#Maatregel|Maatregel]]
+* [[Meldcode]]
+* [[Pestprotocol]]
+* [[Privacyreglement]]
+* [[Verzuimregistratie]]

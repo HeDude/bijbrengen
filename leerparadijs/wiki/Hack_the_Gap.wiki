@@ -1,0 +1,87 @@
+Tijdens deze hackathon tonen we dat een leerling goed in staat is zelf zijn onderwijs in te richten om zijn kansen te bevorderen.
+
+* [[Hack_the_Gap/Presentatie|Presentatie]]
+* [[Hack the Gap/Data_analyse|Data analyse]]
+* [https://www.equithic.nl/ Paardenschool]
+* [https://www.leerparadijs.nl/gameschool/ Gameschool]
+* [[Hack_the_Gap/PVA|Plan van Aanpak]]
+
+== Onderbouwing ==
+=== Onderwijsverbetering ===
+In de wetenschappelijke literatuur is een bijna oneindige lijst te vinden van mogelijke verbeteringen van het huidig regulier onderwijs.  Het is daarentegen zeer moeilijk iets te vinden dat onderbouwt waarom de gangbare inrichting en organisatie van het reguliere onderwijs verstandig is. Een verkenning laat zien dat het systeem ooit zo geleidelijk is ontstaan vanuit fabrieksdenken, het efficiënt opvangen van grote groepen kinderen zodat de ouders vrij waren om te werken. Het drukte de bestaande meester-gezel aanpak langzaam aan de kant.
+
+=== Maatwerk ===
+Eén van de belangrijke aanbevelingen van onderwijswetenschappers is het differentiëren in aanpak tussen leerlingen. [https://www.ingrado.nl/assets/uploads/van_leerplicht_naar_leerrecht.pdf Maatwerk] is de sleutel tot effectief leren. Een thema waar veel scholen mee experimenteren. En vanuit de rechten van het kind beschouwd, is dat ook een [[Hack_the_Gap#Wettelijke_kaders|wettelijke plicht]]. Je hoeft ook geen wetenschapper te zijn om te snappen dat elke 50 minuten met 30 leerlingen verplaatsen van onderwerp en plek samen met duizenden andere leerlingen niet perse voor iedereen mensvriendelijk is. Het argument dat onderwijs leerlingen voorbereidt op de maatschappij geldt ook niet; er is geen werkgever te vinden die zo zijn werknemers behandeld. 
+
+=== Biased datasets ===
+Wat echter opvalt, na het grondig bestuderen van de alle aangereikte datasets, is dat de invloed van maatwerk in de organisatie en vorm van het onderwijs op het creëren van gelijke kansen niet is gemeten.  Dat geeft een vertekend beeld. OCW zou ook de hand in eigen boezem moeten steken. Er zijn voor een eerlijke en effectieve aanpak van kansenongelijkheid ook gegevens nodig over hoe het bestaande onderwijs qua vorm en inhoud flexibel kan omgaan met de verschillen tussen mensen. Die verschillen zijn er nu eenmaal en dat kan ook worden gezien als een waarde in plaats van een probleem. Door ze bij voorbaat al te labelen als een probleem en als mogelijke oorzaak , zal het biased onderzoek en de gegevens die daaruit voorkomen dat gaan bevestigen. Dit vingerwijzen, helpt niet bij een oplossing. 
+
+=== Uniciteit ===
+Wat wel helpt is het onderwijs aanpassen aan de behoeften van het kind. Niet elk kind op grond van gemiddelden uit statistieken pushen in een voorbedachte vorm - dat is sneu voor de buitenbeentjes - maar pullen door het onderwijs aan te laten sluiten bij de uniciteit van elk kind.
+
+==Motivatie==
+[[Bestand:Motivatie.png]]
+
+[[Bestand:Motivatie2.png]]
+
+[[Bestand:Motivatie3.png]]
+
+==Wettelijke kaders==
+
+===Verdrag inzake de rechten van het kind===
+
+====artikel 28====
+
+'''1''' De Staten die partij zijn, erkennen het recht van het kind op onderwijs, en teneinde dit recht geleidelijk en op basis van gelijke kansen te verwezenlijken, verbinden zij zich er met name toe:
+
+'''a.''' primair onderwijs verplicht te stellen en voor iedereen gratis beschikbaar te stellen;
+
+'''b.''' <u> de ontwikkeling van verschillende vormen van voortgezet onderwijs aan te moedigen, met inbegrip van algemeen onderwijs en beroepsonderwijs, deze vormen voor ieder kind beschikbaar te stellen en toegankelijk te maken, en passende maatregelen te nemen zoals de invoering van gratis onderwijs en het bieden van financiële bijstand indien noodzakelijk; </u>
+
+'''c.''' met behulp van alle passende middelen hoger onderwijs toegankelijk te maken voor een ieder naar gelang zijn capaciteiten;
+
+'''d.''' informatie over en begeleiding bij onderwijs- en beroepskeuze voor alle kinderen beschikbaar te stellen en toegankelijk te maken;
+
+'''e.''' maatregelen te nemen om regelmatig schoolbezoek te bevorderen en het aantal kinderen dat de school vroegtijdig verlaat, te verminderen.
+
+'''2''' De Staten die partij zijn, nemen alle passende maatregelen om te verzekeren dat de wijze van handhaving van de discipline op scholen verenigbaar is met de menselijke waardigheid van het kind en in overeenstemming is met dit Verdrag.
+
+'''3''' De Staten die partij zijn, bevorderen en stimuleren internationale samenwerking in aangelegenheden die verband houden met onderwijs, met name teneinde bij te dragen tot de uitbanning van onwetendheid en analfabetisme in de gehele wereld, en de toegankelijkheid van wetenschappelijke en technische kennis en moderne onderwijsmethoden te vergroten. In dit opzicht wordt met name rekening gehouden met de behoeften van de ontwikkelingslanden.
+
+====Artikel 29====
+1 De Staten die partij zijn, komen overeen dat het onderwijs aan het kind dient te zijn gericht op:
+
+'''a.''' <u> de zo volledig mogelijke ontplooiing van de persoonlijkheid, talenten en geestelijke en lichamelijke vermogens van het kind; </u>
+
+b. het bijbrengen van eerbied voor de rechten van de mens en de fundamentele vrijheden, en voor de in het Handvest van de Verenigde Naties vastgelegde beginselen;
+
+c. het bijbrengen van eerbied voor de ouders van het kind, voor zijn of haar eigen culturele identiteit, taal en waarden, voor de nationale waarden van het land waar het kind woont, het land waar het is geboren, en voor andere beschavingen dan de zijne of hare;
+
+d. de voorbereiding van het kind op een verantwoord leven in een vrije samenleving, in de geest van begrip, vrede, verdraagzaamheid, gelijkheid van geslachten, en vriendschap tussen alle volken, etnische, nationale en godsdienstige groepen en personen behorend tot de oorspronkelijke bevolking;
+
+e. het bijbrengen van eerbied voor de natuurlijke omgeving.
+
+
+===Kamerbrief: stand van zaken thuiszitters (2019)===
+
+'''2.4 Leerrecht en hoorrecht'''
+Thuiszitters hebben niet de kans om hun recht op onderwijs te verzilveren. In het regeerakkoord heeft dit kabinet afgesproken te onderzoeken op welke wijze het leerrecht van kinderen wettelijk kan worden vastgelegd. 
+
+<u> Leerrecht wordt vaak gezien als een sterkere positie van de leerling als afnemer van onderwijs. Als leerlingen onderwijs van slechte kwaliteit ontvangen of als het onderwijs niet past bij de behoefte van het kind, wordt het leerrecht geschaad. </u> Onder het vorige kabinet is al onderzoek gedaan naar leerrecht. Naar aanleiding van een motie van Van Meenen c.s.  heeft NCOR in opdracht van het kabinet onderzocht hoe “de opzet en inhoud van de Nederlandse wet- en regelgeving de realisering van de kernelementen van leerrecht belemmeren en hoe leerrecht in de wetgeving van primair en voortgezet onderwijs kan worden verankerd”. Het vorige kabinet stuurde het rapport naar uw Kamer met een beleidsarme reactie, vanwege de demissionaire status van het kabinet. In deze beleidsreactie werd onderstreept dat <u> het Nederlandse onderwijsstelsel voldoet aan het internationaal vastgelegde recht op onderwijs, maar werd ook erkend dat de positie van de leerling in de wet- en regelgeving bescheiden is. </u> In deze brief beschrijven wij hoe wij het leerrecht van kinderen binnen passend onderwijs materieel versterken. Daarnaast onderzoeken wij op welke wijze het leerrecht van kinderen wettelijk kan worden vastgelegd. Hierbij willen wij tevens de inzichten betrekken die de heer Dullaert hierover in zijn rapport heeft opgenomen. U wordt daarover voor de zomer nader geïnformeerd. 
+
+Versterking van leerrecht
+<u> Het kabinet richt zich vooruitlopend daarop reeds op de concrete verbetering van de waarborgen van het leerrecht voor kinderen die speciale ondersteuning nodig hebben in het onderwijs of die (tijdelijk) niet in een schoolse setting kunnen leren. </u> Het onderzoek naar doorzettingsmacht zien wij als een eerste onderdeel hiervan. Het beleggen van een wettelijke plicht voor doorzettingsmacht zal eraan bijdragen dat kinderen hun leerrecht kunnen verzilveren in het onderwijs. 
+
+In de onderwijs-zorgbrief heeft het kabinet aangekondigd om onderwijs-zorgarrangementen te gaan ontwikkelen voor kinderen die niet in staat zijn een volledig onderwijsprogramma te volgen en een diploma te halen.  
+Het onderzoek hiernaar gaat eveneens over het invullen van het leerrecht voor deze kinderen. 
+
+Als er in de ogen van ouders geen passend aanbod voor onderwijs is voor hun kind, kunnen ouders zich wenden tot Geschillencommissie Passend Onderwijs. De geschillencommissie is dus een belangrijke speler bij het waarborgen van het leerrecht van kinderen. Deze heeft een tijdelijk karakter, maar is ingesteld voor onbepaalde duur. Dat roept vragen op. Ook de nieuwe voornemens voor het inzetten van doorzettingsmacht roepen vragen op over de rol van de geschillencommissie. 
+Daarom willen wij advies vragen over de toekomst van de Geschillencommissie Passend Onderwijs en de wijze waarop ouders en leerlingen een beroep kunnen doen op de invulling van hun leerrecht. 
+
+Overigens versterkt de minister voor BVOM het leerrecht ook buiten passend onderwijs voor alle kinderen door de verankering van het doorstroomrecht van vmbo naar havo en van havo naar vwo. Op deze wijze zoeken wij naar mogelijkheden om het leerrecht van leerlingen beter te verankeren, op een manier die concreet resultaat oplevert voor leerlingen. Daarnaast bezien wij waar verder nog winst te behalen is op het gebied van leerrecht, ook naar aanleiding van het advies van de heer Dullaert. Hij pleit voor het afschaffen van de leerplicht en om toe te werken naar een recht op ontwikkeling. Dit is een veelomvattende uitspraak waarvan de gevolgen nog niet zijn te overzien. Daarom richten wij ons nu eerst op de bovenstaande maatregelen. Die dragen eraan bij dat leerlingen de kans krijgen om zich te ontwikkelen. 
+
+Hoorrecht in passend onderwijs
+Het LAKS pleit daarnaast voor hoorrecht voor leerlingen in passend onderwijs en bij het opstellen van het ontwikkelingsperspectief van leerlingen in het voortgezet (speciaal) onderwijs. Het hoorrecht van leerlingen kan ons inziens tot uiting komen door het betrekken van leerlingen bij het bespreken en evalueren van hun ontwikkelingsperspectief. Samen met het LAKS wil de minister voor BVOM verkennen welke wensen leerlingen hierbij hebben en hoe het hoorrecht gerealiseerd kan worden op de korte en de lange termijn. Daarbij verkent de minister voor BVOM ook de mogelijkheid om het hoorrecht wettelijk te verankeren.
+
+===Thuiszitterspact===
+[[Bestand:Thuiszitterspact.png]]

@@ -1,0 +1,7 @@
+Op [http://elo.leerparadijs.nl elo.leerparadijs.nl] (let op geen www als prefix) hebben alle betrokkenen een eigen account. Leerlingen zijn bij ons niet alleen de student van een cursus, maar de '''course creator''' en '''manager''' (zogenaamde '''system roles''' in de elo) van zelfbedachte cursussen. 
+
+== Cursussen ==
+Als course creator kun je in de '''Site Administration''' onder '''Courses''' en '''Manage courses and categories''' een cursus aanmaken. Als je een eigen cursus aanmaakt, bedenk dan een korte en lange naam die meteen beschrijft waar de cursus overgaat. 
+
+== Leerdoelen ==
+De volgende stap is het bedenken wat je met de cursus precies leert. Daarvoor kun je in de '''Site Administration''' onder '''Competencies''' en '''Competency frameworks''' neuzen voor leerdoelen die je met de cursus zou kunnen bereiken. Ook kun je aldaar zelf leerdoelen toevoegen als ze er niet bij staan. Standaard werken we met ECTS als '''Scale''', waarbij de '''Scale Value''' 1 als default wordt gezet. We kennen als '''Taxonomies''' voor eindexamenprogramma's op '''Level 1''' = '''Domain''', '''Level 2''' = '''Level''', '''Level 3''' = '''Competency''' en '''Level 4''' = '''Skill'''.

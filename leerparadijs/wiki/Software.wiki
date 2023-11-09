@@ -1,0 +1,10 @@
+* '''Moodle''' (http://elo.leerparadijs.nl) als Elektronische Leeromgeving
+* '''MediaWiki'''  (http://wiki.leerparadijs.nl) als Leercontent Management Systeem.
+* '''OpenEMR''' (http://dossier.leerparadijs.nl) voor het online beheer van de Leerlingzorg.
+* '''MineCraft''' (http://mc.leerparadijs.nl) voor Gamification van het onderwijs.
+* '''Mahara''' (http://portfolio.leerparadijs.nl) voor portfolio's van Leerling en Docenten.
+* '''Magento''' (http://shop.leerparadijs.nl) voor het online ondernemen.
+* '''Skype''' voor begeleiding op afstand.
+* '''GPS Tracker''' om leerlingen qua locatie te volgen.
+
+Een eigen laptop met snel en mobiele internetverbinding is noodzakelijk. Dit wordt gevraagd als bijdrage van de ouders. De leeromgeving is volledig webbased, dus leerlingen kunnen met deze faciliteiten overal 24/7 met hun projecten werken. Er zijn volop MOOC’s, online cursussen en andere webbronnen om vakinhouden op maat aan te bieden zonder fysieke begeleiding. Juist onze doelgroep leert graag zelfstandig.
