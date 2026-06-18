@@ -1,9 +1,12 @@
+---
+const base = import.meta.env.BASE_URL;
+---
 <section class="subsidy">
   <div class="subsidy__inner">
     <div class="subsidy__panel">
       <div class="subsidy__logos">
-        <img src="images/snn.jpg" alt="SNN Logo" />
-        <img src="images/europe.png" alt="EU Logo" />
+        <img src={`${base}images/snn.jpg`} alt="SNN Logo" />
+        <img src={`${base}images/europe.png`} alt="EU Logo" />
       </div>
       <div class="subsidy__text">
         <p class="subsidy__eyebrow">

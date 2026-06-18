@@ -5,6 +5,8 @@ import SubsidyNotice from "../components/SubsidyNotice.astro";
 import Footer from "../components/Footer.astro";
 import { teasers } from "../data/homepage.js";
 import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -36,7 +38,7 @@ import "../styles/global.css";
                 <div class="teaser-card__media">
                   {teaser.image && (
                     <img
-                      src={teaser.image}
+                      src={`${base}${teaser.image}`}
                       alt=""
                       width="80"
                       height="80"
@@ -48,7 +50,7 @@ import "../styles/global.css";
                 </div>
                 <p>{teaser.description}</p>
                 <div class="teaser-card__actions">
-                  <a href={teaser.ctaHref} class="btn btn--secondary btn--full">
+                  <a href={`${base}${teaser.ctaHref}`} class="btn btn--secondary btn--full">
                     {teaser.ctaLabel}
                   </a>
                 </div>

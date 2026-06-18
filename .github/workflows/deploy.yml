@@ -38,6 +38,8 @@ jobs:
         run: npm ci
 
       - name: Build Astro site
+        env:
+          BIJBRENGEN_SITE_BASE: /bijbrengen
         run: npm run build:landing
 
       - name: Upload Pages artifact
