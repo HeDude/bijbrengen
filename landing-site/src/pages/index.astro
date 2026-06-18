@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import SubsidyNotice from "../components/SubsidyNotice.astro";
 import Footer from "../components/Footer.astro";
-import { teasers } from "../data/homepage.js";
+import { projectOverview, serviceOverview } from "../data/homepage.js";
 import "../styles/global.css";
 
 const base = import.meta.env.BASE_URL;
@@ -24,39 +24,73 @@ const base = import.meta.env.BASE_URL;
       <Hero />
       <SubsidyNotice />
       
-      <section class="teaser-section">
-        <div class="teaser-section__inner">
-          <div class="teaser-section__intro">
-            <h2>Onze kernpijlers</h2>
+      <section class="overview-section" aria-labelledby="projecten-heading">
+        <div class="overview-section__inner">
+          <div class="overview-section__intro">
+            <span class="badge">Projecten</span>
+            <h2 id="projecten-heading">Projecten van Bijbrengen</h2>
             <p>
-              Stichting Bijbrengen werkt op het raakvlak van persoonlijke ontwikkeling, vernieuwend onderwijs en technologische innovatie. Ontdek hieronder onze belangrijkste pijlers.
+              Een compact overzicht van de initiatieven waarmee Stichting Bijbrengen leren, ondernemen, technologie en natuur met elkaar verbindt.
             </p>
           </div>
-          <div class="teaser-grid">
-            {teasers.map((teaser) => (
-              <article class="teaser-card" id={teaser.id}>
-                <div class="teaser-card__media">
-                  {teaser.image && (
+          <ul class="overview-grid" role="list">
+            {projectOverview.map((project) => (
+              <li class="overview-card">
+                <a href={`${base}${project.href}`}>
+                  <div class="overview-card__media">
+                    {project.image && (
+                      <img
+                        src={`${base}${project.image}`}
+                        alt=""
+                        width="240"
+                        height="120"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
+                  </div>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section class="overview-section overview-section--muted" aria-labelledby="diensten-heading">
+        <div class="overview-section__inner">
+          <div class="overview-section__intro">
+            <span class="badge">Diensten</span>
+            <h2 id="diensten-heading">Diensten van Bijbrengen</h2>
+            <p>
+              Deze diensten ondersteunen mensen, scholen en makers bij persoonlijke groei, onderwijsontwerp en het slim inzetten van technologie.
+            </p>
+          </div>
+          <ul class="overview-grid overview-grid--services" role="list">
+            {serviceOverview.map((service) => (
+              <li class="overview-card">
+                <a href={`${base}${service.href}`}>
+                  <div class="overview-card__media">
+                    {service.image ? (
                     <img
-                      src={`${base}${teaser.image}`}
+                      src={`${base}${service.image}`}
                       alt=""
-                      width="80"
-                      height="80"
+                      width="240"
+                      height="120"
                       loading="lazy"
                       decoding="async"
                     />
-                  )}
-                  <h3>{teaser.title}</h3>
-                </div>
-                <p>{teaser.description}</p>
-                <div class="teaser-card__actions">
-                  <a href={`${base}${teaser.ctaHref}`} class="btn btn--secondary btn--full">
-                    {teaser.ctaLabel}
-                  </a>
-                </div>
-              </article>
+                    ) : (
+                      <span>{service.title}</span>
+                    )}
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

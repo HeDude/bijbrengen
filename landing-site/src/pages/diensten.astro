@@ -1,0 +1,120 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Diensten van Stichting Bijbrengen: MeTherapy, Onderwijsarchitect en HeDude."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <title>Diensten - Stichting Bijbrengen</title>
+    <script is:inline data-goatcounter="https://bijbrengen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <Header />
+
+      <main class="main-content">
+        <section class="page-intro">
+          <div class="page-intro__inner">
+            <h1>Diensten</h1>
+            <p>
+              Naast maatschappelijke projecten biedt Bijbrengen diensten voor persoonlijke
+              begeleiding, onderwijsontwerp en technische innovatie. Deze diensten versterken
+              het werk van de stichting en maken de projecten praktisch uitvoerbaar.
+            </p>
+          </div>
+        </section>
+
+        <section id="metherapy" class="project-detail project-detail--featured">
+          <div class="project-detail__inner">
+            <div class="project-detail__copy">
+              <span class="badge">Zorg en begeleiding</span>
+              <h2>MeTherapy</h2>
+              <p>
+                MeTherapy richt zich op psychosociale therapie, hypnotherapie en persoonlijke
+                begeleiding. De aanpak vertrekt vanuit eigen herstelkracht, bewustwording en
+                het doorbreken van patronen die groei in de weg staan.
+              </p>
+              <p>
+                Binnen Bijbrengen sluit MeTherapy aan op dezelfde brede visie: mensen leren
+                zichzelf en hun omgeving beter begrijpen, zodat ze meer regie kunnen nemen.
+              </p>
+              <div class="project-detail__actions">
+                <a href="https://www.metherapy.nl/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                  Naar MeTherapy.nl
+                </a>
+              </div>
+            </div>
+            <div class="project-detail__media">
+              <div class="media-placeholder">
+                <img src={`${base}media/photos/metherapy.webp`} alt="MeTherapy" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="onderwijsarchitect" class="project-detail">
+          <div class="project-detail__inner project-detail__inner--reverse">
+            <div class="project-detail__copy">
+              <span class="badge">Onderwijsontwerp</span>
+              <h2>Onderwijsarchitect</h2>
+              <p>
+                Onderwijsarchitect ondersteunt scholen, docenten en makers bij het ontwerpen
+                van leeromgevingen. De dienst helpt om persoonlijke talenten, curriculum,
+                ICT en ondernemend leren om te zetten naar werkbare onderwijsconcepten.
+              </p>
+              <p>
+                De methodiek sluit aan bij de rol van de docent als ontwerper en leercoach,
+                met technologie als hulpmiddel in plaats van doel op zichzelf.
+              </p>
+            </div>
+            <div class="project-detail__media">
+              <div class="media-placeholder media-placeholder--logo">
+                <img src={`${base}media/logos/onderwijsarchitect.svg`} alt="Onderwijsarchitect" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="hedude" class="project-detail project-detail--last">
+          <div class="project-detail__inner">
+            <div class="project-detail__copy">
+              <span class="badge">AI en techniek</span>
+              <h2>HeDude</h2>
+              <p>
+                HeDude is de technische en AI-gerichte dienst rond gepersonaliseerd leren.
+                Het helpt bij het verkennen, ontwerpen en testen van digitale leerpaden,
+                AI-coaching en interactieve onderwijsconcepten.
+              </p>
+              <p>
+                Daarmee vormt HeDude de praktische ontwikkelkant van de leerpret-engine:
+                experimenteren, bouwen, meten en verbeteren vanuit de inhoud van Bijbrengen.
+              </p>
+              <div class="project-detail__actions">
+                <a href={`${base}hedude/`} class="btn btn--secondary">
+                  Bekijk HeDude
+                </a>
+              </div>
+            </div>
+            <div class="project-detail__media">
+              <div class="media-placeholder media-placeholder--text">
+                <span>HeDude</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  </body>
+</html>

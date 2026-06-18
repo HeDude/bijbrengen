@@ -1,9 +1,25 @@
 export const navigation = [
   { label: "Home", href: "/" },
-  { label: "Projecten en diensten", href: "projecten-en-diensten/" },
-  { label: "Entreprenasium", href: "entreprenasium/" },
-  { label: "Leerparadijs", href: "leerparadijs/" },
-  { label: "Over Ons", href: "over-ons/" }
+  {
+    label: "Projecten",
+    items: [
+      { label: "Alle projecten", href: "projecten/" },
+      { label: "Entreprenasium", href: "entreprenasium/" },
+      { label: "Leerparadijs", href: "leerparadijs/" },
+      { label: "Leerpretpark", href: "projecten/#leerpretpark" },
+      { label: "Humanature", href: "projecten/#humanature" }
+    ]
+  },
+  {
+    label: "Diensten",
+    items: [
+      { label: "Alle diensten", href: "diensten/" },
+      { label: "MeTherapy", href: "diensten/#metherapy" },
+      { label: "Onderwijsarchitect", href: "diensten/#onderwijsarchitect" },
+      { label: "HeDude", href: "hedude/" }
+    ]
+  },
+  { label: "Over ons", href: "over-ons/" }
 ];
 
 export const heroImages = [
@@ -29,29 +45,49 @@ export const heroImages = [
   }
 ];
 
-export const teasers = [
+export const projectOverview = [
   {
-    id: "zorg-coaching-teaser",
-    title: "Persoonlijke groei & welzijn",
-    description: "Onder de vlag van Stichting Bijbrengen bieden we met MeTherapy en MeCoaching professionele psychosociale therapie en leefstijlcoaching aan. Onze benadering is erop gericht om mensen te helpen zichzelf beter te begrijpen, belemmerende patronen te doorbreken en in hun eigen kracht te gaan staan. We combineren moderne therapeutische methoden met natuurlijke elementen (Humanature) om een holistische weg naar herstel en groei te bieden. Alle inkomsten uit deze diensten vloeien direct terug in de stichting om onze educatieve projecten te bekostigen.",
-    ctaLabel: "Ontdek onze zorg- & coachingtrajecten",
-    ctaHref: "projecten-en-diensten/#zorg-coaching",
+    title: "Entreprenasium",
+    description: "Ondernemend leren voor leerlingen die hun eigen initiatief willen verbinden aan echte projecten.",
+    href: "entreprenasium/",
+    image: "media/logos/entreprenasium.svg"
+  },
+  {
+    title: "Leerparadijs",
+    description: "Een kleinschalig onderwijsconcept voor jongeren die persoonlijk, passend en ondernemend willen leren.",
+    href: "leerparadijs/",
+    image: "media/logos/leerparadijs.svg"
+  },
+  {
+    title: "Leerpretpark",
+    description: "De leerpret-engine waarin spel, ICT, AI en onderwijs samenkomen in een speelse leeromgeving.",
+    href: "projecten/#leerpretpark",
+    image: "media/photos/leerparadijs.webp"
+  },
+  {
+    title: "Humanature",
+    description: "Een project rond natuur, herstel en harmonie tussen mens, omgeving en duurzame ontwikkeling.",
+    href: "projecten/#humanature",
+    image: "media/logos/humanature.svg"
+  }
+];
+
+export const serviceOverview = [
+  {
+    title: "MeTherapy",
+    description: "Integrale psychosociale therapie, hypnotherapie en persoonlijke begeleiding vanuit de Bijbrengen-visie.",
+    href: "diensten/#metherapy",
     image: "media/logos/metherapy.webp"
   },
   {
-    id: "onderwijs-teaser",
-    title: "Vernieuwend & ondernemend onderwijs",
-    description: "Wij ontwerpen en leveren onderwijsprogramma's die leerlingen uitdagen om zelf op onderzoek uit te gaan en hun ondernemende vaardigheden te ontwikkelen. Met projecten zoals het Entreprenasium en ons Leerparadijs creëren we fysieke en digitale vrijplaatsen waar jongeren met uiteenlopende talenten aan de slag kunnen met echte vraagstukken. Daarnaast ondersteunen we leerkrachten en ouders met tastbare leermaterialen, zoals de Leerbox, die nieuwsgierigheid en verwondering in de klas aanwakkeren. Onze programma's stimuleren creativiteit, autonomie en kritisch denken vanaf jonge leeftijd.",
-    ctaLabel: "Bekijk onze onderwijsprogramma's",
-    ctaHref: "projecten-en-diensten/#onderwijs",
-    image: "media/logos/leerbox.svg"
+    title: "Onderwijsarchitect",
+    description: "Begeleiding bij het ontwerpen van onderwijs, leeromgevingen en ICT-rijke leertrajecten.",
+    href: "diensten/#onderwijsarchitect",
+    image: "media/logos/onderwijsarchitect.svg"
   },
   {
-    id: "innovatie-ai-teaser",
-    title: "De toekomst van het leren",
-    description: "De integratie van ICT en kunstmatige intelligentie biedt ongekende kansen om gepersonaliseerd en vrij leren op grote schaal mogelijk te maken. Stichting Bijbrengen loopt voorop in het onderzoeken en implementeren van AI als interactieve coach bij het ontwerpen van leertrajecten. Via ons platform HeDude en de methodiek van de Onderwijstechnoloog ondersteunen we docenten en leerlingen bij het slim en ethisch inzetten van technologie. Zo maken we adaptief onderwijs dat zich aanpast aan het tempo en de interesses van de individuele leerling werkelijkheid.",
-    ctaLabel: "Lees meer over onze IT- & AI-innovaties",
-    ctaHref: "projecten-en-diensten/#innovatie-ai",
-    image: "media/logos/onderwijsarchitect.svg"
+    title: "HeDude",
+    description: "AI-ondersteuning en technische sparring voor gepersonaliseerd, vrij en ondernemend leren.",
+    href: "hedude/"
   }
 ];

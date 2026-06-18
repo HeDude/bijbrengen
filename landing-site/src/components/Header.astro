@@ -2,6 +2,18 @@
 import { navigation } from "../data/homepage.js";
 
 const base = import.meta.env.BASE_URL;
+
+const getHref = (href: string) => {
+  if (href === "/") {
+    return base;
+  }
+
+  if (href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("#")) {
+    return href;
+  }
+
+  return `${base}${href}`;
+};
 ---
 
 <header class="site-header">
@@ -19,7 +31,32 @@ const base = import.meta.env.BASE_URL;
     <nav class="site-nav" aria-label="Hoofdnavigatie">
       <ul class="site-nav__list" role="list">
         {navigation.map((item) => {
-          const href = item.href === "/" ? base : `${base}${item.href}`;
+          if (item.items) {
+            return (
+              <li class="site-nav__item site-nav__item--group">
+                <details class="site-nav__group">
+                  <summary class="site-nav__summary">
+                    <span>{item.label}</span>
+                    <span class="site-nav__chevron" aria-hidden="true"></span>
+                  </summary>
+                  <ul class="site-nav__submenu" role="list">
+                    {item.items.map((subItem) => (
+                      <li>
+                        <a
+                          href={getHref(subItem.href)}
+                          class="site-nav__submenu-link"
+                        >
+                          {subItem.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            );
+          }
+
+          const href = getHref(item.href);
           return (
             <li class="site-nav__item">
               <a href={href} class="site-nav__link">{item.label}</a>

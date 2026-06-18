@@ -1,0 +1,119 @@
+---
+import Header from "../components/Header.astro";
+import SubsidyNotice from "../components/SubsidyNotice.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Projecten van Stichting Bijbrengen: Leerpretpark, Entreprenasium, Leerparadijs en Humanature."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <title>Projecten - Stichting Bijbrengen</title>
+    <script is:inline data-goatcounter="https://bijbrengen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <Header />
+
+      <main class="main-content">
+        <section class="page-intro">
+          <div class="page-intro__inner">
+            <h1>Projecten</h1>
+            <p>
+              Stichting Bijbrengen ontwikkelt projecten rond vrij leren, ondernemerschap,
+              natuur en technologie. Elk project heeft een eigen invalshoek, maar dezelfde
+              kern: mensen helpen om zelf richting te geven aan leren en ontwikkeling.
+            </p>
+          </div>
+        </section>
+
+        <section id="leerpretpark" class="project-detail project-detail--featured">
+          <div class="project-detail__inner">
+            <div class="project-detail__copy">
+              <span class="badge">Centraal initiatief</span>
+              <h2>Leerpretpark: de leerpret-engine</h2>
+              <p>
+                Met Leerpretpark ontwikkelt Bijbrengen een leerpret-engine waarin spelen,
+                ontdekken, ICT en AI elkaar versterken. Het project vertaalt leren naar een
+                omgeving die voelt als een ontdekkingsreis, met ruimte voor nieuwsgierigheid,
+                eigen regie en concrete leerdoelen.
+              </p>
+            </div>
+            <div class="project-detail__media">
+              <div class="media-placeholder media-placeholder--featured">
+                <img src={`${base}media/photos/leerparadijs.webp`} alt="Leerpretpark impressie" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <SubsidyNotice />
+
+        <section id="onderwijs" class="project-detail">
+          <div class="project-detail__inner project-detail__inner--reverse">
+            <div class="project-detail__copy">
+              <span class="badge">Ondernemend leren</span>
+              <h2>Entreprenasium en Leerparadijs</h2>
+              <p>
+                Het Entreprenasium en Leerparadijs zijn onderwijsprojecten waarin jongeren
+                hun talenten, interesses en ondernemende kracht verbinden aan echte vragen.
+                De projecten geven leerlingen meer eigenaarschap over hun leerroute en maken
+                leren concreet, persoonlijk en betekenisvol.
+              </p>
+              <p>
+                De detailpagina's bundelen de openbare informatie, documentatie en historie
+                die nu al in deze site is verwerkt.
+              </p>
+              <div class="project-detail__actions" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                <a href={`${base}entreprenasium/`} class="btn btn--primary">
+                  Naar Entreprenasium
+                </a>
+                <a href={`${base}leerparadijs/`} class="btn btn--secondary">
+                  Naar Leerparadijs
+                </a>
+              </div>
+            </div>
+            <div class="project-detail__media">
+              <div class="media-placeholder">
+                <img src={`${base}media/photos/entreprenasium.webp`} alt="Ondernemend leren" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="humanature" class="project-detail project-detail--last">
+          <div class="project-detail__inner">
+            <div class="project-detail__copy">
+              <span class="badge">Mens en natuur</span>
+              <h2>Humanature</h2>
+              <p>
+                Humanature is het project waarin Bijbrengen werkt aan herstel, natuur,
+                permacultuur en de verbinding tussen mens en omgeving. Het initiatief begon
+                in Nederland en kreeg later een plek in Coutada, Portugal.
+              </p>
+              <p>
+                De kern van Humanature is actieve harmonie: leren door te doen, zorg voor
+                de omgeving en aandacht voor wat mensen nodig hebben om duurzaam te groeien.
+              </p>
+            </div>
+            <div class="project-detail__media">
+              <div class="media-placeholder">
+                <img src={`${base}media/photos/humanature.webp`} alt="Humanature" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  </body>
+</html>
