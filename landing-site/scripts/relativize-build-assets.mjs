@@ -1,6 +1,6 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { join } from "node:path";
+import { join, relative } from "node:path";
 
 const distDir = fileURLToPath(new URL("../dist/", import.meta.url));
 
@@ -23,7 +23,14 @@ async function findHtmlFiles(dir) {
 
 for (const filePath of await findHtmlFiles(distDir)) {
   const html = await readFile(filePath, "utf8");
-  const nextHtml = html.replaceAll('href="/_astro/', 'href="_astro/').replaceAll('src="/_astro/', 'src="_astro/');
+  
+  const relativePath = relative(distDir, filePath);
+  const depth = relativePath.split(/[\\/]/).length - 1;
+  const prefix = "../".repeat(depth);
+
+  const nextHtml = html
+    .replaceAll('href="/_astro/', `href="${prefix}_astro/`)
+    .replaceAll('src="/_astro/', `src="${prefix}_astro/`);
 
   if (nextHtml !== html) {
     await writeFile(filePath, nextHtml);
