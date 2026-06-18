@@ -1,0 +1,22 @@
+---
+import OfferCard from "./OfferCard.astro";
+
+const { section } = Astro.props;
+---
+
+<section id={section.id} class="offer-section">
+  <div class="offer-section__inner">
+    <div class="offer-section__intro">
+      <h2>
+        {section.title}
+      </h2>
+      <p>
+        {section.intro}
+      </p>
+    </div>
+
+    <ul role="list" class="offer-grid">
+      {section.items.map((item: any) => <OfferCard item={item} />)}
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+---
+import { heroImages } from "../data/homepage.js";
+---
+
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <h1>
+        Stichting Bijbrengen
+      </h1>
+      <p>
+        Bijbrengen is een stichting die zich inzet voor het bijbrengen van mensen door ze bij elkaar te brengen.
+        Wij bieden verschillende vormen van leren aan, zoals zorg, coaching en onderwijs.
+      </p>
+    </div>
+
+    <div class="hero-gallery" aria-label="Impressie van Bijbrengen initiatieven">
+      {heroImages.map((image, index) => (
+        <figure class={`hero-gallery__item hero-gallery__item--${index + 1}`}>
+          <img
+            src={image.src}
+            alt={image.alt}
+            width="900"
+            height="620"
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding="async"
+          />
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

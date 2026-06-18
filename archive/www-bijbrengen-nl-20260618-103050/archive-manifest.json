@@ -1,0 +1,35 @@
+﻿{
+    "capturedAt":  "2026-06-18T10:31:48.3275500+02:00",
+    "source":  "https://www.bijbrengen.nl/",
+    "archivePath":  "D:\\repos\\Bijbrengen\\archive\\www-bijbrengen-nl-20260618-103050",
+    "downloadedCount":  21,
+    "failedCount":  3,
+    "downloaded":  [
+                       "https://www.bijbrengen.nl/",
+                       "https://www.bijbrengen.nl/apple-touch-icon.png",
+                       "https://www.bijbrengen.nl/favicon-32x32.png",
+                       "https://www.bijbrengen.nl/favicon-16x16.png",
+                       "https://www.bijbrengen.nl/site.webmanifest",
+                       "https://www.bijbrengen.nl/_astro/index.CdoN0s5g.css",
+                       "https://www.bijbrengen.nl/_astro/page.BCFd37Sx.js",
+                       "https://www.bijbrengen.nl/_astro/logo.D0Zokoqj_1iasJh.svg",
+                       "https://www.bijbrengen.nl/_astro/metherapy-header.DIT_ddXg_2lgKuH.webp",
+                       "https://www.bijbrengen.nl/_astro/humanature.CNF6-a9A_Z1Hsu0V.webp",
+                       "https://www.bijbrengen.nl/_astro/entreprenasium.DZz97MII_Z1rp5dA.webp",
+                       "https://www.bijbrengen.nl/_astro/leerparadijs.DDyN82_j_Z15jLLt.webp",
+                       "https://www.bijbrengen.nl/_astro/mecoaching-header.C3lxkqkA_Z1eVycG.webp",
+                       "https://www.bijbrengen.nl/_astro/logo_metherapy.De8321ph_oRP3H.webp",
+                       "https://www.bijbrengen.nl/_astro/logo_mecoaching.DOvl3nsV_Z22gTUE.svg",
+                       "https://www.bijbrengen.nl/_astro/logo_humanature.DdCmM4rn_ZrU4Ik.svg",
+                       "https://www.bijbrengen.nl/_astro/logo_leerparadijs.CHZ6A_zb_bOHIx.svg",
+                       "https://www.bijbrengen.nl/_astro/logo_entreprenasium.IQFPjZtJ_UxOMB.svg",
+                       "https://www.bijbrengen.nl/_astro/leerbox-logo.B5OLEtt6_Zg9SqP.svg",
+                       "https://www.bijbrengen.nl/_astro/logo_onderwijsarchitect.Bk_O0CFQ_22KPyu.svg",
+                       "https://www.bijbrengen.nl/scripts/htmx@2.0.4.min.js"
+                   ],
+    "failed":  [
+                   "https://www.bijbrengen.nl/scripts/t :: The remote server returned an error: (403) Forbidden.",
+                   "https://www.bijbrengen.nl/scripts/t.responseURL :: The remote server returned an error: (403) Forbidden.",
+                   "https://www.bijbrengen.nl/scripts/t,document.location.href :: The remote server returned an error: (403) Forbidden."
+               ]
+}

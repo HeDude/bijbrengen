@@ -1,0 +1,5 @@
+@charset "utf-8";
+.background_image_page
+{
+	background-image:url('../images/background.jpg');
+}
