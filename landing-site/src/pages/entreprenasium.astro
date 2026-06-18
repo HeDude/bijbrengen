@@ -1,0 +1,794 @@
+---
+// @ts-nocheck
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import fs from "node:fs";
+import path from "node:path";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+
+interface DocFile {
+  name: string;
+  fileName: string;
+  path: string;
+  category: string;
+}
+
+// Helper to recursively find files in a directory
+function getFilesRecursively(dir: string, baseDirName: string): DocFile[] {
+  let results: DocFile[] = [];
+  if (!fs.existsSync(dir)) return results;
+  
+  const list = fs.readdirSync(dir);
+  list.forEach((file: string) => {
+    if (file.startsWith('.')) return; // Ignore hidden files like .htaccess
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+    
+    if (stat && stat.isDirectory()) {
+      results = results.concat(getFilesRecursively(filePath, baseDirName));
+    } else {
+      const relativePath = path.relative("public", filePath).replace(/\\/g, "/");
+      const rawName = file.replace(/\.[^/.]+$/, "").replace(/_/g, " ");
+      const name = rawName.split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+      const parentDir = path.dirname(filePath);
+      const category = path.basename(parentDir);
+      
+      results.push({
+        name,
+        fileName: file,
+        path: relativePath,
+        category: category === baseDirName ? "Algemeen" : category
+      });
+    }
+  });
+  return results;
+}
+
+// Read documents and newsletters directories dynamically
+const docsDir = path.resolve("public/entreprenasium/doc");
+const newsDir = path.resolve("public/entreprenasium/nieuws");
+
+const allDocs = getFilesRecursively(docsDir, "doc");
+const allNews = getFilesRecursively(newsDir, "nieuws");
+
+// Group documents by their subdirectories
+const docsByCategory = allDocs.reduce((acc: Record<string, DocFile[]>, file: DocFile) => {
+  if (file.category === "wikibooks") return acc;
+  if (!acc[file.category]) {
+    acc[file.category] = [];
+  }
+  acc[file.category].push(file);
+  return acc;
+}, {});
+
+// Category names mapping for user display
+const categoryNames: Record<string, string> = {
+  book: "Boeken & Handleidingen",
+  brochure: "Brochures & Flyers",
+  curriculum: "Curriculum & Programma's",
+  design: "Ontwerp & Methodiek",
+  news: "Nieuwsbrieven Archief",
+  press: "Persberichten & Artikelen",
+  reference: "Referentiekaders",
+  sheet: "Infobladen (Sheets)",
+  style: "Huisstijl & Logo's",
+  wikibooks: "Wikibooks Hoofdstukken",
+  Algemeen: "Algemene Documenten"
+};
+
+// Original Moodle frontpage available courses data
+const courses = {
+  allen: [
+    {
+      id: "49",
+      name: "Ondernemend Leren",
+      summary: "Het entreprenasium hanteert als onderwijsvorm ondernemend leren. Wat is het verschil tussen leren ondernemen en ondernemend leren? Voor wie is ondernemend leren geschikt en voor wie juist niet?"
+    },
+    {
+      id: "4",
+      name: "Jij de Baas",
+      summary: "In Nederland is behoefte aan het ondersteunen van ondernemerschap op jonge leeftijd. Hoe geef je hier een invulling aan die recht doet aan alle kinderen en aan de eigenheid van de school?"
+    },
+    {
+      id: "5",
+      name: "Jij de Intrapreneur",
+      summary: "Op een entreprenasium ontwerpen leerlingen en docenten zelf hun eigen onderwijs. Hoe doe je dat en hoe zorg je dat de hele school hiervan meeprofiteert?"
+    },
+    {
+      id: "7",
+      name: "Jij de Wereldburger",
+      summary: "Ondernemend leren is een kunst op zich. Hoe leer je dit en hoe deel je wat dit oplevert met anderen?"
+    },
+    {
+      id: "8",
+      name: "Jij de Maatschappij",
+      summary: "Een school bereidt jongeren voor op de maatschappij. Hoe zorg je middels ondernemende projecten en evenementen ervoor dat de school open gaat en staat voor de lokale samenleving?"
+    },
+    {
+      id: "9",
+      name: "Jij de School",
+      summary: "Een eigen (afdeling binnen de) school oprichten is een ingewikkelde klus. Hoe zet je een opleiding op met ondernemend leren als onderwijsvorm?"
+    }
+  ],
+  docenten: [
+    {
+      id: "36",
+      name: "Change Agent",
+      summary: "Het entreprenasium vraagt een verandering in een school. Hoe help je mensen die hierin betrokken zijn en het lastig vinden om deze verandering niet vanuit oude gewoontes te benaderen?"
+    },
+    {
+      id: "35",
+      name: "Intrapreneur",
+      summary: "Een intrapreneur is een ondernemende werknemer. Hoe wordt je dit als onderwijsprofessional?"
+    },
+    {
+      id: "34",
+      name: "Supporter",
+      summary: "Ondernemende leerlingen verbinden hun passie via ondernemende projecten met leerdoelen. Hoe zorg je als vakdocent dat je leerlingen hierin kunt ondersteunen?"
+    },
+    {
+      id: "33",
+      name: "Business Coach",
+      summary: "Vanuit ondernemend leren ontstaan projecten of ondernemingen. Hoe leer je een leerling daarin effectief te ondernemen?"
+    },
+    {
+      id: "32",
+      name: "Examinator",
+      summary: "Een entreprenasium diploma getuigt van een ondernemende competentie. Hoe bepaal je dit en hoe zorg je voor zo veel mogelijke koppelingen met reguliere leerdoelen?"
+    }
+  ],
+  leerlingen: [
+    {
+      id: "15",
+      name: "Solidariteit",
+      summary: "Het entreprenasium vraagt van jou om met jouw onderneming een constructieve bijdrage te leveren aan de samenleving. Hoe toon je in jouw ondernemend gedrag een betrokken en verantwoordelijke houding?"
+    },
+    {
+      id: "12",
+      name: "Coöperatie",
+      summary: "Een ondernemende persoon opereert altijd in interactie met andere mensen. Hoe ontwikkel je een goed ontwikkeld en actief netwerk en onderhoud je deze zorgvuldig?"
+    },
+    {
+      id: "14",
+      name: "Burgerschap",
+      summary: "Je bent pas écht burger als je een actief en loyaal lid bent van de samenleving, je daarin thuis voelt en daarmee een sterke binding ervaart. Hoe ontwikkel je middels ondernemend gedrag jouw wereldburgerschap?"
+    },
+    {
+      id: "17",
+      name: "Metacognitie",
+      summary: "Het leren van leren, denken over denken, kennis over kennis of metacognitie is nodig om actief je eigen onderwijs vorm te geven. Hoe doe je dit door plezier te maken?"
+    },
+    {
+      id: "18",
+      name: "Zelfbewust",
+      summary: "Ondernemend leren vraagt om zowel bewust te zijn van jezelf als persoon, van wat het onderwijs vraagt en van wat je onderneming nodig heeft. Hoe leer je deze belangen goed kennen?"
+    },
+    {
+      id: "19",
+      name: "Planning",
+      summary: "Jezelf en anderen motiveren te doen wat er gepland is, is een belangrijk taak van een ondernemer. Hoe zorg je dat een planning maken leuk is en anderen overtuigt?"
+    },
+    {
+      id: "16",
+      name: "Creativiteit",
+      summary: "Creativiteit is een vaardigheid die de ondernemende persoon helpt om vernieuwend te kunnen zijn. Hoe ontwikkel je jouw creatieve vermogens?"
+    },
+    {
+      id: "10",
+      name: "Ondernemendheid",
+      summary: "Een ondernemende persoon is creatief, ontplooit graag zelf initiatieven en doet het liefst op z’n eigen wijze de benodigde kennis op. Hoe ontwikkel je jouw ondernemendheid tot een nog hoger niveau?"
+    },
+    {
+      id: "11",
+      name: "Eigenaarschap",
+      summary: "Het entreprenasium heeft eigenaarschap als kernwaarde omdat dit nodig is om ondernemend gedrag te ontwikkelen. Hoe neem je de regie over zowel een eigen route, een eigen onderneming als een eigen diploma?"
+    },
+    {
+      id: "20",
+      name: "Product",
+      summary: "Er bestaat vaak een kloof tussen het bedenken van een goed idee en het realiseren daarvan. Hoe breng je een product zo tot bloei dat het tot een innovatie leidt?"
+    },
+    {
+      id: "13",
+      name: "Model",
+      summary: "Om anderen te bewegen om mee te doen, zul je jouw onderneming een zichtbare vorm willen geven. Hoe kun je op een systematische en praktische methode over je strategie nadenken en die op één A4 schetsen?"
+    },
+    {
+      id: "21",
+      name: "Prestatie",
+      summary: "Hoe toon je aan je docent dat jij door het uitvoeren van jouw ondernemend project hoger zult gaan scoren op de leerdoelen van zijn of haar vak?"
+    },
+    {
+      id: "22",
+      name: "Economie",
+      summary: "Hoe kun je van jouw onderneming een profielwerkstuk maken zodat deze meetelt voor het profiel Economie en Maatschappij?"
+    },
+    {
+      id: "23",
+      name: "Science",
+      summary: "Hoe kun je van jouw onderneming een profielwerkstuk maken zodat deze meetelt voor het profiel Natuur & Gezondheid of het profiel Natuur & Techniek?"
+    },
+    {
+      id: "24",
+      name: "Cultuur",
+      summary: "Hoe kun je van jouw onderneming een profielwerkstuk maken zodat deze meetelt voor het profiel Cultuur en Maatschappij?"
+    }
+  ]
+};
+
+
+
+// Quotes listing for the slider (including Moodle & historical website quotes)
+const quotes = [
+  {
+    title: "Volkskrant",
+    text: "<b>'Ondernemen' een nieuw vak?</b><br>....De maatschappij heeft initiatiefrijke jongeren nodig, mensen die zich niet afwachtend opstellen. Dat vindt de politiek en dat vindt ook de Stichting Entreprenasium, die scholen aanmoedigt het vak ondernemen in te voeren....",
+    image: "media/photos/entreprenasium_kwc_handelsbeurs.jpg"
+  },
+  {
+    title: "Trouw",
+    text: "<b>Ondernemend gedrag</b><br>....Ondernemende scholieren komen in het voortgezet onderwijs nauwelijks aan hun trekken. Een nieuwe schoolsoort, het entreprenasium, moet dat veranderen. Onze leerlingen zeggen: laat maar, ik doe het zelf wel....",
+    image: "media/photos/entreprenasium_wereldburger_berlijn.jpg"
+  },
+  {
+    title: "RTL 4",
+    text: "<b>LifestyleXperience</b><br>....Tegenwoordig zijn er verschillende concepten om aansluiting te vinden bij de interesses van de leerlingen. Zo ook het entreprenasium....",
+    image: "media/photos/entreprenasium_ace_2014.jpg"
+  },
+  {
+    title: "Telegraaf",
+    text: "<b>Entreprenasium voor vwo’ers met handelsgeest</b><br>....Wij kijken naar kinderen die een uitdaging zoeken en met een zekere vrijheid toch goed kunnen presteren. Het wordt geen gewone school met klaslokalen, maar een ruimte waarin allerlei bedrijven zijn gevestigd....",
+    image: "media/photos/entreprenasium_ben_woldring.jpg"
+  },
+  {
+    title: "VO-raad / VO-magazine",
+    text: "<b>Beginnen waar anderen zich inhouden</b><br>....Conclusie is dat je dit een vorm van onderwijs kunt noemen dat je eigenlijk iedere leerling in het voortgezet onderwijs toewenst. Het prikkelt ondernemingslust bij leerlingen en leraren....",
+    image: "media/photos/entreprenasium_paul_rosenmoller.png"
+  },
+  {
+    title: "Het Kind",
+    text: "<b>Je kunt echt je passie leven</b><br>....Het Entreprenasium werpt vruchten af: 'Ik heb meer geleerd dan in mijn hele schoolcarrière tot nu toe'....",
+    image: "media/photos/entreprenasium.webp"
+  },
+  {
+    title: "Dagblad van het Noorden",
+    text: "<b>School van ondernemende mensen</b><br>....Op het entreprenasium mogen jongeren voor een belangrijk deel hun eigen leertraject bepalen. Het vervangen van reguliere schoolvakken met een leerzame excursiereis is daar een voorbeeld van....",
+    image: "media/photos/leerparadijs.webp"
+  }
+];
+
+// Statistieken 2013/2014 from historical site
+const stats = [
+  { value: "15+", label: "Actieve Scholen" },
+  { value: "100+", label: "Klassen Gevormd" },
+  { value: "32", label: "Vrijwilligers" },
+  { value: "Top 20", label: "OECD Onderwijsinnovatie" },
+  { value: "5", label: "Provincies Actief" },
+  { value: "HBO", label: "Aansluiting & Doorstroom" }
+];
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Entreprenasium: De schoolafdeling voor ondernemend leren. Ontdek onze online cursussen en projecten, en download openbare documenten uit het archief." />
+    <meta name="viewport" content="width=device-width" />
+    <title>Entreprenasium - Stichting Bijbrengen</title>
+    <script is:inline data-goatcounter="https://bijbrengen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <Header />
+
+      <main class="main-content">
+        <!-- Page Intro & Header Wiki Links -->
+        <section class="page-intro">
+          <div class="page-intro__inner">
+            <span class="badge">Onderwijsprogramma</span>
+            <h1>Entreprenasium</h1>
+            <p class="hero__lead" style="margin-bottom: 2rem;">
+              Ruimte voor ondernemend leren. Een schoolafdeling ontworpen om initiatief, creativiteit en regie bij leerlingen en docenten aan te wakkeren.
+            </p>
+            
+            <!-- Prominent Wiki Links at the Top -->
+            <div class="wiki-quicklinks" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+              <a href="https://nl.wikipedia.org/wiki/Entreprenasium" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn-wiki" style="border-color: #5CA048; color: #172026; display: flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, border-color 0.2s;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikipedia.svg" alt="Wikipedia logo" style="width: 16px; height: 16px; object-fit: contain;" />
+                Wikipedia: Entreprenasium
+              </a>
+              <a href="https://nl.wikibooks.org/wiki/Entreprenasium" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn-wiki" style="border-color: #662D91; color: #172026; display: flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, border-color 0.2s;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikibooks.svg" alt="Wikibooks logo" style="width: 16px; height: 16px; object-fit: contain;" />
+                Wikibooks: Entreprenasium Handboek
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quotes Carousel Slider -->
+        <section class="about-section about-section--gray" style="padding: 4rem 1.25rem;">
+          <div class="about-section__inner" style="max-width: 68rem;">
+            <h2 class="text-center" style="margin-bottom: 2.5rem; font-size: 1.75rem;">Het Entreprenasium in de Media</h2>
+            
+            <div class="carousel-container" style="position: relative; background: #ffffff; border-radius: 1rem; border: 1px solid #e5e7eb; overflow: hidden; box-shadow: 0 10px 30px rgb(0 0 0 / 0.05); min-height: 24rem;">
+              {quotes.map((quote, idx) => (
+                <div class={`carousel-slide js-carousel-slide ${idx === 0 ? 'active' : ''}`} data-index={idx} style={`display: ${idx === 0 ? 'grid' : 'none'}; grid-template-columns: 1fr; align-items: center; gap: 2rem; padding: 2.5rem;`}>
+                  <div class="slide-content" style="display: flex; flex-direction: column; justify-content: center; min-height: 12rem;">
+                    <h3 style="color: var(--color-bijbrengen-rose); font-size: 1.5rem; margin: 0 0 1rem; font-weight: 700;">{quote.title}</h3>
+                    <p style="font-size: 1.125rem; line-height: 1.7; color: #334155; font-style: italic; margin: 0;" set:html={quote.text}></p>
+                  </div>
+                  <div class="slide-media" style="display: flex; justify-content: center; align-items: center; border-radius: 0.75rem; overflow: hidden; height: 16rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <img src={`${base}${quote.image}`} alt={quote.title} style="width: 100%; height: 100%; object-fit: cover;" />
+                  </div>
+                </div>
+              ))}
+              
+              <!-- Carousel Controls -->
+              <div class="carousel-nav" style="display: flex; justify-content: center; gap: 0.5rem; padding: 1.5rem 0; background: #fafafa; border-top: 1px solid #f1f5f9;">
+                {quotes.map((_, idx) => (
+                  <button class={`carousel-dot js-carousel-dot ${idx === 0 ? 'active' : ''}`} data-index={idx} aria-label={`Slide ${idx + 1}`} style="width: 12px; height: 12px; border-radius: 50%; border: none; background: #cbd5e1; cursor: pointer; transition: background 0.3s;"></button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Waarom, Wie, Hoe, Waar Core Pillars Grid (Static grid based on user feedback) -->
+        <section class="about-section" style="padding: 4rem 1.25rem; border-bottom: 1px solid #e5e7eb;">
+          <div class="about-section__inner" style="max-width: 68rem;">
+            <h2 class="text-center" style="margin-bottom: 3rem; font-size: 1.75rem;">Kernprincipes & Methodiek</h2>
+            
+            <div class="core-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+              <!-- Waarom? -->
+              <div style="border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.75rem; background: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+                <h3 style="color: #5CA048; font-size: 1.25rem; font-weight: 700; margin: 0 0 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="display: inline-block; width: 8px; height: 8px; background-color: #5CA048; border-radius: 50%;"></span>
+                  Waarom? (Visie)
+                </h3>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                  Ondernemende mensen gedijen in een leeromgeving waarin ruimte is voor creatieve ideeën. Het entreprenasium helpt deze jonge entrepreneurs, zodat zij de drijvende kracht kunnen worden achter de maatschappelijke innovaties waar de 21e eeuw om vraagt.
+                </p>
+              </div>
+
+              <!-- Wie? -->
+              <div style="border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.75rem; background: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+                <h3 style="color: #662D91; font-size: 1.25rem; font-weight: 700; margin: 0 0 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="display: inline-block; width: 8px; height: 8px; background-color: #662D91; border-radius: 50%;"></span>
+                  Wie? (CVE Coöperatie)
+                </h3>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                  Het entreprenasium is van maatschappelijk ondernemende leerlingen, docenten en scholen. De entreprenasia hebben de krachten gebundeld in de <strong>Coöperatieve Vereniging Entreprenasium U.A. (CVE)</strong>.
+                </p>
+              </div>
+
+              <!-- Hoe? -->
+              <div style="border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.75rem; background: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+                <h3 style="color: #F26522; font-size: 1.25rem; font-weight: 700; margin: 0 0 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="display: inline-block; width: 8px; height: 8px; background-color: #F26522; border-radius: 50%;"></span>
+                  Hoe? (Leerlijnen)
+                </h3>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                  Het entreprenasium loopt van basisschool tot hoger onderwijs via de leerlijnen mavo-mbo-hbo, havo-hbo of vwo. Entreprenasiasten volgen ondernemend onderwijs als een effectief alternatief voor het reguliere programma.
+                </p>
+              </div>
+
+              <!-- Waar? -->
+              <div style="border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.75rem; background: #ffffff; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);">
+                <h3 style="color: var(--color-bijbrengen-rose); font-size: 1.25rem; font-weight: 700; margin: 0 0 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                  <span style="display: inline-block; width: 8px; height: 8px; background-color: var(--color-bijbrengen-rose); border-radius: 50%;"></span>
+                  Waar? (Implementaties)
+                </h3>
+                <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                  De entreprenasia zijn verspreid over heel Nederland, maar binnen de eigen regio uniek. Iedere leerling of docent kan zo een maatschappelijk ondernemende invulling geven aan de reguliere examenvakken en het nieuwe vak “Entrepreneurship”.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Statistics Banner (2013/2014 specs) -->
+        <section class="about-section" style="padding: 3.5rem 1.25rem; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #ffffff;">
+          <div class="about-section__inner" style="max-width: 72rem;">
+            <h2 class="text-center" style="color: #ffffff; margin-bottom: 2.5rem; font-size: 1.5rem; letter-spacing: 0.05em; text-transform: uppercase;">Entreprenasium Track Record</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 2rem; text-align: center;">
+              {stats.map(stat => (
+                <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                  <span style="font-size: 2.5rem; font-weight: 800; color: #ffd700; line-height: 1; filter: drop-shadow(0 2px 8px rgba(255,215,0,0.25));">{stat.value}</span>
+                  <span style="font-size: 0.85rem; color: #cbd5e1; font-weight: 520;">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+
+        <!-- Video embeds -->
+        <section class="about-section" style="padding: 4rem 1.25rem;">
+          <div class="about-section__inner" style="max-width: 72rem;">
+            <h2 class="text-center" style="margin-bottom: 2.5rem; font-size: 1.75rem;">Video-impressies</h2>
+            <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+              <div class="video-card" style="position: relative; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.06); aspect-ratio: 16/9; background: #000;">
+                <iframe src="https://www.youtube.com/embed/hIAlqcUalgM" style="position: absolute; inset: 0; width: 100%; height: 100%; border: none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="video-card" style="position: relative; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.06); aspect-ratio: 16/9; background: #000;">
+                <iframe src="https://www.youtube.com/embed/gqV-qbzsdTI" style="position: absolute; inset: 0; width: 100%; height: 100%; border: none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <div class="video-card" style="position: relative; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.06); aspect-ratio: 16/9; background: #000;">
+                <iframe src="https://www.youtube.com/embed/lFJwLtoHhxg" style="position: absolute; inset: 0; width: 100%; height: 100%; border: none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- General Info & Wikipedia/Wikibooks citation -->
+        <section class="about-section about-section--gray" style="padding: 4rem 1.25rem;">
+          <div class="about-section__inner" style="max-width: 50rem;">
+            <div class="about-section__content">
+              <h2 style="font-size: 1.75rem; text-align: center; margin-bottom: 1.5rem;">Wat is het Entreprenasium?</h2>
+              <p>
+                Het Entreprenasium is een schoolafdeling voor ondernemend leren. Het opzetten en uitvoeren van een entreprenasium wordt ondersteund door (voorbeeld)projecten en online cursussen. Het model stelt scholieren in staat om hun eigen passies te verbinden met formele leerdoelen via concrete, ondernemende projecten.
+              </p>
+              <p>
+                De Stichting Entreprenasium stelt alle informatie, documentatie en leermaterialen gratis ter beschikking via het publieke domein. Hiermee kunnen scholen, docenten en leerlingen zelfstandig aan de slag met het vormgeven van ondernemend onderwijs.
+              </p>
+              <div class="general-links" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://nl.wikipedia.org/wiki/Entreprenasium" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikipedia.svg" alt="Wikipedia logo" style="width: 16px; height: 16px; object-fit: contain;" />
+                  Entreprenasium op Wikipedia
+                </a>
+                <a href="https://nl.wikibooks.org/wiki/Entreprenasium" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikibooks.svg" alt="Wikibooks logo" style="width: 16px; height: 16px; object-fit: contain;" />
+                  Entreprenasium op Wikibooks
+                </a>
+                <a href="https://www.youtube.com/user/entreprenasium/videos" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                  <span style="color: #ff0000; font-weight: bold;">▶</span> YouTube-kanaal
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Marketing Spots -->
+        <section class="about-section about-section--gray" style="padding: 4rem 1.25rem;">
+          <div class="about-section__inner" style="max-width: 72rem;">
+            <div class="teaser-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+              <article class="teaser-card" style="border-top: 4px solid #5CA048;">
+                <div class="teaser-card__media">
+                  <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="color: #5CA048;">★</span> Jij de Projecten
+                  </h3>
+                </div>
+                <p>De implementatie van een entreprenasium op een school gaat via schoolbrede projecten.</p>
+                <div class="teaser-card__actions" style="margin-top: auto;">
+                  <a href="https://nl.wikibooks.org/wiki/Entreprenasium/Projecten" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--full" style="border-color: #5CA048; color: #5CA048; font-weight: bold;">Projecten gids</a>
+                </div>
+              </article>
+              
+              <article class="teaser-card" style="border-top: 4px solid #662D91;">
+                <div class="teaser-card__media">
+                  <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="color: #662D91;">★</span> Cursussen
+                  </h3>
+                </div>
+                <p>De verschillende aspecten van ondernemend leren worden in online cursussen/modules getraind.</p>
+                <div class="teaser-card__actions" style="margin-top: auto;">
+                  <a href="#frontpage-course-list" class="btn btn--secondary btn--full" style="border-color: #662D91; color: #662D91; font-weight: bold;">Bekijk aanbod</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Course categories & switcher -->
+        <section id="frontpage-course-list" class="about-section about-section--gray" style="padding: 5rem 1.25rem;">
+          <div class="about-section__inner" style="max-width: 72rem;">
+            <h2 class="text-center" style="margin-bottom: 1rem; font-size: 2rem;">Online Cursussen & Modules</h2>
+            <p class="text-center" style="color: #64748b; margin-bottom: 3rem; max-width: 36rem; margin-inline: auto;">
+              Het complete cursusaanbod uit de ELO, gecategoriseerd voor leerlingen, docenten en algemeen gebruik.
+            </p>
+
+            <!-- Tabs buttons -->
+            <div class="course-tabs" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap;">
+              <button class="btn tab-btn active js-tab-btn" data-category="allen" style="background-color: #5CA048; color: #ffffff; border: none; font-weight: bold; padding: 0.75rem 2rem;">
+                Voor Iedereen (Allen)
+              </button>
+              <button class="btn tab-btn js-tab-btn" data-category="docenten" style="background-color: #ffffff; color: #662D91; border: 1px solid #e5e7eb; font-weight: bold; padding: 0.75rem 2rem;">
+                Voor Docenten
+              </button>
+              <button class="btn tab-btn js-tab-btn" data-category="leerlingen" style="background-color: #ffffff; color: #F26522; border: 1px solid #e5e7eb; font-weight: bold; padding: 0.75rem 2rem;">
+                Voor Leerlingen
+              </button>
+            </div>
+
+            <!-- Content panels -->
+            <div class="course-panels">
+              <!-- Panel: Allen -->
+              <div class="course-panel js-course-panel active" data-category="allen" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                {courses.allen.map(course => (
+                  <div class="course-card" style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.2s;">
+                    <div style="display: flex; justify-content: flex-end; align-items: center;">
+                      <!-- Allen Icon SVG -->
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5CA048" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 700; color: #172026; margin: 0;">{course.name}</h3>
+                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5; margin: 0;">{course.summary}</p>
+                  </div>
+                ))}
+              </div>
+
+              <!-- Panel: Docenten -->
+              <div class="course-panel js-course-panel" data-category="docenten" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                {courses.docenten.map(course => (
+                  <div class="course-card" style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.2s;">
+                    <div style="display: flex; justify-content: flex-end; align-items: center;">
+                      <!-- Docent Icon SVG -->
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#662D91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 700; color: #172026; margin: 0;">{course.name}</h3>
+                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5; margin: 0;">{course.summary}</p>
+                  </div>
+                ))}
+              </div>
+
+              <!-- Panel: Leerlingen -->
+              <div class="course-panel js-course-panel" data-category="leerlingen" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                {courses.leerlingen.map(course => (
+                  <div class="course-card" style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 0.75rem; padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.2s;">
+                    <div style="display: flex; justify-content: flex-end; align-items: center;">
+                      <!-- Leerling Icon SVG -->
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F26522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-weight: 700; color: #172026; margin: 0;">{course.name}</h3>
+                    <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5; margin: 0;">{course.summary}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Document Library (Accordeons) -->
+        <section id="doc-library" class="about-section" style="padding: 5rem 1.25rem;">
+          <div class="about-section__inner" style="max-width: 54rem;">
+            <h2 class="text-center" style="margin-bottom: 1rem; font-size: 2rem;">Archief</h2>
+            <p class="text-center" style="color: #64748b; margin-bottom: 3.5rem; max-width: 36rem; margin-inline: auto;">
+              Blader door ons openbare archief van brochures, handleidingen, infobladen en nieuwsbrieven.
+            </p>
+
+            <div class="document-accordion" style="display: flex; flex-direction: column; gap: 1rem;">
+              <!-- Accordion: Nieuwsbrieven -->
+              {allNews.length > 0 && (
+                <div class="accordion-item js-accordion-item" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; background: #ffffff;">
+                  <button class="accordion-header js-accordion-header" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; font-size: 1.1rem; font-weight: 700; background: #fafafa; border: none; cursor: pointer; text-align: left; transition: background 0.2s;">
+                    <span>📰 Nieuwsbrieven ({allNews.length} bestanden)</span>
+                    <span class="accordion-icon" style="transition: transform 0.2s; font-size: 0.8rem;">▼</span>
+                  </button>
+                  <div class="accordion-content js-accordion-content" style="display: none; padding: 1.5rem; border-top: 1px solid #e5e7eb; background: #ffffff;">
+                    <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                      {allNews.map((file: DocFile) => (
+                        <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.5rem;">
+                          <span style="font-weight: 520; color: #334155;">{file.name}</span>
+                          <a href={`${base}${file.path}`} target="_blank" class="btn btn--secondary" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;">Laden</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              <!-- Accordions for Document Categories -->
+              {Object.keys(docsByCategory).sort().map((catKey: string) => {
+                const files = docsByCategory[catKey];
+                const catName = categoryNames[catKey] || catKey;
+                return (
+                  <div class="accordion-item js-accordion-item" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; background: #ffffff;">
+                    <button class="accordion-header js-accordion-header" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; font-size: 1.1rem; font-weight: 700; background: #fafafa; border: none; cursor: pointer; text-align: left; transition: background 0.2s;">
+                      <span>📁 {catName} ({files.length} bestanden)</span>
+                      <span class="accordion-icon" style="transition: transform 0.2s; font-size: 0.8rem;">▼</span>
+                    </button>
+                    <div class="accordion-content js-accordion-content" style="display: none; padding: 1.5rem; border-top: 1px solid #e5e7eb; background: #ffffff;">
+                      <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                        {files.map((file: DocFile) => (
+                          <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.5rem;">
+                            <span style="font-weight: 520; color: #334155;">{file.name}</span>
+                            <a href={`${base}${file.path}`} target="_blank" class="btn btn--secondary" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;">Laden</a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+
+    <!-- Client-side Interactive Functionality -->
+    <script is:inline>
+      // 1. Quotes Carousel
+      document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll(".js-carousel-slide");
+        const dots = document.querySelectorAll(".js-carousel-dot");
+        let activeIdx = 0;
+        let carouselInterval;
+
+        function showSlide(index) {
+          slides.forEach((slide, idx) => {
+            if (idx === index) {
+              slide.style.display = "grid";
+              slide.classList.add("active");
+            } else {
+              slide.style.display = "none";
+              slide.classList.remove("active");
+            }
+          });
+
+          dots.forEach((dot, idx) => {
+            if (idx === index) {
+              dot.classList.add("active");
+              dot.style.background = "var(--color-bijbrengen-rose)";
+            } else {
+              dot.classList.remove("active");
+              dot.style.background = "#cbd5e1";
+            }
+          });
+          activeIdx = index;
+        }
+
+        // Initialize dots styling
+        showSlide(0);
+
+        dots.forEach(dot => {
+          dot.addEventListener("click", () => {
+            const index = parseInt(dot.getAttribute("data-index"), 10);
+            showSlide(index);
+            resetInterval();
+          });
+        });
+
+        function startInterval() {
+          carouselInterval = setInterval(() => {
+            let nextIdx = (activeIdx + 1) % slides.length;
+            showSlide(nextIdx);
+          }, 6000);
+        }
+
+        function resetInterval() {
+          clearInterval(carouselInterval);
+          startInterval();
+        }
+
+        startInterval();
+
+        // 2. Course Tab Switcher
+        const tabBtns = document.querySelectorAll(".js-tab-btn");
+        const panels = document.querySelectorAll(".js-course-panel");
+
+        tabBtns.forEach(btn => {
+          btn.addEventListener("click", () => {
+            const cat = btn.getAttribute("data-category");
+            
+            // Set buttons active state and colors
+            tabBtns.forEach(b => {
+              b.classList.remove("active");
+              b.style.backgroundColor = "#ffffff";
+              b.style.border = "1px solid #e5e7eb";
+              
+              const bCat = b.getAttribute("data-category");
+              if (bCat === "allen") b.style.color = "#5CA048";
+              if (bCat === "docenten") b.style.color = "#662D91";
+              if (bCat === "leerlingen") b.style.color = "#F26522";
+            });
+
+            btn.classList.add("active");
+            if (cat === "allen") {
+              btn.style.backgroundColor = "#5CA048";
+              btn.style.color = "#ffffff";
+              btn.style.border = "none";
+            } else if (cat === "docenten") {
+              btn.style.backgroundColor = "#662D91";
+              btn.style.color = "#ffffff";
+              btn.style.border = "none";
+            } else if (cat === "leerlingen") {
+              btn.style.backgroundColor = "#F26522";
+              btn.style.color = "#ffffff";
+              btn.style.border = "none";
+            }
+
+            // Show panel
+            panels.forEach(panel => {
+              if (panel.getAttribute("data-category") === cat) {
+                panel.style.display = "grid";
+                panel.classList.add("active");
+              } else {
+                panel.style.display = "none";
+                panel.classList.remove("active");
+              }
+            });
+          });
+        });
+
+        // 3. Document / General accordions
+        const accordionHeaders = document.querySelectorAll(".js-accordion-header");
+        accordionHeaders.forEach(header => {
+          header.addEventListener("click", () => {
+            const parent = header.closest(".js-accordion-item");
+            const content = parent.querySelector(".js-accordion-content");
+            const icon = header.querySelector(".accordion-icon");
+
+            if (content.style.display === "none" || !content.style.display) {
+              content.style.display = "block";
+              icon.style.transform = "rotate(180deg)";
+              header.style.background = "#f1f5f9";
+            } else {
+              content.style.display = "none";
+              icon.style.transform = "rotate(0deg)";
+              header.style.background = "#fafafa";
+            }
+          });
+        });
+      });
+    </script>
+
+    <style>
+      .btn-wiki:hover {
+        transform: translateY(-2px);
+      }
+      .wiki-quicklinks a:first-child:hover {
+        border-color: #5ca048 !important;
+        box-shadow: 0 4px 12px rgba(92, 160, 72, 0.15);
+      }
+      .wiki-quicklinks a:last-child:hover {
+        border-color: #662d91 !important;
+        box-shadow: 0 4px 12px rgba(102, 45, 145, 0.15);
+      }
+
+      .carousel-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .carousel-dot.active {
+        background: var(--color-bijbrengen-rose) !important;
+      }
+
+      /* CSS transitions for slide fade-in */
+      .carousel-slide {
+        animation: fadeIn 0.4s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @media (min-width: 768px) {
+        .carousel-slide {
+          grid-template-columns: 1.2fr 0.8fr !important;
+        }
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-8px) !important;
+      }
+      
+      .course-card:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+        border-color: rgba(0, 0, 0, 0.15) !important;
+      }
+
+      .accordion-header:hover {
+        background: #f1f5f9 !important;
+      }
+    </style>
+  </body>
+</html>

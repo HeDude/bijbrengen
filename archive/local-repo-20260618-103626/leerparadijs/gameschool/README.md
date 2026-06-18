@@ -1,2 +1,0 @@
-# gameschool
-Website of Gameschool
