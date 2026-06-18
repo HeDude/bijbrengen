@@ -106,7 +106,7 @@ const base = import.meta.env.BASE_URL;
         </section>
 
         <!-- Innovatie in het Onderwijs -->
-        <section id="innovatie-ai" class="project-detail project-detail--last">
+        <section id="innovatie-ai" class="project-detail">
           <div class="project-detail__inner project-detail__inner--reverse">
             <div class="project-detail__copy">
               <h2>Onderwijstransformatie door ondernemend leren en AI-coaching</h2>
@@ -129,9 +129,70 @@ const base = import.meta.env.BASE_URL;
             </div>
           </div>
         </section>
+
+        <!-- Vrijwillige kennisdeling (Wikipedia & Wikibooks) -->
+        <section id="kennisdeling" class="project-detail project-detail--last">
+          <div class="project-detail__inner">
+            <div class="project-detail__copy">
+              <h2>Vrijwillige kennisdeling en open-source-educatie</h2>
+              <p>
+                Om onze maatschappelijke missie van vrij en toegankelijk leren optimaal uit te dragen, schrijft en onderhoudt ons team op vrijwillige basis diverse lemma's en boeken op Wikipedia en Wikibooks. Wij geloven in de kracht van gratis en openbare kennisdeling ten behoeve van de gehele gemeenschap.
+              </p>
+              <p>
+                Door onze methodieken, zoals Humanature, het Leerparadijs en het Entreprenasium, volledig open source te documenteren via het Wikibooks-profiel en de Wikipedia-gebruikerspagina van <a href="https://nl.wikibooks.org/wiki/Gebruiker:BeeBringer" target="_blank" rel="noopener noreferrer">BeeBringer</a>, stellen we docenten, ouders en studenten wereldwijd in staat om zelfstandig aan de slag te gaan met vernieuwend onderwijs. Deze actieve bijdrage aan het publieke domein weerspiegelt onze overtuiging dat kwalitatieve educatieve informatie voor iedereen drempelvrij beschikbaar moet zijn.
+              </p>
+              <div class="project-detail__actions">
+                <a href="https://nl.wikibooks.org/wiki/Gebruiker:BeeBringer" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                  Bekijk onze Wikibooks-bijdragen
+                </a>
+                <a href="https://nl.wikipedia.org/wiki/Gebruiker:BeeBringer" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                  Bekijk onze Wikipedia-bijdragen
+                </a>
+              </div>
+            </div>
+            <div class="project-detail__media">
+              <div class="wiki-logos-container">
+                <img src={`${base}media/logos/wikipedia.svg`} alt="Wikipedia Logo" class="wiki-logo" />
+                <img src={`${base}media/logos/wikibooks.svg`} alt="Wikibooks Logo" class="wiki-logo" />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
     </div>
   </body>
 </html>
+
+<style>
+  .wiki-logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 40px rgb(0 0 0 / 0.08);
+    height: 100%;
+    min-height: 20rem;
+  }
+  .wiki-logo {
+    width: 35%;
+    max-width: 140px;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.05));
+    transition: transform 0.3s ease;
+  }
+  .wiki-logo:hover {
+    transform: scale(1.08);
+  }
+  
+  @media (max-width: 640px) {
+    .wiki-logos-container {
+      gap: 2rem;
+      padding: 2rem;
+    }
+  }
+</style>
