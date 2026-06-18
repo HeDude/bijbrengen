@@ -193,19 +193,26 @@ const partners = [
           </div>
         </section>
 
-        <!-- Samenwerkingen -->
+        <!-- Hoe werkt het via Bijbrengen -->
         <section class="about-section about-section--gray" style="padding: 4rem 1.25rem;">
-          <div class="about-section__inner" style="max-width: 60rem;">
-            <h2 class="text-center" style="margin-bottom: 1rem; font-size: 1.75rem;">Samenwerkingen</h2>
-            <p class="text-center" style="color: #64748b; margin-bottom: 2.5rem; max-width: 40rem; margin-inline: auto;">
-              Onderwijsarchitect werkt samen met onderwijsinitiatieven waar innovatie en professionalisering hand in hand gaan.
+          <div class="about-section__inner" style="max-width: 50rem;">
+            <h2 style="font-size: 1.75rem; text-align: center; margin-bottom: 1rem;">Inschakelen via Bijbrengen</h2>
+            <p style="text-align: center; color: #64748b; margin-bottom: 2rem; max-width: 42rem; margin-inline: auto;">
+              Een onderwijsarchitect kan zelfstandig worden ingeschakeld, of via Stichting Bijbrengen.
             </p>
-            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-              {partners.map(partner => (
-                partner.href
-                  ? <a href={partner.href} class="btn btn--secondary" style="font-weight: 600;">{partner.name}</a>
-                  : <span style="display: inline-flex; align-items: center; padding: 0.6rem 1.25rem; border: 1px solid #e5e7eb; border-radius: 0.5rem; font-weight: 600; color: #64748b; background: #ffffff;">{partner.name}</span>
-              ))}
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+              <div style="background: #ffffff; border: 1px solid #e5e7eb; border-top: 4px solid #5CA048; border-radius: 0.75rem; padding: 1.75rem;">
+                <h3 style="font-size: 1.1rem; font-weight: 700; color: #172026; margin: 0 0 0.75rem;">Via Bijbrengen</h3>
+                <p style="color: #64748b; font-size: 0.9rem; line-height: 1.65; margin: 0;">
+                  Wordt de factuur via Stichting Bijbrengen gestuurd, dan komt de opbrengst ten goede aan de stichting. Zo draagt elk traject bij aan de bredere onderwijsmissie van Bijbrengen.
+                </p>
+              </div>
+              <div style="background: #ffffff; border: 1px solid #e5e7eb; border-top: 4px solid #662D91; border-radius: 0.75rem; padding: 1.75rem;">
+                <h3 style="font-size: 1.1rem; font-weight: 700; color: #172026; margin: 0 0 0.75rem;">Direct via de onderwijsarchitect</h3>
+                <p style="color: #64748b; font-size: 0.9rem; line-height: 1.65; margin: 0;">
+                  Regelt de onderwijsarchitect het traject zelf, dan ontvangt hij of zij de opbrengst rechtstreeks en draagt een aansluitbijdrage af aan Bijbrengen. Zo houdt de stichting zich — zonder winstoogmerk — in stand.
+                </p>
+              </div>
             </div>
           </div>
         </section>
