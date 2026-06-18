@@ -1,10 +1,9 @@
 ---
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
-import OfferSection from "../components/OfferSection.astro";
 import SubsidyNotice from "../components/SubsidyNotice.astro";
 import Footer from "../components/Footer.astro";
-import { sections } from "../data/homepage.js";
+import { teasers } from "../data/homepage.js";
 import "../styles/global.css";
 ---
 
@@ -12,9 +11,9 @@ import "../styles/global.css";
 <html lang="nl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Stichting Bijbrengen verbindt zorg, coaching en onderwijs rond vrij leren." />
+    <meta name="description" content="Stichting Bijbrengen verbindt zorg, coaching en onderwijs rond vrij en ondernemend leren. Ontdek onze initiatieven zoals Leerpretpark.nl." />
     <meta name="viewport" content="width=device-width" />
-    <title>Bijbrengen</title>
+    <title>Bijbrengen - Samen leren, groeien en innoveren</title>
     <script is:inline data-goatcounter="https://bijbrengen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </head>
   <body>
@@ -22,7 +21,43 @@ import "../styles/global.css";
       <Header />
       <Hero />
       <SubsidyNotice />
-      {sections.map((section) => <OfferSection section={section} />)}
+      
+      <section class="teaser-section">
+        <div class="teaser-section__inner">
+          <div class="teaser-section__intro">
+            <h2>Onze kernpijlers</h2>
+            <p>
+              Stichting Bijbrengen werkt op het raakvlak van persoonlijke ontwikkeling, vernieuwend onderwijs en technologische innovatie. Ontdek hieronder onze belangrijkste pijlers.
+            </p>
+          </div>
+          <div class="teaser-grid">
+            {teasers.map((teaser) => (
+              <article class="teaser-card" id={teaser.id}>
+                <div class="teaser-card__media">
+                  {teaser.image && (
+                    <img
+                      src={teaser.image}
+                      alt=""
+                      width="80"
+                      height="80"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  )}
+                  <h3>{teaser.title}</h3>
+                </div>
+                <p>{teaser.description}</p>
+                <div class="teaser-card__actions">
+                  <a href={teaser.ctaHref} class="btn btn--secondary btn--full">
+                    {teaser.ctaLabel}
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   </body>

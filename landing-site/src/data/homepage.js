@@ -1,7 +1,7 @@
 export const navigation = [
-  { label: "Zorg", href: "#zorg" },
-  { label: "Onderwijs", href: "#onderwijs" },
-  { label: "Coaching", href: "#coaching" }
+  { label: "Home", href: "/" },
+  { label: "Projecten en diensten", href: "/projecten-en-diensten" },
+  { label: "Over Ons", href: "/over-ons" }
 ];
 
 export const heroImages = [
@@ -27,87 +27,29 @@ export const heroImages = [
   }
 ];
 
-export const sections = [
+export const teasers = [
   {
-    id: "zorg",
-    title: "Zorg",
-    intro:
-      "Bijbrengen biedt verschillende vormen van zorg aan. Hiernaast vindt u een overzicht van de verschillende vormen van zorg die wij aanbieden.",
-    items: [
-      {
-        title: "MeTherapy",
-        href: "https://www.metherapy.nl/",
-        description: "Integrale, psychosociale en hypnotherapie.",
-        image: "media/logos/metherapy.webp"
-      },
-      {
-        title: "MeCoaching",
-        href: "https://www.metherapy.nl/",
-        description: "Leef vrij door jezelf beter te leren kennen.",
-        image: "media/logos/mecoaching.svg"
-      },
-      {
-        title: "Humanature",
-        href: "https://nl.wikibooks.org/wiki/Humanature",
-        description: "Het bijeenvoegen van mens en natuur.",
-        image: "media/logos/humanature.svg"
-      }
-    ]
+    id: "zorg-coaching-teaser",
+    title: "Persoonlijke groei & welzijn",
+    description: "Onder de vlag van Stichting Bijbrengen bieden we met MeTherapy en MeCoaching professionele psychosociale therapie en leefstijlcoaching aan. Onze benadering is erop gericht om mensen te helpen zichzelf beter te begrijpen, belemmerende patronen te doorbreken en in hun eigen kracht te gaan staan. We combineren moderne therapeutische methoden met natuurlijke elementen (Humanature) om een holistische weg naar herstel en groei te bieden. Alle inkomsten uit deze diensten vloeien direct terug in de stichting om onze educatieve projecten te bekostigen.",
+    ctaLabel: "Ontdek onze zorg- & coachingtrajecten",
+    ctaHref: "/projecten-en-diensten#zorg-coaching",
+    image: "media/logos/metherapy.webp"
   },
   {
-    id: "onderwijs",
-    title: "Onderwijs",
-    intro:
-      "Bijbrengen biedt verschillende vormen van onderwijs aan. Hiernaast vindt u een overzicht van de verschillende vormen van onderwijs die wij aanbieden.",
-    items: [
-      {
-        title: "Leerparadijs",
-        href: "https://nl.wikibooks.org/wiki/Leerparadijs",
-        description: "Voor jongeren met bijzondere talenten.",
-        image: "media/logos/leerparadijs.svg"
-      },
-      {
-        title: "Entreprenasium",
-        href: "https://nl.wikibooks.org/wiki/Entreprenasium",
-        description: "Onderwijs voor jonge entrepreneurs.",
-        image: "media/logos/entreprenasium.svg"
-      },
-      {
-        title: "Co-creeneur",
-        href: "https://nl.wikibooks.org/wiki/Onderwijstechnoloog/Opleiding",
-        description: "Ondernemend leren vormgeven door ICT."
-      },
-      {
-        title: "Leerbox",
-        href: "https://www.leerbox.nl",
-        description:
-          "Het bieden van kant-en-klare, thematische onderwijsmaterialen die leerlingen uitdagen om te verwonderen, ontdekken en onderzoeken.",
-        image: "media/logos/leerbox.svg"
-      }
-    ]
+    id: "onderwijs-teaser",
+    title: "Vernieuwend & ondernemend onderwijs",
+    description: "Wij ontwerpen en leveren onderwijsprogramma's die leerlingen uitdagen om zelf op onderzoek uit te gaan en hun ondernemende vaardigheden te ontwikkelen. Met projecten zoals het Entreprenasium en ons Leerparadijs creëren we fysieke en digitale vrijplaatsen waar jongeren met uiteenlopende talenten aan de slag kunnen met echte vraagstukken. Daarnaast ondersteunen we leerkrachten en ouders met tastbare leermaterialen, zoals de Leerbox, die nieuwsgierigheid en verwondering in de klas aanwakkeren. Onze programma's stimuleren creativiteit, autonomie en kritisch denken vanaf jonge leeftijd.",
+    ctaLabel: "Bekijk onze onderwijsprogramma's",
+    ctaHref: "/projecten-en-diensten#onderwijs",
+    image: "media/logos/leerbox.svg"
   },
   {
-    id: "coaching",
-    title: "Coaching",
-    intro:
-      "Bijbrengen biedt verschillende vormen van coaching aan. Hiernaast vindt u een overzicht van de verschillende vormen van coaching die wij aanbieden.",
-    items: [
-      {
-        title: "Onderwijstechnoloog",
-        href: "https://nl.wikibooks.org/wiki/Onderwijstechnoloog",
-        description: "De inzet van technologie om vrij leren te ondersteunen."
-      },
-      {
-        title: "Onderwijsarchitect",
-        href: "https://nl.wikibooks.org/wiki/Onderwijsarchitect",
-        description: "U voldoet prima, laten we daar gebruik van maken.",
-        image: "media/logos/onderwijsarchitect.svg"
-      },
-      {
-        title: "HeDude",
-        href: "https://hedude.github.io/",
-        description: "AI als coach bij het ontwerpen van vrij leren."
-      }
-    ]
+    id: "innovatie-ai-teaser",
+    title: "De toekomst van het leren",
+    description: "De integratie van ICT en kunstmatige intelligentie biedt ongekende kansen om gepersonaliseerd en vrij leren op grote schaal mogelijk te maken. Stichting Bijbrengen loopt voorop in het onderzoeken en implementeren van AI als interactieve coach bij het ontwerpen van leertrajecten. Via ons platform HeDude en de methodiek van de Onderwijstechnoloog ondersteunen we docenten en leerlingen bij het slim en ethisch inzetten van technologie. Zo maken we adaptief onderwijs dat zich aanpast aan het tempo en de interesses van de individuele leerling werkelijkheid.",
+    ctaLabel: "Lees meer over onze IT- & AI-innovaties",
+    ctaHref: "/projecten-en-diensten#innovatie-ai",
+    image: "media/logos/onderwijsarchitect.svg"
   }
 ];

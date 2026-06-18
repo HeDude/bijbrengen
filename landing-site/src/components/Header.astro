@@ -1,12 +1,27 @@
+---
+import { navigation } from "../data/homepage.js";
+---
+
 <header class="site-header">
-  <a href="#" class="site-header__brand">
-    <img
-      src="media/logos/bijbrengen.svg"
-      alt="Bijbrengen"
-      width="218"
-      height="86"
-      loading="eager"
-      decoding="async"
-    />
-  </a>
+  <div class="site-header__inner">
+    <a href="/" class="site-header__brand">
+      <img
+        src="media/logos/bijbrengen.svg"
+        alt="Bijbrengen"
+        width="218"
+        height="86"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+    <nav class="site-nav" aria-label="Hoofdnavigatie">
+      <ul class="site-nav__list" role="list">
+        {navigation.map((item) => (
+          <li class="site-nav__item">
+            <a href={item.href} class="site-nav__link">{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
 </header>
