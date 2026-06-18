@@ -1,0 +1,267 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+
+const werkwijzeIndividueel = [
+  {
+    title: "Analyse",
+    text: "Van wensen en talenten. Vaststellen van de rendementsafspraak.",
+    color: "#5CA048"
+  },
+  {
+    title: "Functioneel ontwerp",
+    text: "Wensen en talenten van de docent worden gecombineerd als de sleutel tot het gewenste rendement.",
+    color: "#662D91"
+  },
+  {
+    title: "Uitvoer",
+    text: "De docent maakt detailontwerp(en) en voert deze zelf uit.",
+    color: "#F26522"
+  },
+  {
+    title: "Ondersteuning",
+    text: "De docent raadpleegt de onderwijsarchitect bij vragen, twijfels of behoefte aan steun.",
+    color: "var(--color-bijbrengen-rose)"
+  }
+];
+
+const werkwijzeArchitectuur = [
+  {
+    title: "Koers",
+    text: "Docenten sluiten jaarlijks een deal met het management om initiatieven af te stemmen op de koers van de schoolorganisatie.",
+    color: "#5CA048"
+  },
+  {
+    title: "Maatwerk",
+    text: "Vaststaande bouwstenen garanderen zelflerend organiseren. Aan te vullen met zelfgekozen bouwstenen.",
+    color: "#662D91"
+  },
+  {
+    title: "Structureel",
+    text: "Jaarlijks terugkerend, groeiend project van en door de docenten zelf.",
+    color: "#F26522"
+  },
+  {
+    title: "Integratie",
+    text: "Alle bestaande scholing en initiatieven kunnen worden opgenomen in de architectuur.",
+    color: "var(--color-bijbrengen-rose)"
+  },
+  {
+    title: "Ondersteuning",
+    text: "Ontwerp architectuur, begeleide opstart, implementatie bouwstenen, advies en feedbacksysteem.",
+    color: "#1e293b"
+  }
+];
+
+const partners = [
+  { name: "Stichting Entreprenasium", href: `${base}entreprenasium/` },
+  { name: "Leerparadijs", href: `${base}leerparadijs/` },
+  { name: "LOLmakers", href: null },
+  { name: "Codeniacs", href: null }
+];
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Onderwijsarchitect: maatwerk onderwijsarchitectuur die docenten in flow brengt en leerlingen hoog betrokken houdt. Individuele trajecten en architectuur voor zelflerende teams." />
+    <meta name="viewport" content="width=device-width" />
+    <title>Onderwijsarchitect - Stichting Bijbrengen</title>
+    <script is:inline data-goatcounter="https://bijbrengen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <Header />
+
+      <main class="main-content">
+
+        <!-- Page Intro & Wiki Links -->
+        <section class="page-intro">
+          <div class="page-intro__inner">
+            <span class="badge">Dienst</span>
+            <h1>Onderwijsarchitect</h1>
+            <p class="hero__lead" style="margin-bottom: 2rem;">
+              Van individuele trajecten tot een volledige architectuur voor een lerende schoolorganisatie. Docenten in flow — als resultaat van maatwerk onderwijsarchitectuur.
+            </p>
+
+            <!-- Prominente Wiki Links -->
+            <div class="wiki-quicklinks" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+              <a href="https://nl.wikipedia.org/wiki/Onderwijsarchitectuur" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn-wiki" style="border-color: #5CA048; color: #172026; display: flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, border-color 0.2s;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikipedia.svg" alt="Wikipedia logo" style="width: 16px; height: 16px; object-fit: contain;" />
+                Wikipedia: Onderwijsarchitectuur
+              </a>
+              <a href="https://nl.wikibooks.org/wiki/Onderwijsarchitect" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn-wiki" style="border-color: #662D91; color: #172026; display: flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, border-color 0.2s;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikibooks.svg" alt="Wikibooks logo" style="width: 16px; height: 16px; object-fit: contain;" />
+                Wikibooks: Onderwijsarchitect
+              </a>
+              <a href="https://www.onderwijsarchitect.nl/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn-wiki" style="border-color: #F26522; color: #172026; display: flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, border-color 0.2s;">
+                🌐 onderwijsarchitect.nl
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- In het kort -->
+        <section class="about-section about-section--gray" style="padding: 4rem 1.25rem;">
+          <div class="about-section__inner" style="max-width: 60rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+              <div>
+                <h2 style="font-size: 1.75rem; margin-bottom: 1.25rem;">In het kort</h2>
+                <p style="color: #334155; line-height: 1.75; margin-bottom: 1rem;">
+                  Van individuele trajecten tot een volledige architectuur voor een lerende schoolorganisatie. Voorbeelden van opbrengsten: vergroten van persoonlijke effectiviteit, verbeteren van arbeidstevredenheid, vergroten van innovatief vermogen van de onderwijsinstelling, reductie van weerstand tegen veranderingen, verhogen van leerlingmotivatie en leerlingresultaten.
+                </p>
+                <p style="color: #334155; line-height: 1.75; margin-bottom: 1rem;">
+                  Het concept onderwijsarchitect is door en door getest in de praktijk en ontwikkeld in samenwerking met de Rijksuniversiteit Groningen.
+                </p>
+                <p style="color: #334155; line-height: 1.75;">
+                  Wij vertrouwen op de interesses en talenten van mensen. Commitment aan uitdagingen vanuit dit uitgangspunt zorgt voor de <strong>'super power'</strong> om het onderwijs toekomstbestendig te maken en te houden.
+                </p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-left: 4px solid #5CA048; border-radius: 0.5rem; padding: 1.25rem;">
+                  <p style="font-weight: 700; color: #172026; margin: 0 0 0.25rem;">Teachers in flow</p>
+                  <p style="color: #64748b; font-size: 0.9rem; margin: 0;">De beste in eigen talenten en wensen</p>
+                </div>
+                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-left: 4px solid #662D91; border-radius: 0.5rem; padding: 1.25rem;">
+                  <p style="font-weight: 700; color: #172026; margin: 0 0 0.25rem;">High involved students</p>
+                  <p style="color: #64748b; font-size: 0.9rem; margin: 0;">Als resultaat van maatwerk onderwijsarchitectuur</p>
+                </div>
+                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-left: 4px solid #F26522; border-radius: 0.5rem; padding: 1.25rem;">
+                  <p style="font-weight: 700; color: #172026; margin: 0 0 0.25rem;">No Cure No Pay</p>
+                  <p style="color: #64748b; font-size: 0.9rem; margin: 0;">Rendementen via SMART doelstellingen gegarandeerd</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Werkwijze: Individueel traject -->
+        <section class="about-section" style="padding: 4rem 1.25rem; border-bottom: 1px solid #e5e7eb;">
+          <div class="about-section__inner" style="max-width: 68rem;">
+            <h2 class="text-center" style="margin-bottom: 0.75rem; font-size: 1.75rem;">Werkwijze</h2>
+            <p class="text-center" style="color: #64748b; margin-bottom: 3rem; max-width: 44rem; margin-inline: auto;">
+              Individueel of groepstraject waarin men op eigen manier naar hetzelfde rendement werkt. Rendementen worden geformuleerd en gegarandeerd via SMART doelstellingen en No Cure No Pay garantie.
+            </p>
+
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; color: #172026;">Individueel traject</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 3.5rem;">
+              {werkwijzeIndividueel.map((stap, i) => (
+                <div style={`background: #ffffff; border: 1px solid #e5e7eb; border-top: 4px solid ${stap.color}; border-radius: 0.75rem; padding: 1.5rem;`}>
+                  <span style={`font-size: 0.75rem; font-weight: 700; color: ${stap.color}; text-transform: uppercase; letter-spacing: 0.05em;`}>Stap {i + 1}</span>
+                  <h4 style="font-size: 1.1rem; font-weight: 700; color: #172026; margin: 0.5rem 0 0.5rem;">{stap.title}</h4>
+                  <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin: 0;">{stap.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #172026;">Architectuur voor zelflerende teams en organisaties</h3>
+            <p style="color: #64748b; margin-bottom: 1.5rem; max-width: 52rem;">
+              Docenten geven zelf hun professionalisering en innovatie vorm. Interesses en talenten worden zo ingezet dat men bijdraagt aan de strategische doelstelling van de onderwijsorganisatie.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem;">
+              {werkwijzeArchitectuur.map((stap) => (
+                <div style={`background: #ffffff; border: 1px solid #e5e7eb; border-top: 4px solid ${stap.color}; border-radius: 0.75rem; padding: 1.5rem;`}>
+                  <h4 style="font-size: 1.05rem; font-weight: 700; color: #172026; margin: 0 0 0.5rem;">{stap.title}</h4>
+                  <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin: 0;">{stap.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <!-- Video -->
+        <section class="about-section" style="padding: 4rem 1.25rem; border-bottom: 1px solid #e5e7eb;">
+          <div class="about-section__inner" style="max-width: 56rem;">
+            <h2 class="text-center" style="margin-bottom: 2rem; font-size: 1.75rem;">Onderwijsarchitect in beeld</h2>
+            <div style="position: relative; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.06); aspect-ratio: 16/9; background: #000; max-width: 48rem; margin: 0 auto;">
+              <iframe src="https://www.youtube.com/embed/xekCDOsrgpc" style="position: absolute; inset: 0; width: 100%; height: 100%; border: none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quote banner -->
+        <section style="padding: 4rem 1.25rem; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: #ffffff; text-align: center;">
+          <div style="max-width: 52rem; margin: 0 auto;">
+            <p style="font-size: 1.75rem; font-weight: 700; line-height: 1.4; color: #ffd700; margin: 0 0 1rem;">
+              "Teachers who love teaching teach children to love learning"
+            </p>
+            <p style="color: #cbd5e1; font-size: 1rem; margin: 0;">— Onderwijsarchitect</p>
+          </div>
+        </section>
+
+        <!-- Samenwerkingen -->
+        <section class="about-section about-section--gray" style="padding: 4rem 1.25rem;">
+          <div class="about-section__inner" style="max-width: 60rem;">
+            <h2 class="text-center" style="margin-bottom: 1rem; font-size: 1.75rem;">Samenwerkingen</h2>
+            <p class="text-center" style="color: #64748b; margin-bottom: 2.5rem; max-width: 40rem; margin-inline: auto;">
+              Onderwijsarchitect werkt samen met onderwijsinitiatieven waar innovatie en professionalisering hand in hand gaan.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+              {partners.map(partner => (
+                partner.href
+                  ? <a href={partner.href} class="btn btn--secondary" style="font-weight: 600;">{partner.name}</a>
+                  : <span style="display: inline-flex; align-items: center; padding: 0.6rem 1.25rem; border: 1px solid #e5e7eb; border-radius: 0.5rem; font-weight: 600; color: #64748b; background: #ffffff;">{partner.name}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <!-- Wiki & contact sectie -->
+        <section class="about-section" style="padding: 4rem 1.25rem;">
+          <div class="about-section__inner" style="max-width: 50rem;">
+            <div class="about-section__content">
+              <h2 style="font-size: 1.75rem; text-align: center; margin-bottom: 1rem;">Meer weten?</h2>
+              <p style="text-align: center; color: #64748b; margin-bottom: 2rem; max-width: 38rem; margin-inline: auto;">
+                Het onderwijsarchitectconcept is volledig gedocumenteerd op Wikipedia en Wikibooks. Neem contact op via info@onderwijsarchitect.nl voor een traject op maat.
+              </p>
+              <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://nl.wikipedia.org/wiki/Onderwijsarchitectuur" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikipedia.svg" alt="Wikipedia logo" style="width: 16px; height: 16px; object-fit: contain;" />
+                  Onderwijsarchitectuur op Wikipedia
+                </a>
+                <a href="https://nl.wikibooks.org/wiki/Onderwijsarchitect" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                  <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikibooks.svg" alt="Wikibooks logo" style="width: 16px; height: 16px; object-fit: contain;" />
+                  Onderwijsarchitect op Wikibooks
+                </a>
+                <a href="mailto:info@onderwijsarchitect.nl" class="btn btn--secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                  ✉ info@onderwijsarchitect.nl
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <Footer />
+    </div>
+
+    <style>
+      .btn-wiki:hover {
+        transform: translateY(-2px);
+      }
+      .wiki-quicklinks a:nth-child(1):hover {
+        border-color: #5ca048 !important;
+        box-shadow: 0 4px 12px rgba(92, 160, 72, 0.15);
+      }
+      .wiki-quicklinks a:nth-child(2):hover {
+        border-color: #662d91 !important;
+        box-shadow: 0 4px 12px rgba(102, 45, 145, 0.15);
+      }
+      .wiki-quicklinks a:nth-child(3):hover {
+        border-color: #F26522 !important;
+        box-shadow: 0 4px 12px rgba(242, 101, 34, 0.15);
+      }
+
+      @media (max-width: 640px) {
+        .about-section__inner > div[style*="grid-template-columns: 1fr 1fr"] {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    </style>
+  </body>
+</html>

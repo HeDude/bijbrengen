@@ -15,7 +15,7 @@ export const navigation = [
     items: [
       { label: "Alle diensten", href: "diensten/" },
       { label: "MeTherapy", href: "diensten/#metherapy" },
-      { label: "Onderwijsarchitect", href: "diensten/#onderwijsarchitect" },
+      { label: "Onderwijsarchitect", href: "onderwijsarchitect/" },
       { label: "HeDude", href: "hedude/" }
     ]
   },
@@ -82,7 +82,7 @@ export const serviceOverview = [
   {
     title: "Onderwijsarchitect",
     description: "Begeleiding bij het ontwerpen van onderwijs, leeromgevingen en ICT-rijke leertrajecten.",
-    href: "diensten/#onderwijsarchitect",
+    href: "onderwijsarchitect/",
     image: "media/logos/onderwijsarchitect.svg"
   },
   {
