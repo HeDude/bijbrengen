@@ -1,0 +1,90 @@
+Een ontwikkelingsperspectief plan (OPP) bevat de onderwijsdoelen die horen bij een passende uitstroom. In het ontwikkelingsperspectief wordt ook aangegeven welke  ondersteuningsbehoefte er is. Dit wordt onderscheiden in [[onderwijs]]ondersteuning en in voorwaardenscheppende [[zorg]]-ondersteuning. Daarnaast wordt beschreven welke handelingen er op grond van welke diagnostiek, adviezen en doelen er plaatsvinden en met welk resultaat.
+
+== Plan ==
+=== Reden ===
+Bij een ontwikkelingsperspectief gaat het bij elke  jongere om individueel maatwerk. Niet elke jongere kan namelijk bijvoorbeeld zonder meer volledig in een klas functioneren. Soms is geleidelijke opbouw van onderwijstijd wenselijk of is een vervangende onderwijs-leerplek nodig.
+
+=== Timing ===
+Aan het begin van het Voortgezet Onderwijs wordt het ontwikkelingsperspectief opgesteld, met daaropvolgend een tussenevaluatie en vervolgens een evaluatie aan het eind van het leerjaar. In deze evaluaties wordt vastgesteld aan welke doelen er is gewerkt, in welke mate die zijn gehaald, hoe dat is bereikt en wat er nog nodig is aan ondersteuning.
+
+=== Toegroei-plan ===
+De ondersteuning kan ook betekenen dat een jongere (tijdelijk) is aangewezen op verkorte onderwijstijd of op een vervangende onderwijsplek. Voor een lopend schooljaar kan in dat verband een uitwerking plaatsvinden in de vorm van een toegroei-plan. Daarin staat de inzet beschreven die wordt gedaan om voor die jongere de toegroei naar terugkeer naar volledig onderwijs te realiseren. Dit document kan vervolgens tevens gebruikt worden om aan de onderwijsinspectie en aan de leerplicht te laten zien hoe er wordt gewerkt voor deze jongere.
+
+== Inhoud ==
+=== Start ===
+* '''Naam''':
+* '''Geboortedatum''':
+* '''Advies Basisschool''':
+* '''Wens ouder(s)/verzorger(s)''':
+* '''Wens Leerling''':
+* '''Klas''':
+* '''[https://shop.leerparadijs.nl/ Arrangement]''': 
+* '''Startinformatie Intelligentie gegevens''':
+* '''Didactische gegevens/Leervorderingen''':
+** Technische Lezen
+** Spelling
+** Begrijpend Lezen
+** Rekenen-Wiskunde
+* '''Integratief Beeld''':
+* '''Huidige situatie''':
+** Leren (cijfers/niveau)
+** Werkhouding / Werktempo (huiswerkhouding)
+** Sociaal en/of Emotionele problematiek
+** Thuis/Systeem
+** Overig
+* '''[https://shop.leerparadijs.nl/ Ondersteuningsbehoefte]''':
+* '''Doelen van dit schooljaar''':
+* '''[https://shop.leerparadijs.nl/ Handelingsadvies]''':
+* '''Uitstroomprofiel''':
+** Leerroute:
+** Beoogde uitstroomdatum
+** Opmerkingen specifiek t.a.v. vakken (niveau en vorderingen)
+** Onderbouwing uitstroombestemming, leerroute en tijdsbestek op basis van alle gegevens.
+* '''Ondertekening''':
+** Ouder(s)/Verzorger(s)
+** Leerling
+** VO-school van inschrijving
+
+=== Tussenevaluatie ===
+* '''Naam''':
+* '''Geboortedatum''':
+* '''Klas''':
+* '''Huidige situatie''':
+** Leren (cijfers/niveau)
+** Werkhouding / Werktempo (huiswerkhouding)
+** Sociaal en/of Emotionele problematiek
+** Thuis/Systeem
+** Overig
+* '''[https://shop.leerparadijs.nl/ Geboden ondersteuning]''':
+* '''[https://shop.leerparadijs.nl/ Handelingsadvies]''':
+* '''Wijziging uitstroomprofiel''':
+** Leerroute:
+** Beoogde uitstroomdatum
+** Opmerkingen specifiek t.a.v. vakken (niveau en vorderingen)
+** Onderbouwing uitstroombestemming, leerroute en tijdsbestek op basis van alle gegevens.
+* '''Ondertekening''':
+** Ouder(s)/Verzorger(s)
+** Leerling
+** VO-school van inschrijving
+
+=== Eindevaluatie ===
+* '''Naam''':
+* '''Geboortedatum''':
+* '''Klas''':
+* '''Huidige situatie''':
+** Leren (cijfers/niveau)
+** Werkhouding / Werktempo (huiswerkhouding)
+** Sociaal en/of Emotionele problematiek
+** Thuis/Systeem
+** Overig
+* '''[https://shop.leerparadijs.nl/ Geboden ondersteuning]''':
+* '''[https://shop.leerparadijs.nl/ Handelingsadvies]''':
+* '''Wijziging uitstroomprofiel''':
+** Leerroute:
+** Beoogde uitstroomdatum
+** Opmerkingen specifiek t.a.v. vakken (niveau en vorderingen)
+** Onderbouwing uitstroombestemming, leerroute en tijdsbestek op basis van alle gegevens.
+* '''Ondertekening''':
+** Ouder(s)/Verzorger(s)
+** Leerling
+** VO-school van inschrijving

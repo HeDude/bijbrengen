@@ -1,0 +1,24 @@
+== Kans ==
+
+We kunnen alle challenges van de hackathon Hack the Gap bereiken door niet meer over de kinderen maar met de kinderen te gaan praten.
+
+== Oplossing ==
+
+{{:Ondernemend leren}}
+
+== Data ==
+
+De dataset van de hackathon is biased. Er wordt vooral de vinger gelegd bij de leerling, en helemaal niet bij het onderwijs. Dat komt omdat de publiek beschikbare data van CBS en DUO daar niet overgaat en de gegevens over de vraag hoe scholen omgaan met verschillen en de invloed op schooluitval of afstroom afgeschermd is. Via onderwijsinspectie-rapporten kan daarvan iets worden achterhaalt, maar ons advies is om een groot onderzoek te doen naar de relatie tussen differentiatie in onderwijsvormen afgestemd op het kind en de mate van kansengelijkheid binnen de school. 
+
+== Stappen ==
+
+* Zoeken van schoolleiders met als uitgangspunt "het kind op tafel".
+* Regelen van een plek die is ingericht als EM2groningen.
+* Docenten en ouders informeren en plan voorleggen.
+* Eerste aanmeldingen op grond van geschiktheid verkennen.
+* Pilot starten met 12 leerlingen en 2 docenten.
+* Op grond van onderwijsontwerpen van de leerlingen voorzieningen, begeleiding en andere zaken organiseren.
+* Verbreding en verspreiding.
+
+== Impact ==
+We richten ons eerst op kinderen met ASS die hoog functioneren. Zij zullen het meeste baat hebben aangezien daar de uitval relatief erg hoog is. Onze ervaring met bijvoorbeeld het [https://www.entreprenasium.nl entreprenasium] laat zien dat een inspirerend voorbeeld doet volgen. In plaats van een apart afgezonderde groep te creëren zoeken we via de leerlingen, ouders, docenten en schoolleiders de wisselwerking met leeftijdsgenoten.

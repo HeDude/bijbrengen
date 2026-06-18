@@ -1,0 +1,22 @@
+== Visueel ==
+
+# [https://www.codeniacs.nl/ Ondernemend leren door ICT]; Tonen niet scrollen.
+# [[Hack_the_Gap/Data_analyse|Infographics van de Data analyse]]; Tonen door te scrollen.
+# [https://didactiefonline.nl/artikel/als-onderwijs-niet-past-mag-ik-het-dan-ruilen Als onderwijs niet past, mag ik het dan ruilen?]; Tonen niet scrollen.
+# [[Hack_the_Gap#Wettelijke_kaders|Wettelijke kaders]]; Scrollen
+# [https://www.leerparadijs.nl/gameschool/ Gameschool]; Scrollen.
+# [https://www.equithic.nl/ Paardenschool]; Scrollen en via knop "back to top" naar menu en wiki klikken.
+# [https://wiki.equithic.nl/index.php/Hoofdpagina Wiki Paardenschool]; Klikken op vakken Aardrijkskunde, Economie, Geschiedenis en Wiskunde. Kort tonen en dan terug.
+# [https://www.gelijke-kansen.nl/eva-de-leeuw/ Gelijke kansen]; Tekst: Eva de Leeuw (21) komt op voor de buitenbeentjes van het MBO.
+# [[Hack the Gap/PVA|Plan van Aanpak]]; Scrollen.
+
+== Onderdelen ==
+De volgende elementen komen in ieder geval aan bod in genummerde volgorde;
+# We begonnen als drie teams met eigen ideeën en hebben deze vervolgens gebundeld omdat we dezelfde paraplu hebben; ondernemend leren.
+# Vier teamleden hebben volgens de [[Hack the Gap/Data_analyse|data labeling]] een onderwijsprobleem; de oorzaak is ASS. Toch heeft de één twee wetenschappelijke opleidingen gedaan, ga ik gewoon naar een reguliere school, is de ander hard uitgevallen en kan nu niet meer naar school en voorkomen we dat bij de vierde doordat ze naar een school gaat die ze zelf heeft ontworpen.
+# '''Is er wat mis met jou als je niet in het onderwijs past, of is er iets mis met het onderwijs als niet iedereen erin past?''' Helaas kiest men door de selectie van de datasets voor het eerste, want onze data analisten konden niets vinden waarbij de belangrijkste deelnemer in de kansenongelijkheid, het onderwijs zelf, is onderzocht. Laat staan in hoeverre het onderwijs weet om te gaan met verschillen tussen mensen. Terwijl de onderwijsmensen in ons team eerlijk toegeven dat daar een groot probleem ligt en het hen in hun school zou helpen als dat zwart op wit zou staan.
+# Volgens de [[Hack_the_Gap#Wettelijke_kaders|wet]] heeft het kind het recht om gehoord te worden; help ons zelf te bedenken en te bepalen wat goed voor ons is.
+# Voorbeelden van tijdens de hackathon ontworpen school zijn de [https://www.equithic.nl/ paardenschool] en 
+# de [https://www.leerparadijs.nl/gameschool/ gameschool].
+# Is het ontwerpen van onderwijs door de leerlingen een utopie? Het leerparadijs doet het met succes. Paardenschool draait zelfs al samen met een VO-school in Emmen. Maar er zijn elders ook genoeg [https://www.gelijke-kansen.nl/eva-de-leeuw/ voorbeelden] dat dit kan. 
+# Zie onze [[Hack the Gap/PVA|Plan van Aanpak]] hoe je leerlingen zelf hun onderwijs kunt helpen ontwerpen. Maar vooral ook dat je beleid maakt op niet biased datasets.
