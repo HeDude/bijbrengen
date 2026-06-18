@@ -24,8 +24,8 @@ export const navigation = [
 
 export const heroImages = [
   {
-    src: "media/photos/metherapy.webp",
-    alt: "MeTherapy"
+    src: "media/photos/praktijkruimte.jpeg",
+    alt: "Praktijkruimte Wijster"
   },
   {
     src: "media/photos/humanature.webp",
@@ -40,8 +40,8 @@ export const heroImages = [
     alt: "Leerparadijs"
   },
   {
-    src: "media/photos/mecoaching.webp",
-    alt: "MeCoaching"
+    src: "media/photos/oa_hackathon.jpg",
+    alt: "Onderwijsarchitect Hackathon"
   }
 ];
 
@@ -62,7 +62,7 @@ export const projectOverview = [
     title: "Leerpretpark",
     description: "De leerpret-engine waarin spel, ICT, AI en onderwijs samenkomen in een speelse leeromgeving.",
     href: "projecten/#leerpretpark",
-    image: "media/photos/leerparadijs.webp"
+    image: "media/logos/leerpretpark.svg"
   },
   {
     title: "Humanature",
@@ -88,6 +88,7 @@ export const serviceOverview = [
   {
     title: "HeDude",
     description: "AI-ondersteuning en technische sparring voor gepersonaliseerd, vrij en ondernemend leren.",
-    href: "hedude/"
+    href: "hedude/",
+    image: "media/photos/hedude_logo.jpg"
   }
 ];
