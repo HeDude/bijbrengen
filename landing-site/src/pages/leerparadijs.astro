@@ -1,0 +1,983 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+
+const features = [
+  {
+    title: "Vrijheid om te zijn",
+    text: "Ruimte om te doen wat past. Leerparadijs geeft jongeren zo veel mogelijk regie over de inrichting van hun onderwijs."
+  },
+  {
+    title: "Toegankelijk door bekostiging",
+    text: "Via onderwijs- en zorgarrangementen kan worden onderzocht hoe begeleiding en onderwijs passend en betaalbaar georganiseerd worden."
+  },
+  {
+    title: "Midden in de samenleving",
+    text: "Door ondernemende projecten ontdekken jongeren waarom ze leren en hoe hun werk meteen waarde kan toevoegen."
+  },
+  {
+    title: "Ondernemend leren",
+    text: "Leerlingen ontwerpen hun eigen leerroute, nemen zelf het roer en verbinden schooldoelen aan echte vragen uit hun omgeving."
+  },
+  {
+    title: "Zorg en onderwijs onder een dak",
+    text: "Een vertrouwde plek waar onderwijs, begeleiding en persoonlijke ontwikkeling dichter bij elkaar worden gebracht."
+  },
+  {
+    title: "Persoonlijke ontwikkeling",
+    text: "Jongeren ontdekken hun talenten, passies en grenzen, zodat hun eigenheid ook buiten school krachtig kan worden ingezet."
+  }
+];
+
+const portfolioItems = [
+  {
+    title: "Emmen.nu: particuliere havo en vwo voor paradijsvogels",
+    category: "Pers",
+    filter: "pers",
+    image: "emmen-nu-paradijsvogels.png",
+    href: `${base}leerparadijs/portfolio/full/emmen-nu-paradijsvogels.png`
+  },
+  {
+    title: "Folder Leerlingen",
+    category: "Informatie",
+    filter: "informatie",
+    image: "folder-leerlingen.png",
+    href: `${base}leerparadijs/portfolio/full/folder-leerlingen.png`
+  },
+  {
+    title: "Folder Ouders",
+    category: "Informatie",
+    filter: "informatie",
+    image: "folder-ouders.png",
+    href: `${base}leerparadijs/portfolio/full/folder-ouders.png`
+  },
+  {
+    title: "RTV Drenthe: Drenthe Nu",
+    category: "Pers",
+    filter: "pers",
+    image: "rtv-drenthe-school.png",
+    href: `${base}leerparadijs/portfolio/full/rtv-drenthe-school.png`
+  },
+  {
+    title: "Hackathon Smart City & Smart Industry",
+    category: "Evenementen",
+    filter: "evenementen",
+    image: "hackathon-smart-city.jpg",
+    href: `${base}leerparadijs/portfolio/full/hackathon-smart-city.jpg`
+  },
+  {
+    title: "Hackathon Hack Education",
+    category: "Evenementen",
+    filter: "evenementen",
+    image: "hackathon-hack-education.png",
+    href: `${base}leerparadijs/portfolio/full/hackathon-hack-education.png`
+  },
+  {
+    title: "Bezoek vanuit Estland",
+    category: "Evenementen",
+    filter: "evenementen",
+    image: "bezoek-vanuit-estland.jpg",
+    href: `${base}leerparadijs/portfolio/full/bezoek-vanuit-estland.jpg`
+  },
+  {
+    title: "RTV Drenthe: leerlingen dreigen buiten de boot te vallen",
+    category: "Pers",
+    filter: "pers",
+    image: "rtv-drenthe-buiten-boot.png",
+    href: `${base}leerparadijs/portfolio/full/rtv-drenthe-buiten-boot.png`
+  },
+  {
+    title: "Minecraft als tool om onderwijs in te richten",
+    category: "Projecten",
+    filter: "projecten",
+    image: "minecraft-onderwijs.jpg",
+    href: `${base}leerparadijs/portfolio/full/minecraft-onderwijs.jpg`
+  },
+  {
+    title: "Vanuit autisme bekeken",
+    category: "Informatie",
+    filter: "informatie",
+    image: "vanuit-autisme-bekeken.png",
+    href: `${base}leerparadijs/portfolio/full/vanuit-autisme-bekeken.png`
+  },
+  {
+    title: "Hackathon Circulaire Woonwijk",
+    category: "Projecten",
+    filter: "projecten",
+    image: "hackathon-circulaire-woonwijk.jpg",
+    href: `${base}leerparadijs/portfolio/full/hackathon-circulaire-woonwijk.jpg`
+  },
+  {
+    title: "Veldbezoek Humanimal Care",
+    category: "Projecten",
+    filter: "projecten",
+    image: "veldbezoek-humanimal-care.jpg",
+    href: `${base}leerparadijs/portfolio/full/veldbezoek-humanimal-care.jpg`
+  }
+];
+
+const entryRoutes = [
+  {
+    title: "Thuiszitter",
+    audience: "Jongere",
+    items: ["Diagnostisch rapport", "Contact met leerplicht", "Verkenning van zorg- en onderwijsroute"],
+    featured: false
+  },
+  {
+    title: "Basisonderwijs",
+    audience: "Leerling",
+    items: ["Diagnostisch rapport", "Schooladvies", "Oriëntatie op passende vervolgroute"],
+    featured: true
+  },
+  {
+    title: "Voortgezet onderwijs",
+    audience: "Scholier",
+    items: ["Diagnostisch rapport", "Schoolrapport", "Onderzoek naar onderwijs-zorgarrangement"],
+    featured: false
+  }
+];
+
+const documents = [
+  {
+    title: "Presentatie Leerparadijs",
+    text: "Publieke presentatie met uitgangspunten, doelgroep en werkwijze.",
+    href: `${base}leerparadijs/docs/presentatie-leerparadijs.pdf`
+  },
+  {
+    title: "Intentieverklaring 2017",
+    text: "Historisch document uit de projectopbouw.",
+    href: `${base}leerparadijs/docs/intentieverklaring-20171019.pdf`
+  },
+  {
+    title: "Inschrijfformulier 2018-2019",
+    text: "Oud inschrijfformulier uit de projecthistorie.",
+    href: `${base}leerparadijs/docs/inschrijfformulier-2018-2019.pdf`
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Leerparadijs is het onderwijsconcept van Bijbrengen voor unieke jongeren die ondernemend, persoonlijk en passend willen leren."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <title>Leerparadijs - Stichting Bijbrengen</title>
+    <script is:inline data-goatcounter="https://bijbrengen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body class="leerparadijs-page">
+    <div class="page-shell">
+      <Header />
+
+      <main class="leerparadijs-main">
+        <section id="intro" class="lp-hero" style={`--lp-hero-image: url("${base}leerparadijs/images/hero.jpg")`}>
+          <div class="lp-hero__overlay"></div>
+          <div class="lp-hero__inner">
+            <div class="lp-hero__copy">
+              <img
+                class="lp-hero__logo"
+                src={`${base}leerparadijs/images/logo.svg`}
+                alt="Leerparadijs"
+                width="320"
+                height="126"
+                loading="eager"
+                decoding="async"
+              />
+              <span class="badge">Onderwijsprogramma</span>
+              <h1>Voortgezet onderwijs voor unieke jongeren</h1>
+              <p>
+                Wil jij verkennen wie je bent, wat jij nodig hebt en zo je eigen onderwijs inrichten?
+                Leerparadijs is ontworpen voor jongeren die op hun eigen manier willen leren, met ruimte
+                voor ASS, ADD, ADHD, HSP, talent, ondernemingszin en persoonlijke groei.
+              </p>
+              <div class="lp-hero__actions">
+                <a href="#aanmelden" class="btn btn--primary">Aanmelden of verkennen</a>
+                <a href="#portfolio" class="btn btn--secondary">Bekijk portfolio</a>
+              </div>
+            </div>
+
+            <div class="lp-hero__panel" aria-label="Kern van Leerparadijs">
+              <p class="lp-hero__eyebrow">Voor wie anders leert</p>
+              <h2>voor unieke jongeren</h2>
+              <p>
+                Een kleinschalige leerplek waar passende begeleiding, eigen regie en ondernemende
+                projecten elkaar versterken.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <nav class="lp-section-nav" aria-label="Leerparadijs onderdelen">
+          <a href="#kenmerken">Kenmerken</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#aanmelden">Aanmelden</a>
+          <a href="#bestuur">Bestuur</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <section id="kenmerken" class="lp-section lp-section--raised">
+          <div class="lp-section__inner">
+            <div class="lp-section__heading">
+              <span class="badge">Kenmerken</span>
+              <h2>Ruimte, ritme en richting voor passend leren</h2>
+              <p>
+                Leerparadijs draait om zes herkenbare beloftes. Die blijven hier leidend
+                binnen de Bijbrengen-site.
+              </p>
+            </div>
+
+            <div class="lp-feature-grid">
+              {features.map((feature, index) => (
+                <article class="lp-feature-card">
+                  <span class="lp-feature-card__number">{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="portfolio" class="lp-section lp-section--soft">
+          <div class="lp-section__inner">
+            <div class="lp-section__heading">
+              <span class="badge">Portfolio</span>
+              <h2>Projecthistorie en voorbeelden</h2>
+              <p>
+                Leerlingen houden hun eigen portfolio bij. Hieronder staat het portfolio van het
+                Leerparadijs zelf: pers, informatie, evenementen en projecten.
+              </p>
+            </div>
+
+            <div class="lp-filter" role="group" aria-label="Portfolio filter">
+              <button class="lp-filter__button is-active" type="button" data-filter="all">Allen</button>
+              <button class="lp-filter__button" type="button" data-filter="pers">Pers</button>
+              <button class="lp-filter__button" type="button" data-filter="informatie">Informatie</button>
+              <button class="lp-filter__button" type="button" data-filter="evenementen">Evenementen</button>
+              <button class="lp-filter__button" type="button" data-filter="projecten">Projecten</button>
+            </div>
+
+            <div class="lp-portfolio-grid">
+              {portfolioItems.map((item) => (
+                <article class="lp-portfolio-card" data-category={item.filter}>
+                  <a href={item.href} target="_blank" rel="noopener noreferrer">
+                    <img
+                      src={`${base}leerparadijs/portfolio/thumb/${item.image}`}
+                      alt={item.title}
+                      width="420"
+                      height="260"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <span>{item.category}</span>
+                    <h3>{item.title}</h3>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="aanmelden" class="lp-section">
+          <div class="lp-section__inner">
+            <div class="lp-section__heading">
+              <span class="badge">Aanmelden</span>
+              <h2>Een route kiezen die bij de jongere past</h2>
+              <p>
+                De aanmeldroutes geven een herkenbare structuur. Neem voor actuele mogelijkheden
+                contact op met Bijbrengen; samen bepalen we of het gaat om zorg,
+                passend onderwijs, een brugperiode of een projectmatige leerroute.
+              </p>
+            </div>
+
+            <div class="lp-route-grid">
+              {entryRoutes.map((route) => (
+                <article class:list={["lp-route-card", { "lp-route-card--featured": route.featured }]}>
+                  <p class="lp-route-card__audience">{route.audience}</p>
+                  <h3>{route.title}</h3>
+                  <ul>
+                    {route.items.map((item) => <li>{item}</li>)}
+                  </ul>
+                  <a href="mailto:info@bijbrengen.nl?subject=Aanmelding%20Leerparadijs" class="btn btn--secondary btn--full">
+                    Aanmelden
+                  </a>
+                </article>
+              ))}
+            </div>
+
+            <div class="lp-intake">
+              <div>
+                <span class="badge">Intake</span>
+                <h3>Van eerste vraag naar passend arrangement</h3>
+                <p>
+                  Bij de intake wordt bekeken welke ondersteuning nodig is. Als passend onderwijs
+                  mogelijk is, kan een ontwikkelingsperspectief helpen om onderwijs- en zorgarrangementen
+                  concreet te maken.
+                </p>
+              </div>
+              <div>
+                <span class="badge">Inschrijven</span>
+                <h3>Eerst ervaren, daarna besluiten</h3>
+                <p>
+                  Deze route start met een brugperiode: elkaar leren kennen, ervaren wat werkt,
+                  en daarna samen bepalen of inschrijving logisch is.
+                </p>
+              </div>
+            </div>
+
+            <div class="lp-documents">
+              {documents.map((document) => (
+                <a href={document.href} target="_blank" rel="noopener noreferrer" class="lp-document-card">
+                  <span>PDF</span>
+                  <h3>{document.title}</h3>
+                  <p>{document.text}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="bestuur" class="lp-section lp-section--soft">
+          <div class="lp-section__inner">
+            <div class="lp-section__heading">
+              <span class="badge">Bestuur</span>
+              <h2>Mensen achter de projectopbouw</h2>
+              <p>
+                Bij de ontwikkeling van Leerparadijs namen betrokken bestuurders en initiatiefnemers
+                het roer om de plek vorm te geven.
+              </p>
+            </div>
+
+            <div class="lp-people">
+              <article class="lp-person-card">
+                <img
+                  src={`${base}leerparadijs/images/marielle.jpg`}
+                  alt="Mariëlle Janssen"
+                  width="180"
+                  height="180"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h3>Mariëlle Janssen</h3>
+                <p>Voorzitter</p>
+              </article>
+              <article class="lp-person-card">
+                <img
+                  src={`${base}leerparadijs/images/carmen.jpg`}
+                  alt="Carmen Slagter"
+                  width="180"
+                  height="180"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h3>Carmen Slagter</h3>
+                <p>Secretaris & penningmeester</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="lp-contact">
+          <div class="lp-contact__inner">
+            <div>
+              <span class="badge">Contact</span>
+              <h2>Leerparadijs binnen Bijbrengen</h2>
+              <p>
+                Wil je meer weten over Leerparadijs, de projecthistorie of een actuele toepassing
+                binnen Bijbrengen? Stuur ons een bericht, dan kijken we samen welke route past.
+              </p>
+            </div>
+            <div class="lp-contact__actions">
+              <a href="mailto:info@bijbrengen.nl?subject=Leerparadijs" class="btn btn--primary">
+                Mail Bijbrengen
+              </a>
+              <a href="https://nl.wikibooks.org/wiki/Leerparadijs" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                Leerparadijs op Wikibooks
+              </a>
+              <a href="https://www.facebook.com/leerparadijs/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                Facebook
+              </a>
+              <a href="https://www.linkedin.com/company/leerparadijs/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".lp-filter__button");
+        const cards = document.querySelectorAll(".lp-portfolio-card");
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const filter = button.getAttribute("data-filter");
+
+            buttons.forEach((item) => item.classList.remove("is-active"));
+            button.classList.add("is-active");
+
+            cards.forEach((card) => {
+              const visible = filter === "all" || card.getAttribute("data-category") === filter;
+              card.hidden = !visible;
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  .leerparadijs-main {
+    background: #ffffff;
+  }
+
+  .lp-hero {
+    position: relative;
+    min-height: 44rem;
+    overflow: hidden;
+    background-image: var(--lp-hero-image);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .lp-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgb(255 255 255 / 0.94) 0%, rgb(255 255 255 / 0.78) 46%, rgb(255 255 255 / 0.32) 100%),
+      linear-gradient(180deg, rgb(255 255 255 / 0.22), rgb(22 101 52 / 0.34));
+  }
+
+  .lp-hero__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    max-width: 72rem;
+    min-height: 44rem;
+    margin-inline: auto;
+    padding: 9.5rem 1.25rem 5rem;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .lp-hero__copy {
+    max-width: 42rem;
+  }
+
+  .lp-hero__logo {
+    width: min(18rem, 70vw);
+    height: auto;
+    margin-bottom: 1.4rem;
+  }
+
+  .lp-hero h1 {
+    max-width: 42rem;
+    margin: 0;
+    color: #111827;
+    font-size: clamp(3rem, 7vw, 5.75rem);
+    font-weight: 720;
+    line-height: 0.96;
+  }
+
+  .lp-hero__copy p {
+    max-width: 39rem;
+    margin: 1.5rem 0 0;
+    color: #475569;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    font-weight: 520;
+    line-height: 1.78;
+  }
+
+  .lp-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .lp-hero__panel {
+    align-self: end;
+    max-width: 24rem;
+    padding: 1.5rem;
+    border: 1px solid rgb(255 255 255 / 0.72);
+    border-radius: 0.75rem;
+    background: rgb(255 255 255 / 0.82);
+    box-shadow: 0 24px 60px rgb(15 23 42 / 0.16);
+    backdrop-filter: blur(18px);
+  }
+
+  .lp-hero__panel h2 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(1.7rem, 4vw, 2.45rem);
+    font-weight: 720;
+    line-height: 1.05;
+  }
+
+  .lp-hero__panel p {
+    margin: 1rem 0 0;
+    color: #475569;
+    line-height: 1.65;
+  }
+
+  .lp-hero__eyebrow {
+    margin: 0 0 0.7rem;
+    color: var(--color-bijbrengen-rose);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .lp-section-nav {
+    position: sticky;
+    top: 0;
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1.25rem;
+    overflow-x: auto;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    background: rgb(250 250 247 / 0.95);
+    backdrop-filter: blur(14px);
+  }
+
+  .lp-section-nav a {
+    flex: 0 0 auto;
+    padding: 0.55rem 0.85rem;
+    border-radius: 0.5rem;
+    color: #334155;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .lp-section-nav a:hover {
+    background: #ffffff;
+    color: var(--color-bijbrengen-rose);
+  }
+
+  .lp-section {
+    padding: 5rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
+  }
+
+  .lp-section--soft {
+    background: #fafaf7;
+  }
+
+  .lp-section--raised {
+    position: relative;
+    z-index: 2;
+  }
+
+  .lp-section__inner {
+    max-width: 72rem;
+    margin-inline: auto;
+  }
+
+  .lp-section__heading {
+    max-width: 45rem;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .lp-section__heading h2 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.05;
+  }
+
+  .lp-section__heading p {
+    margin: 1rem 0 0;
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .lp-feature-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .lp-feature-card {
+    min-height: 100%;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    box-shadow: 0 14px 35px rgb(15 23 42 / 0.04);
+  }
+
+  .lp-feature-card__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 1.25rem;
+    border-radius: 50%;
+    background: rgb(190 18 60 / 0.09);
+    color: var(--color-bijbrengen-rose);
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+
+  .lp-feature-card h3,
+  .lp-route-card h3,
+  .lp-intake h3,
+  .lp-document-card h3,
+  .lp-person-card h3,
+  .lp-portfolio-card h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 1.18rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .lp-feature-card p,
+  .lp-route-card li,
+  .lp-intake p,
+  .lp-document-card p,
+  .lp-person-card p {
+    color: #64748b;
+    line-height: 1.65;
+  }
+
+  .lp-feature-card p {
+    margin: 0.85rem 0 0;
+  }
+
+  .lp-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+    margin-bottom: 2rem;
+  }
+
+  .lp-filter__button {
+    padding: 0.65rem 1rem;
+    border: 1px solid #dbe3ea;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    color: #334155;
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 150ms ease, border-color 150ms ease, background 150ms ease, color 150ms ease;
+  }
+
+  .lp-filter__button:hover {
+    transform: translateY(-1px);
+    border-color: rgb(190 18 60 / 0.35);
+  }
+
+  .lp-filter__button.is-active {
+    border-color: var(--color-bijbrengen-rose);
+    background: var(--color-bijbrengen-rose);
+    color: #ffffff;
+  }
+
+  .lp-portfolio-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .lp-portfolio-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .lp-portfolio-card[hidden] {
+    display: none;
+  }
+
+  .lp-portfolio-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgb(15 23 42 / 0.08);
+  }
+
+  .lp-portfolio-card a {
+    display: block;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .lp-portfolio-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #f1f5f9;
+  }
+
+  .lp-portfolio-card span {
+    display: inline-flex;
+    margin: 1rem 1rem 0.6rem;
+    color: var(--color-bijbrengen-forest);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .lp-portfolio-card h3 {
+    padding: 0 1rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .lp-route-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .lp-route-card {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #ffffff;
+  }
+
+  .lp-route-card--featured {
+    border-color: rgb(190 18 60 / 0.24);
+    box-shadow: 0 18px 45px rgb(190 18 60 / 0.08);
+  }
+
+  .lp-route-card__audience {
+    margin: 0 0 0.55rem;
+    color: var(--color-bijbrengen-rose);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .lp-route-card ul {
+    display: grid;
+    gap: 0.65rem;
+    padding: 0;
+    margin: 1.2rem 0 1.5rem;
+    list-style: none;
+  }
+
+  .lp-route-card li {
+    position: relative;
+    padding-left: 1.35rem;
+  }
+
+  .lp-route-card li::before {
+    position: absolute;
+    top: 0.68rem;
+    left: 0;
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 50%;
+    background: var(--color-bijbrengen-forest);
+    content: "";
+  }
+
+  .lp-route-card .btn {
+    margin-top: auto;
+  }
+
+  .lp-intake {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .lp-intake > div {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background: #fafaf7;
+  }
+
+  .lp-intake p {
+    margin: 0.85rem 0 0;
+  }
+
+  .lp-documents {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .lp-document-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 1rem;
+    align-items: center;
+    padding: 1.25rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 150ms ease, border-color 150ms ease;
+  }
+
+  .lp-document-card:hover {
+    transform: translateY(-1px);
+    border-color: rgb(190 18 60 / 0.34);
+  }
+
+  .lp-document-card span {
+    grid-row: span 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.1rem;
+    height: 3.1rem;
+    border-radius: 0.65rem;
+    background: rgb(22 101 52 / 0.1);
+    color: var(--color-bijbrengen-forest);
+    font-size: 0.8rem;
+    font-weight: 850;
+  }
+
+  .lp-document-card p {
+    margin: 0;
+  }
+
+  .lp-people {
+    display: grid;
+    max-width: 42rem;
+    margin-inline: auto;
+    gap: 1.25rem;
+  }
+
+  .lp-person-card {
+    padding: 2rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    text-align: center;
+  }
+
+  .lp-person-card img {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 auto 1.25rem;
+    border: 0.45rem solid #ffffff;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 12px 28px rgb(15 23 42 / 0.14);
+  }
+
+  .lp-person-card p {
+    margin: 0.35rem 0 0;
+  }
+
+  .lp-contact {
+    padding: 5rem 1.25rem;
+    background: #111827;
+    color: #ffffff;
+  }
+
+  .lp-contact__inner {
+    display: grid;
+    max-width: 72rem;
+    margin-inline: auto;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .lp-contact h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+  }
+
+  .lp-contact p {
+    max-width: 42rem;
+    margin: 1rem 0 0;
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .lp-contact__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  @media (min-width: 720px) {
+    .lp-hero__inner {
+      grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.55fr);
+    }
+
+    .lp-feature-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .lp-portfolio-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .lp-route-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .lp-intake {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lp-documents {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .lp-people {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lp-contact__inner {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+
+  @media (max-width: 719px) {
+    .lp-hero__inner {
+      padding-top: 12rem;
+    }
+
+    .lp-section-nav {
+      top: 0;
+      justify-content: flex-start;
+    }
+
+    .lp-document-card {
+      grid-template-columns: 1fr;
+    }
+
+    .lp-document-card span {
+      grid-row: auto;
+    }
+  }
+</style>

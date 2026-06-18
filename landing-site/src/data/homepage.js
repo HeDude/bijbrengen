@@ -2,6 +2,7 @@ export const navigation = [
   { label: "Home", href: "/" },
   { label: "Projecten en diensten", href: "projecten-en-diensten/" },
   { label: "Entreprenasium", href: "entreprenasium/" },
+  { label: "Leerparadijs", href: "leerparadijs/" },
   { label: "Over Ons", href: "over-ons/" }
 ];
 
