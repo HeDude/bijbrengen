@@ -7,7 +7,7 @@ export default defineConfig({
   site,
   base,
   output: "static",
-  trailingSlash: "never",
+  trailingSlash: "always",
   build: {
     assets: "_astro"
   }
