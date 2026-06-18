@@ -1,12 +1,16 @@
 ---
 import { navigation } from "../data/homepage.js";
+
+const pathname = Astro.url.pathname;
+const isHome = !pathname.includes("over-ons") && !pathname.includes("projecten-en-diensten");
+const pathPrefix = isHome ? "" : "../";
 ---
 
 <header class="site-header">
   <div class="site-header__inner">
-    <a href="/" class="site-header__brand">
+    <a href={isHome ? "/" : "../"} class="site-header__brand">
       <img
-        src="media/logos/bijbrengen.svg"
+        src={`${pathPrefix}media/logos/bijbrengen.svg`}
         alt="Bijbrengen"
         width="218"
         height="86"
@@ -16,11 +20,14 @@ import { navigation } from "../data/homepage.js";
     </a>
     <nav class="site-nav" aria-label="Hoofdnavigatie">
       <ul class="site-nav__list" role="list">
-        {navigation.map((item) => (
-          <li class="site-nav__item">
-            <a href={item.href} class="site-nav__link">{item.label}</a>
-          </li>
-        ))}
+        {navigation.map((item) => {
+          const href = item.href === "/" ? (isHome ? "/" : "../") : `${pathPrefix}${item.href}`;
+          return (
+            <li class="site-nav__item">
+              <a href={href} class="site-nav__link">{item.label}</a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   </div>
