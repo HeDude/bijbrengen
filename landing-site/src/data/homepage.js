@@ -52,7 +52,7 @@ export const projectOverview = [
     href: "projecten/#leerpretpark",
     image: "media/logos/leerpretpark.svg",
     status: "active",
-    statusLabel: "Lopend project"
+    statusLabel: "Lopend"
   },
   {
     title: "Entreprenasium",

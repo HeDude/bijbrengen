@@ -282,6 +282,28 @@ const documents = [
             </div>
           </div>
         </section>
+
+        <section id="voortgang" class="lp-section lp-section--notice">
+          <div class="lp-section__inner">
+            <div class="lp-notice">
+              <h2>Voortgezet in een nieuwe voorziening</h2>
+              <p>
+                Leerparadijs heeft een tijd geleden haar activiteiten gestaakt. In samenwerking met
+                diverse partijen kon op het OPDC een goede voorziening worden getroffen voor onze
+                leerlingen. Deze voorziening is overgenomen door het Carmel College en voortgezet als
+                <strong>Lasso</strong>.
+              </p>
+              <a
+                href="https://www.carmelemmen.nl/ouders/begeleiding-en-ondersteuning"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--primary"
+              >
+                Bekijk Lasso bij het Carmel College →
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
@@ -644,6 +666,30 @@ const documents = [
     .lp-documents {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+  }
+
+  .lp-section--notice {
+    background: #f0fdf4;
+    border-top: 2px solid rgb(22 101 52 / 0.18);
+  }
+
+  .lp-notice {
+    max-width: 52rem;
+    margin-inline: auto;
+  }
+
+  .lp-notice h2 {
+    margin: 0 0 1rem;
+    color: #111827;
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: 700;
+  }
+
+  .lp-notice p {
+    margin: 0 0 1.75rem;
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.75;
   }
 
   @media (max-width: 719px) {
