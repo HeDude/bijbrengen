@@ -7,7 +7,7 @@ export const navigation = [
       { label: "Leerpretpark", href: "projecten/#leerpretpark" },
       { label: "Entreprenasium", href: "entreprenasium/" },
       { label: "Leerparadijs", href: "leerparadijs/" },
-      { label: "Humanature", href: "projecten/#humanature" }
+      { label: "Humanature", href: "humanature/" }
     ]
   },
   {
@@ -73,7 +73,7 @@ export const projectOverview = [
   {
     title: "Humanature",
     description: "Een gerealiseerd project rond mens en natuur. Gestart in Nederland en voortgezet in Coutada (Portugal), waar de resultaten nog dagelijks doorwerken.",
-    href: "projecten/#humanature",
+    href: "humanature/",
     image: "media/logos/humanature.svg",
     status: "realized",
     statusLabel: "Gerealiseerd"

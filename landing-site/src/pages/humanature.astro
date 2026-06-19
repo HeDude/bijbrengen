@@ -1,0 +1,565 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+
+const ideals = [
+  {
+    title: "Wonen in natuur",
+    text: "Woon- en leefgebieden zo ontwerpen dat mens, groen en omgeving elkaar versterken."
+  },
+  {
+    title: "Leren van natuur",
+    text: "Buiten zijn, waarnemen en de omgeving gebruiken als bron voor onderwijs en ontwikkeling."
+  },
+  {
+    title: "Zorgen voor natuur",
+    text: "Mensen verantwoordelijkheid geven voor hun directe leefomgeving en voor elkaar."
+  },
+  {
+    title: "Spelen in natuur",
+    text: "Ruimte maken voor routes, hutten, plekken en ervaringen waarin de omgeving opnieuw ontdekt wordt."
+  },
+  {
+    title: "Waarde geven",
+    text: "Activiteiten ontwikkelen die laten zien hoe natuur rust, betekenis en verbinding kan brengen."
+  },
+  {
+    title: "Ruimte geven",
+    text: "Burgers, organisaties en overheden uitnodigen om natuur letterlijk en figuurlijk meer plek te geven."
+  }
+];
+
+const farmPoints = [
+  {
+    title: "Community",
+    text: "De plek is bedoeld als open leeromgeving voor mensen die willen bijdragen, herstellen, bouwen of groeien."
+  },
+  {
+    title: "Coutada",
+    text: "Humanature begon in Nederland en kreeg vanaf november 2020 een vaste basis op oude grond in Coutada, Centraal-Portugal."
+  },
+  {
+    title: "Herstel",
+    text: "Een oud huis, ruines, arme kleigrond en monocultuur vormden het vertrekpunt voor een langzaam herstelproces."
+  },
+  {
+    title: "Demonstratie",
+    text: "Op het land worden permacultuurprincipes zichtbaar gemaakt, van balkonachtige teelt tot een voedselbos."
+  }
+];
+
+const projects = [
+  {
+    title: "Permacultuurtuin",
+    image: "permaculture.jpg",
+    text: "De tuin gebruikt een no-dig aanpak en richt zich op seizoensgroenten, kruiden en eenvoudige voorbeelden voor mensen zonder grote tuin."
+  },
+  {
+    title: "Voedselbos",
+    image: "foodforest.jpg",
+    text: "Het voedselbos groeit laag voor laag met bomen, struiken en kruiden die passen bij droge periodes en kleigrond."
+  },
+  {
+    title: "Het huis",
+    image: "house.jpg",
+    text: "Het oude huis wordt stap voor stap hersteld met natuurlijke en vindingrijke oplossingen die aansluiten op het land."
+  }
+];
+
+const gallery = [
+  { src: "land-in-the-morning.jpg", alt: "Land in de ochtend" },
+  { src: "the-house.jpg", alt: "Het huis in Coutada" },
+  { src: "river.jpg", alt: "Rivier bij de plek" },
+  { src: "view.jpg", alt: "Uitzicht over Coutada" },
+  { src: "compost-toilet.jpg", alt: "Buitenproject op het land" },
+  { src: "citrus-trees.jpg", alt: "Citrusbomen" },
+  { src: "harvesting-pears.jpeg", alt: "Oogst op het land" }
+];
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Humanature is het Bijbrengen-project rond actieve harmonie tussen mens, natuur, permacultuur en leren op het land in Coutada, Portugal."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <title>Humanature - Stichting Bijbrengen</title>
+    <script is:inline data-goatcounter="https://bijbrengen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <Header />
+
+      <main class="main-content humanature-page">
+        <section class="humanature-hero" style={`--humanature-hero: url('${base}humanature/images/view.jpg')`}>
+          <div class="humanature-hero__inner">
+            <div class="humanature-hero__copy">
+              <img
+                src={`${base}humanature/images/logo-with-subtitle.svg`}
+                alt="Humanature"
+                width="320"
+                height="120"
+                loading="eager"
+                decoding="async"
+              />
+              <span class="badge badge--realized">Gerealiseerd project</span>
+              <h1>Actieve harmonie tussen mens en natuur</h1>
+              <p>
+                Humanature zoekt manieren om mens en natuur opnieuw met elkaar te verbinden,
+                zodat beide sterker worden. Het project begon in Nederland en kreeg een vaste
+                basis in Coutada, Centraal-Portugal.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="humanature-section humanature-section--mission" aria-labelledby="humanature-mission-heading">
+          <div class="humanature-section__inner humanature-split">
+            <div>
+              <span class="badge">Missie</span>
+              <h2 id="humanature-mission-heading">Alles begint op de plek zelf</h2>
+              <p>
+                Humanature is ontstaan vanuit de overtuiging dat herstel, onderwijs en
+                duurzaamheid tastbaar moeten worden. Niet als abstract ideaal, maar als plek
+                waar mensen kunnen werken, observeren, proberen en opnieuw leren kijken.
+              </p>
+              <p>
+                Voor Humanature als zelfstandig project vorm kreeg, liep er al een verwante
+                voorloper: Humanimal Care, gericht op zorg voor mens en dier. Die brede zorglijn
+                groeide door in Humanature, waar de relatie tussen mens, natuur en leefomgeving
+                centraal kwam te staan.
+              </p>
+              <p>
+                De oude Humanature-site beschreef dit als het zoeken naar harmonie tussen
+                mens en natuur. In deze nieuwe Bijbrengen-pagina is die kern behouden en
+                opnieuw opgebouwd in onze huidige Astro-structuur.
+              </p>
+            </div>
+            <figure class="humanature-feature-image">
+              <img
+                src={`${base}humanature/images/ideal.jpg`}
+                alt="Detail uit de Humanature-beeldtaal"
+                width="640"
+                height="480"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
+        </section>
+
+        <section class="humanature-section humanature-section--reflection" aria-labelledby="humanature-reflection-heading">
+          <div class="humanature-section__inner humanature-split humanature-split--reverse">
+            <div>
+              <span class="badge">Verdere ontwikkeling</span>
+              <h2 id="humanature-reflection-heading">De menselijke natuur beter begrijpen</h2>
+              <p>
+                Humanature ontwikkelde zich naast het praktische werk op het land ook als een
+                onderzoekende manier om de menselijke natuur te begrijpen. In de Wikibooks-uitwerking
+                wordt de relatie tussen mens en natuur bekeken vanuit meerdere perspectieven, met
+                respect voor de verschillen tussen die invalshoeken.
+              </p>
+              <p>
+                Daarbij komen natuurwetenschappen, religie en filosofie naast elkaar te staan. Niet
+                om alles tot een enkel antwoord te reduceren, maar om begrippen als vrijheid,
+                leegheid, oneindigheid, gelukzaligheid en verbondenheid vanuit verschillende tradities
+                scherper te leren zien.
+              </p>
+              <p>
+                In de Humanature-whitepaper wordt die ontwikkeling vertaald naar onderwijs:
+                natuurwetenschappelijke lessen verrijken met filosofische en spirituele inzichten
+                via gamification. Het voorstel noemt multidisciplinair afstudeeronderzoek, een
+                prototype van een leergame en samenwerking met onder meer de Rijksuniversiteit
+                Groningen en Game Architecture and Design.
+              </p>
+              <div class="humanature-action-row">
+                <a href="https://nl.wikibooks.org/wiki/Humanature" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                  Lees Humanature op Wikibooks
+                </a>
+                <a href={`${base}humanature/docs/humanature-white-paper.pdf`} target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                  Open whitepaper
+                </a>
+              </div>
+            </div>
+            <figure class="humanature-feature-image">
+              <img
+                src={`${base}humanature/images/land-in-the-morning.jpg`}
+                alt="Humanature-landschap in de ochtend"
+                width="640"
+                height="480"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
+        </section>
+
+        <section class="humanature-section humanature-section--muted" aria-labelledby="humanature-ideals-heading">
+          <div class="humanature-section__inner">
+            <div class="humanature-section__intro">
+              <span class="badge">Idealen</span>
+              <h2 id="humanature-ideals-heading">Zes manieren om de verbinding praktisch te maken</h2>
+              <p>
+                De oorspronkelijke idealen blijven herkenbaar, maar zijn hier herschreven als
+                compacte uitgangspunten voor de huidige Bijbrengen-site.
+              </p>
+            </div>
+            <ul class="humanature-ideal-grid" role="list">
+              {ideals.map((ideal) => (
+                <li class="humanature-ideal-card">
+                  <h3>{ideal.title}</h3>
+                  <p>{ideal.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section class="humanature-section" aria-labelledby="humanature-farm-heading">
+          <div class="humanature-section__inner">
+            <div class="humanature-section__intro">
+              <span class="badge">De Quinta</span>
+              <h2 id="humanature-farm-heading">Van oude grond naar leerplek</h2>
+              <p>
+                In Coutada wordt Humanature zichtbaar als een langzaam groeiende plek voor
+                permacultuur, herstel en leren. De omstandigheden zijn niet gladgestreken:
+                juist het oude huis, de kleigrond en de ruines maken het project concreet.
+              </p>
+            </div>
+            <ul class="humanature-point-grid" role="list">
+              {farmPoints.map((point) => (
+                <li>
+                  <h3>{point.title}</h3>
+                  <p>{point.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section class="humanature-section humanature-section--dark" aria-labelledby="humanature-projects-heading">
+          <div class="humanature-section__inner">
+            <div class="humanature-section__intro">
+              <span class="badge">Projecten op het land</span>
+              <h2 id="humanature-projects-heading">Tuin, voedselbos en huis als levende onderdelen</h2>
+              <p>
+                De deelprojecten laten zien hoe Humanature werkt: niet alleen plannen maken,
+                maar stap voor stap de bodem, de plek en het dagelijks gebruik verbeteren.
+              </p>
+            </div>
+            <ul class="humanature-project-grid" role="list">
+              {projects.map((project) => (
+                <li class="humanature-project-card">
+                  <img
+                    src={`${base}humanature/images/${project.image}`}
+                    alt=""
+                    width="640"
+                    height="420"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p>{project.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section class="humanature-section" aria-labelledby="humanature-gallery-heading">
+          <div class="humanature-section__inner">
+            <div class="humanature-section__intro">
+              <span class="badge">Beeldarchief</span>
+              <h2 id="humanature-gallery-heading">Een selectie uit Coutada</h2>
+            </div>
+            <div class="humanature-gallery">
+              {gallery.map((image) => (
+                <figure>
+                  <img
+                    src={`${base}humanature/images/${image.src}`}
+                    alt={image.alt}
+                    width="640"
+                    height="640"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style>
+  .humanature-page {
+    background: #ffffff;
+  }
+
+  .humanature-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 42rem;
+    background:
+      linear-gradient(90deg, rgb(255 255 255 / 0.96) 0%, rgb(255 255 255 / 0.86) 42%, rgb(255 255 255 / 0.2) 100%),
+      var(--humanature-hero) center right / cover no-repeat;
+  }
+
+  .humanature-hero__inner {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding: 8rem 1.25rem 5rem;
+  }
+
+  .humanature-hero__copy {
+    max-width: 42rem;
+  }
+
+  .humanature-hero__copy > img {
+    width: min(19rem, 78vw);
+    height: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .humanature-hero h1 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(2.8rem, 7vw, 5.4rem);
+    font-weight: 780;
+    line-height: 0.98;
+  }
+
+  .humanature-hero p {
+    margin: 1.5rem 0 0;
+    color: #475569;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    font-weight: 520;
+    line-height: 1.7;
+  }
+
+  .humanature-section {
+    border-top: 1px solid #e5e7eb;
+    padding: 5rem 1.25rem;
+  }
+
+  .humanature-section--muted {
+    background: #fafaf7;
+  }
+
+  .humanature-section--dark {
+    background: #172026;
+    color: #ffffff;
+  }
+
+  .humanature-section--reflection {
+    background: #f0fdf4;
+  }
+
+  .humanature-section__inner {
+    max-width: 72rem;
+    margin-inline: auto;
+  }
+
+  .humanature-section__intro,
+  .humanature-contact > div:first-child {
+    max-width: 48rem;
+    margin-bottom: 2rem;
+  }
+
+  .humanature-section h2 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 740;
+    line-height: 1.12;
+  }
+
+  .humanature-section--dark h2,
+  .humanature-section--dark h3 {
+    color: #ffffff;
+  }
+
+  .humanature-section p {
+    margin: 1rem 0 0;
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .humanature-section--dark p {
+    color: #d1d5db;
+  }
+
+  .humanature-split {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .humanature-split .btn {
+    margin-top: 1.75rem;
+  }
+
+  .humanature-action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .humanature-action-row .btn {
+    margin-top: 1.75rem;
+  }
+
+  .humanature-feature-image {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background: #f1f5f9;
+    box-shadow: 0 18px 45px rgb(15 23 42 / 0.12);
+  }
+
+  .humanature-feature-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 20rem;
+    object-fit: cover;
+  }
+
+  .humanature-ideal-grid,
+  .humanature-point-grid,
+  .humanature-project-grid {
+    display: grid;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .humanature-ideal-card,
+  .humanature-point-grid li {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background: #ffffff;
+    padding: 1.25rem;
+  }
+
+  .humanature-ideal-card h3,
+  .humanature-point-grid h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 1.15rem;
+    font-weight: 720;
+  }
+
+  .humanature-ideal-card p,
+  .humanature-point-grid p {
+    font-size: 0.96rem;
+  }
+
+  .humanature-project-card {
+    overflow: hidden;
+    border: 1px solid rgb(255 255 255 / 0.16);
+    border-radius: 0.5rem;
+    background: rgb(255 255 255 / 0.06);
+  }
+
+  .humanature-project-card img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+  }
+
+  .humanature-project-card div {
+    padding: 1.25rem;
+  }
+
+  .humanature-project-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 720;
+  }
+
+  .humanature-project-card p {
+    font-size: 0.96rem;
+  }
+
+  .humanature-gallery {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .humanature-gallery figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background: #f1f5f9;
+  }
+
+  .humanature-gallery img {
+    width: 100%;
+    height: 100%;
+    min-height: 13rem;
+    object-fit: cover;
+    transition: transform 180ms ease;
+  }
+
+  .humanature-gallery figure:hover img {
+    transform: scale(1.03);
+  }
+
+  @media (min-width: 760px) {
+    .humanature-split {
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.8fr);
+    }
+
+    .humanature-split--reverse {
+      grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1fr);
+    }
+
+    .humanature-split--reverse > div {
+      grid-column: 2;
+    }
+
+    .humanature-split--reverse > figure {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .humanature-ideal-grid,
+    .humanature-point-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .humanature-project-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .humanature-gallery {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .humanature-gallery figure:first-child,
+    .humanature-gallery figure:nth-child(4) {
+      grid-column: span 2;
+    }
+  }
+
+  @media (min-width: 1040px) {
+    .humanature-ideal-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>
