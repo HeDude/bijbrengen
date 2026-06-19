@@ -39,7 +39,7 @@ jobs:
 
       - name: Build Astro site
         env:
-          BIJBRENGEN_SITE_BASE: /bijbrengen
+          BIJBRENGEN_SITE_BASE: /Bijbrengen
         run: npm run build:landing
 
       - name: Upload Pages artifact
