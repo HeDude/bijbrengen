@@ -147,9 +147,99 @@ const base = import.meta.env.BASE_URL;
             </div>
           </div>
         </section>
+
+        <section class="project-detail diensten-combo">
+          <div class="project-detail__inner">
+            <div class="project-detail__copy diensten-combo__copy">
+              <span class="badge">Gecombineerde inzet</span>
+              <h2>Diensten die elkaar versterken</h2>
+              <p>
+                In de praktijk van Bijbrengen worden diensten regelmatig gecombineerd ingezet.
+                Twee diensten samen leveren dan iets op dat geen van beide afzonderlijk zou kunnen bieden.
+              </p>
+
+              <div class="diensten-combo__cards">
+                <div class="diensten-combo__card">
+                  <p class="diensten-combo__label">Leerbox + HeDude</p>
+                  <h3>Digitale twins van leerboxen</h3>
+                  <p>
+                    De fysieke leerboxen van Leerbox worden door HeDude digitaal getwined: interactieve,
+                    digitale versies die zelfstandig of naast het fysieke materiaal ingezet worden en
+                    interferentievrije meting via de Leerpret-engine mogelijk maken.
+                  </p>
+                </div>
+                <div class="diensten-combo__card">
+                  <p class="diensten-combo__label">HeDude + Onderwijsarchitect</p>
+                  <h3>ICT-onderwijs van concept tot uitvoering</h3>
+                  <p>
+                    Technische expertise van HeDude gecombineerd met het onderwijsontwerp van
+                    Onderwijsarchitect levert volledige ICT-leertrajecten op. CodeGorilla is hier
+                    een concreet voorbeeld van: Bijbrengen hielp bij de opzet van het
+                    onderwijsontwerp, waarna CodeGorilla zelfstandig is doorgegroeid tot een
+                    landelijke sociale onderneming die IT-professionals opleidt en plaatst.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
     </div>
   </body>
 </html>
+
+<style>
+  .diensten-combo {
+    background: #f0fdf4;
+    border-top: 2px solid rgb(22 101 52 / 0.15);
+  }
+
+  .diensten-combo__copy > p {
+    max-width: 42rem;
+    color: #475569;
+    line-height: 1.75;
+  }
+
+  .diensten-combo__cards {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+  }
+
+  .diensten-combo__card {
+    padding: 1.5rem;
+    border: 1px solid rgb(22 101 52 / 0.18);
+    border-radius: 0.75rem;
+    background: #ffffff;
+  }
+
+  .diensten-combo__label {
+    margin: 0 0 0.4rem;
+    color: var(--color-bijbrengen-forest);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .diensten-combo__card h3 {
+    margin: 0 0 0.75rem;
+    color: #111827;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .diensten-combo__card p:last-child {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  @media (min-width: 720px) {
+    .diensten-combo__cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
