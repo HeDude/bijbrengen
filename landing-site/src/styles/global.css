@@ -838,6 +838,16 @@ img {
   margin-bottom: 1rem;
 }
 
+.badge--active {
+  background-color: rgb(22 101 52 / 0.1);
+  color: var(--color-bijbrengen-forest);
+}
+
+.badge--realized {
+  background-color: rgb(71 85 105 / 0.1);
+  color: #475569;
+}
+
 .project-detail__copy h2 {
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;

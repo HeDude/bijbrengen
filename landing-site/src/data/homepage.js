@@ -4,9 +4,9 @@ export const navigation = [
     label: "Projecten",
     items: [
       { label: "Alle projecten", href: "projecten/" },
+      { label: "Leerpretpark", href: "projecten/#leerpretpark" },
       { label: "Entreprenasium", href: "entreprenasium/" },
       { label: "Leerparadijs", href: "leerparadijs/" },
-      { label: "Leerpretpark", href: "projecten/#leerpretpark" },
       { label: "Humanature", href: "projecten/#humanature" }
     ]
   },
@@ -47,28 +47,36 @@ export const heroImages = [
 
 export const projectOverview = [
   {
+    title: "Leerpretpark",
+    description: "Het lopende kerninitiatief van Bijbrengen: een innovatieve leerpret-engine waarin spel, ICT, AI en onderwijs samenkomen in een actieve ontwikkelfase.",
+    href: "projecten/#leerpretpark",
+    image: "media/logos/leerpretpark.svg",
+    status: "active",
+    statusLabel: "Lopend project"
+  },
+  {
     title: "Entreprenasium",
-    description: "Ondernemend leren voor leerlingen die hun eigen initiatief willen verbinden aan echte projecten.",
+    description: "Dit afgeronde pioniersproject rond ondernemend leren is inmiddels duurzaam verankerd; de methodes en cursussen blijven vrij beschikbaar.",
     href: "entreprenasium/",
-    image: "media/logos/entreprenasium.svg"
+    image: "media/logos/entreprenasium.svg",
+    status: "realized",
+    statusLabel: "Gerealiseerd"
   },
   {
     title: "Leerparadijs",
-    description: "Een kleinschalig onderwijsconcept voor jongeren die persoonlijk, passend en ondernemend willen leren.",
+    description: "Een gerealiseerd onderwijsconcept voor unieke jongeren. De opgedane kennis en materialen zijn geborgd en blijven actief inspireren.",
     href: "leerparadijs/",
-    image: "media/logos/leerparadijs.svg"
-  },
-  {
-    title: "Leerpretpark",
-    description: "De leerpret-engine waarin spel, ICT, AI en onderwijs samenkomen in een speelse leeromgeving.",
-    href: "projecten/#leerpretpark",
-    image: "media/logos/leerpretpark.svg"
+    image: "media/logos/leerparadijs.svg",
+    status: "realized",
+    statusLabel: "Gerealiseerd"
   },
   {
     title: "Humanature",
-    description: "Een project rond natuur, herstel en harmonie tussen mens, omgeving en duurzame ontwikkeling.",
+    description: "Een gerealiseerd project rond mens en natuur. Gestart in Nederland en voortgezet in Coutada (Portugal), waar de resultaten nog dagelijks doorwerken.",
     href: "projecten/#humanature",
-    image: "media/logos/humanature.svg"
+    image: "media/logos/humanature.svg",
+    status: "realized",
+    statusLabel: "Gerealiseerd"
   }
 ];
 
