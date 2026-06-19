@@ -149,6 +149,61 @@ const gallery = [
           </div>
         </section>
 
+        <section class="humanature-section humanature-section--hic" aria-labelledby="humanature-hic-heading">
+          <div class="humanature-section__inner">
+            <div class="humanature-split">
+              <div>
+                <span class="badge">Voorloper</span>
+                <h2 id="humanature-hic-heading">Humanimalcare — een aandeel in elkaar</h2>
+                <p>
+                  Humanimalcare was de directe voorloper van Humanature: een rust- en ontmoetingsplek
+                  in het bos voor mens en dier, opgezet als inclusief zorg- en leercentrum. De
+                  centrale overtuiging: <em>"de som is meer dan de afzonderlijke delen"</em> —
+                  iedereen heeft een beperking én ieders kracht is waardevol. De grens tussen
+                  'gezond' en 'beperkt' vervaagt wanneer mensen samen leren en werken.
+                </p>
+                <p>
+                  Het concept verbond zorg, natuur, onderwijs en ondernemerschap op één plek.
+                  Wetenschap had pas waarde als het in de alledaagse praktijk werkte: leerlingen
+                  (via Entreprenasium) leerden van experts, ouderen en mensen met een beperking
+                  draaiden mee in de dagelijkse activiteiten, en de natuur en dieren stonden
+                  centraal als heilzame omgeving voor leren en herstel.
+                </p>
+                <p>
+                  De spanning tussen rust in het bos en de dynamiek van ontmoeten en werken werd
+                  bewust omarmd: juist die rust is de voorwaarde voor creativiteit en
+                  ondernemingszin.
+                </p>
+              </div>
+              <div class="hic-werkplaatsen">
+                <p class="hic-werkplaatsen__label">Geplande werkplaatsen</p>
+                <ul class="hic-list">
+                  <li>
+                    <strong>Boscafé & Ontmoetingspunt</strong>
+                    <span>Inclusieve horeca waar mensen met en zonder beperking samen de bediening verzorgen.</span>
+                  </li>
+                  <li>
+                    <strong>Atelier De Creatieve Schuur</strong>
+                    <span>Werkplaats voor kunst, media en film — ouderen en jongeren maken samen.</span>
+                  </li>
+                  <li>
+                    <strong>Dier & Natuur Beheer</strong>
+                    <span>Verzorging van dieren en onderhoud van de bosomgeving als dagbesteding en leerplek.</span>
+                  </li>
+                  <li>
+                    <strong>Entreprenasium Praktijkhub</strong>
+                    <span>Leerlingen voeren maatschappelijk ondernemende projecten uit in een echte setting.</span>
+                  </li>
+                  <li>
+                    <strong>Techniek & Groen</strong>
+                    <span>Facilitaire werkplaats waarbij technische en groene talenten van iedereen worden benut.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section class="humanature-section humanature-section--reflection" aria-labelledby="humanature-reflection-heading">
           <div class="humanature-section__inner humanature-split humanature-split--reverse">
             <div>
@@ -357,6 +412,61 @@ const gallery = [
   .humanature-section--dark {
     background: #172026;
     color: #ffffff;
+  }
+
+  .humanature-section--hic {
+    background: #fefce8;
+    border-top: 1px solid #fde68a;
+  }
+
+  .hic-werkplaatsen {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    align-self: start;
+  }
+
+  .hic-werkplaatsen__label {
+    margin: 0 0 1rem !important;
+    color: #92400e !important;
+    font-size: 0.75rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .hic-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .hic-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  .hic-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .hic-list strong {
+    color: #111827;
+    font-size: 0.95rem;
+  }
+
+  .hic-list span {
+    color: #64748b;
+    font-size: 0.88rem;
+    line-height: 1.5;
   }
 
   .humanature-section--reflection {
