@@ -1,0 +1,556 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
+
+const artikelen = [
+  {
+    titel: "Leerpret gedefinieerd",
+    subtitel: "Het onderscheid tussen passieve affectie en actieve exploratie",
+    samenvatting:
+      "Leerpret is de passie voor leren die bij de lerende ontstaat en door interactie met een leeromgeving wordt versterkt. Niet simpelweg 'iets leuk vinden', maar de kracht die ontstaat wanneer een activiteit betekenis heeft, iets oplevert en de moeite waard blijft — ook als er spanning of frustratie bij komt kijken. Het concept maakt een analytisch onderscheid tussen leerplezier (positieve waardering) en leerpret (die waardering gecombineerd met actief handelen: beginnen, proberen, ontdekken, volhouden en terugkeren)."
+  },
+  {
+    titel: "Leerpret geactiveerd",
+    subtitel: "Van menselijk handelen naar meetbare actie",
+    samenvatting:
+      "Een Actie is de kleinste meetbare eenheid van leerpret: een interactie tussen een deelnemer en een leerobject binnen een leerbox. Pas een voldoende aaneengesloten reeks acties levert een bruikbare gedragsbasis op. De engine controleert minimale duur en minimale activiteit voordat leerpret getypeerd of gescoord kan worden."
+  },
+  {
+    titel: "Leerpret geformuleerd",
+    subtitel: "Van ingrediënten naar gedragsformule",
+    samenvatting:
+      "De leerpretformule vertaalt vijf ingrediënten — leerplezier, leernut, leeropbrengst, leerimpact en leerverbruik — naar een berekenbare gedragsscore via vier archetypische lerenden: de Volger, Verwerver, Veroveraar en Verkenner. Een lerende wordt berekend als een mengvorm van deze uitersten op basis van vijf gedragsmarkers: verblijftijd (T), activiteit (A), variatie (V), resilience (R) en succes (S)."
+  },
+  {
+    titel: "Leerpret gefaciliteerd",
+    subtitel: "Van inzicht naar structurele verankering in leeromgevingen",
+    samenvatting:
+      "Na het meetbaar maken van leerpret verschuift de focus naar implementatie en opschaling. Door leerervaringen en data te delen binnen netwerken van lerenden, docenten en organisaties ontstaat collectief bewustzijn. Technologisch wordt leerpret gefaciliteerd via instrumenten en digitale tweelingen die zonder verstoring van de ervaring meten en verbeteren."
+  },
+  {
+    titel: "Leerpret gespeeld",
+    subtitel: "Exploratieve leerervaringen via games en simulaties",
+    samenvatting:
+      "Leerpret wordt niet als bijproduct van spelen beschouwd, maar als het ontwerpdoel. Praktijkcasussen tonen hoe de LEARNGame-aanpak en Phile — een strategisch kaartspel met ingebouwd leerpretmechanisme — de vijf gedragsmarkers activeren. Digital twins maken interferentievrije meting via de Leerpret-engine mogelijk."
+  },
+  {
+    titel: "Leerpret gefilosofeerd",
+    subtitel: "De deterministische paradox van de lerende geest",
+    samenvatting:
+      "Spontane keuze is geen neutraal beginpunt: de lerende bouwt voort op bestaande voorkeuren en interpretatiekaders. Fundamentele herschikking van aandacht vereist externe incidentie — een signaal, object of gebeurtenis die niet volledig uit het bestaande zelfmodel is afgeleid. Leerpret is juist de overgang van interne herhaling naar alerte ontvankelijkheid voor het onverwachte."
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Leerpretpark ontwikkelt een leerpret-engine waarin spelen, ICT, AI en onderwijs samenkomen. Ontdek de wetenschap achter leerpret en het Leerpretpark-initiatief."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <title>Leerpretpark - Stichting Bijbrengen</title>
+    <script is:inline data-goatcounter="https://bijbrengen.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body class="leerpretpark-page">
+    <div class="page-shell">
+      <Header />
+
+      <main class="lpp-main">
+
+        <!-- Hero -->
+        <section class="lpp-hero">
+          <div class="lpp-hero__overlay"></div>
+          <div class="lpp-hero__inner">
+            <div class="lpp-hero__copy">
+              <img
+                class="lpp-hero__logo"
+                src={`${base}media/logos/leerpretpark.svg`}
+                alt="Leerpretpark"
+                width="320"
+                height="126"
+                loading="eager"
+                decoding="async"
+              />
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                <span class="badge badge--active" style="margin-bottom: 0;">Actief</span>
+                <span class="badge" style="margin-bottom: 0;">Onderzoek & Ontwikkeling</span>
+              </div>
+              <h1>De leerpret-engine</h1>
+              <p>
+                Leerpretpark brengt spel, ICT, AI en onderwijs samen in een speelse leeromgeving.
+                Het project onderzoekt, meet en vergroot leerpret: de passie voor leren die ontstaat
+                wanneer een leerervaring betekenisvol, activerend en de moeite waard is — ook als
+                het even moeilijk wordt.
+              </p>
+              <div class="lpp-hero__actions">
+                <a href="https://www.leerpretpark.nl/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                  Naar leerpretpark.nl
+                </a>
+                <a href="#artikelen" class="btn btn--secondary">
+                  Artikelenreeks
+                </a>
+              </div>
+            </div>
+
+            <div class="lpp-hero__panel" aria-label="Kern van Leerpretpark">
+              <p class="lpp-hero__eyebrow">Waar spelen en leren samenkomen</p>
+              <h2>Leerpret meten en vergroten</h2>
+              <p>
+                Via leerboxen, digitale tweelingen en een meetbare gedragsformule onderzoekt
+                Leerpretpark hoe leeromgevingen leerpret structureel kunnen activeren en vergroten.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Wat is leerpret -->
+        <section class="lpp-section lpp-section--raised">
+          <div class="lpp-section__inner">
+            <div class="lpp-section__heading">
+              <span class="badge">Concept</span>
+              <h2>Wat is leerpret?</h2>
+              <p>
+                Leerpret is niet simpelweg 'iets leuk vinden'. Het is de passie voor leren die bij
+                de lerende ontstaat door interactie met een goed ontworpen leeromgeving — en die
+                meetbaar wordt via gedrag.
+              </p>
+            </div>
+
+            <div class="lpp-pillars">
+              <article class="lpp-pillar">
+                <span class="lpp-pillar__num">01</span>
+                <h3>Leerplezier</h3>
+                <p>Positieve waardering van de leerervaring — de basis, maar niet genoeg op zichzelf.</p>
+              </article>
+              <article class="lpp-pillar">
+                <span class="lpp-pillar__num">02</span>
+                <h3>Leernut</h3>
+                <p>De lerende ervaart dat de activiteit iets oplevert. Zonder ingeschat leernut begint of blijft de lerende niet.</p>
+              </article>
+              <article class="lpp-pillar">
+                <span class="lpp-pillar__num">03</span>
+                <h3>Leeropbrengst</h3>
+                <p>Wat de lerende concreet meeneemt uit de ervaring, ook na een moeilijk moment.</p>
+              </article>
+              <article class="lpp-pillar">
+                <span class="lpp-pillar__num">04</span>
+                <h3>Leerimpact</h3>
+                <p>De betekenis van de leerervaring voor de lerende op langere termijn.</p>
+              </article>
+              <article class="lpp-pillar">
+                <span class="lpp-pillar__num">05</span>
+                <h3>Leerverbruik</h3>
+                <p>De subjectief beleefde inspanning — in flow voelt veel activiteit toch licht.</p>
+              </article>
+              <article class="lpp-pillar">
+                <span class="lpp-pillar__num">06</span>
+                <h3>Gedragsmarkers</h3>
+                <p>Verblijftijd (T), activiteit (A), variatie (V), resilience (R) en succes (S) maken leerpret meetbaar zonder de ervaring te verstoren.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Artikelenreeks -->
+        <section id="artikelen" class="lpp-section lpp-section--soft">
+          <div class="lpp-section__inner">
+            <div class="lpp-section__heading">
+              <span class="badge">Artikelenreeks</span>
+              <h2>Leerpret in lagen onderzocht</h2>
+              <p>
+                Het Leerpretpark-team werkt aan een reeks wetenschappelijke artikelen die leerpret
+                definiëren, meten, modelleren en faciliteren. Hieronder een overzicht van de
+                gepubliceerde en lopende bijdragen.
+              </p>
+            </div>
+
+            <div class="lpp-articles">
+              {artikelen.map((artikel, i) => (
+                <article class="lpp-article-card">
+                  <span class="lpp-article-card__num">{String(i + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3>{artikel.titel}</h3>
+                    <p class="lpp-article-card__sub">{artikel.subtitel}</p>
+                    <p>{artikel.samenvatting}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <!-- Leerboxen -->
+        <section class="lpp-section">
+          <div class="lpp-section__inner">
+            <div class="lpp-section__heading">
+              <span class="badge">Leerboxen</span>
+              <h2>Leerboxen als meetinstrument en leeromgeving</h2>
+              <p>
+                Leerboxen zijn de praktische bouwstenen van het Leerpretpark. Ze fungeren als
+                gestandaardiseerde leeromgevingen waarin leerpret gemeten en vergeleken kan worden,
+                en als directe leermiddelen voor lerenden.
+              </p>
+            </div>
+
+            <div class="lpp-twin-grid">
+              <div class="lpp-twin-card">
+                <h3>Fysieke leerboxen</h3>
+                <p>
+                  Kant-en-klare pakketten voor ondernemend, spelend en ontdekkend leren. Direct
+                  inzetbaar in de klas of thuis. Beschikbaar via <a href="https://www.leerbox.nl/" target="_blank" rel="noopener noreferrer">leerbox.nl</a>.
+                </p>
+              </div>
+              <div class="lpp-twin-card">
+                <h3>Digitale tweelingen</h3>
+                <p>
+                  Via de dienst HeDude worden digitale twins van de fysieke leerboxen gebouwd:
+                  interactieve versies die interferentievrije meting via de Leerpret-engine
+                  mogelijk maken en naast of in plaats van het fysieke materiaal ingezet worden.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="lpp-section lpp-section--cta">
+          <div class="lpp-section__inner lpp-cta">
+            <h2>Meer weten of meedoen?</h2>
+            <p>
+              Leerpretpark werkt samen met scholen, makers, onderzoekers en ondernemers.
+              Bezoek leerpretpark.nl voor actuele informatie, het volledige artikelenaanbod
+              en contactmogelijkheden.
+            </p>
+            <a href="https://www.leerpretpark.nl/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              Naar leerpretpark.nl →
+            </a>
+          </div>
+        </section>
+
+      </main>
+
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style>
+  .lpp-main {
+    background: #ffffff;
+  }
+
+  /* ── Hero ── */
+  .lpp-hero {
+    position: relative;
+    min-height: 44rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
+  }
+
+  .lpp-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.1), rgb(22 101 52 / 0.06));
+  }
+
+  .lpp-hero__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    max-width: 72rem;
+    min-height: 44rem;
+    margin-inline: auto;
+    padding: 9.5rem 1.25rem 5rem;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .lpp-hero__copy {
+    max-width: 42rem;
+  }
+
+  .lpp-hero__logo {
+    width: min(18rem, 70vw);
+    height: auto;
+    margin-bottom: 1.4rem;
+  }
+
+  .lpp-hero h1 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(3rem, 7vw, 5.75rem);
+    font-weight: 720;
+    line-height: 0.96;
+  }
+
+  .lpp-hero__copy p {
+    max-width: 39rem;
+    margin: 1.5rem 0 0;
+    color: #475569;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    font-weight: 520;
+    line-height: 1.78;
+  }
+
+  .lpp-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .lpp-hero__panel {
+    align-self: end;
+    max-width: 24rem;
+    padding: 1.5rem;
+    border: 1px solid rgb(255 255 255 / 0.72);
+    border-radius: 0.75rem;
+    background: rgb(255 255 255 / 0.88);
+    box-shadow: 0 24px 60px rgb(15 23 42 / 0.12);
+    backdrop-filter: blur(18px);
+  }
+
+  .lpp-hero__panel h2 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(1.7rem, 4vw, 2.45rem);
+    font-weight: 720;
+    line-height: 1.05;
+  }
+
+  .lpp-hero__panel p {
+    margin: 1rem 0 0;
+    color: #475569;
+    line-height: 1.65;
+  }
+
+  .lpp-hero__eyebrow {
+    margin: 0 0 0.7rem;
+    color: var(--color-bijbrengen-forest);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  /* ── Sections ── */
+  .lpp-section {
+    padding: 5rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
+  }
+
+  .lpp-section--soft {
+    background: #fafaf7;
+  }
+
+  .lpp-section--raised {
+    position: relative;
+    z-index: 2;
+  }
+
+  .lpp-section--cta {
+    background: #f0fdf4;
+    border-top: 2px solid rgb(22 101 52 / 0.15);
+    border-bottom: none;
+  }
+
+  .lpp-section__inner {
+    max-width: 72rem;
+    margin-inline: auto;
+  }
+
+  .lpp-section__heading {
+    max-width: 45rem;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .lpp-section__heading h2 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.05;
+  }
+
+  .lpp-section__heading p {
+    margin: 1rem 0 0;
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  /* ── Pillars ── */
+  .lpp-pillars {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .lpp-pillar {
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    box-shadow: 0 14px 35px rgb(15 23 42 / 0.04);
+  }
+
+  .lpp-pillar__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 1.25rem;
+    border-radius: 50%;
+    background: rgb(22 101 52 / 0.1);
+    color: var(--color-bijbrengen-forest);
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+
+  .lpp-pillar h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 1.18rem;
+    font-weight: 700;
+  }
+
+  .lpp-pillar p {
+    margin: 0.85rem 0 0;
+    color: #64748b;
+    line-height: 1.65;
+  }
+
+  /* ── Artikelen ── */
+  .lpp-articles {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .lpp-article-card {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgb(15 23 42 / 0.04);
+  }
+
+  .lpp-article-card__num {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 0.15rem;
+    color: var(--color-bijbrengen-forest);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+  }
+
+  .lpp-article-card h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .lpp-article-card__sub {
+    margin: 0.2rem 0 0.75rem;
+    color: var(--color-bijbrengen-forest);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .lpp-article-card p:last-child {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.65;
+    font-size: 0.95rem;
+  }
+
+  /* ── Twin grid ── */
+  .lpp-twin-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .lpp-twin-card {
+    padding: 1.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #ffffff;
+  }
+
+  .lpp-twin-card h3 {
+    margin: 0 0 0.75rem;
+    color: #111827;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .lpp-twin-card p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.7;
+  }
+
+  .lpp-twin-card a {
+    color: var(--color-bijbrengen-forest);
+    font-weight: 600;
+  }
+
+  /* ── CTA ── */
+  .lpp-cta {
+    text-align: center;
+    max-width: 48rem;
+  }
+
+  .lpp-cta h2 {
+    margin: 0 0 1rem;
+    color: #111827;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+  }
+
+  .lpp-cta p {
+    margin: 0 0 2rem;
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  /* ── Responsive ── */
+  @media (min-width: 720px) {
+    .lpp-hero__inner {
+      grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.55fr);
+    }
+
+    .lpp-pillars {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .lpp-articles {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lpp-twin-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 719px) {
+    .lpp-hero__inner {
+      padding-top: 12rem;
+    }
+  }
+</style>

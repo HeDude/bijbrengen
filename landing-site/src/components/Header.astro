@@ -45,6 +45,8 @@ const getHref = (href: string) => {
                         <a
                           href={getHref(subItem.href)}
                           class="site-nav__submenu-link"
+                          target={subItem.external ? "_blank" : undefined}
+                          rel={subItem.external ? "noopener noreferrer" : undefined}
                         >
                           {subItem.label}
                         </a>

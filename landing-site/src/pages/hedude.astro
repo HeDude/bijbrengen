@@ -31,7 +31,7 @@ const modules = [
   {
     title: "Edar",
     longTitle: "EDucation ARchitect",
-    href: "https://github.com/HeDude/Edar",
+    href: null,
     image: "edar-bg.png",
     description:
       "Edar ondersteunt onderwijsarchitecten bij het ontwerpen, beheren en verbeteren van vrije leerprogramma's. De tool richt zich op overzicht, ontwerpvrijheid en praktische uitvoerbaarheid."
@@ -39,7 +39,7 @@ const modules = [
   {
     title: "Edda",
     longTitle: "EDucator's DAshboard",
-    href: "https://github.com/HeDude/Edda",
+    href: null,
     image: "edda-bg.png",
     description:
       "Edda maakt individuele en groepsroutes inzichtelijk. Daardoor kunnen begeleiders leerlingen meer vrijheid geven en toch zien waar ondersteuning nodig is."
@@ -90,15 +90,14 @@ const modules = [
             <div class="hedude-section__intro">
               <h2 id="hedude-modules-heading">De HeDude-modules</h2>
               <p>
-                De oorspronkelijke HeDude-site beschrijft vier bouwblokken. Op Bijbrengen
-                gebruiken we die als samenhangend dienstenpakket voor leerontwerp en
-                experimentele educatieve tooling.
+                HeDude bestaat uit vier bouwblokken die als samenhangend dienstenpakket
+                ingezet worden voor leerontwerp en experimentele educatieve tooling.
               </p>
             </div>
             <ul class="hedude-module-grid" role="list">
               {modules.map((module) => (
-                <li class="hedude-module-card">
-                  <a href={module.href} target="_blank" rel="noopener noreferrer">
+                <li class={`hedude-module-card${!module.href ? ' hedude-module-card--disabled' : ''}`}>
+                  <a href={module.href ?? undefined} target={module.href ? "_blank" : undefined} rel={module.href ? "noopener noreferrer" : undefined} aria-disabled={!module.href ? "true" : undefined} style={!module.href ? "pointer-events:none;opacity:0.45;cursor:default;" : ""}>
                     <figure>
                       <img
                         src={`${base}hedude/images/${module.image}`}

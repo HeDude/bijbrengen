@@ -4,7 +4,7 @@ export const navigation = [
     label: "Projecten",
     items: [
       { label: "Alle projecten", href: "projecten/" },
-      { label: "Leerpretpark", href: "projecten/#leerpretpark" },
+      { label: "Leerpretpark", href: "leerpretpark/" },
       { label: "Entreprenasium", href: "entreprenasium/" },
       { label: "Leerparadijs", href: "leerparadijs/" },
       { label: "Humanature", href: "humanature/" }
@@ -15,6 +15,7 @@ export const navigation = [
     items: [
       { label: "Alle diensten", href: "diensten/" },
       { label: "MeTherapy", href: "diensten/#metherapy" },
+      { label: "Leerbox", href: "https://www.leerbox.nl/", external: true },
       { label: "Onderwijsarchitect", href: "onderwijsarchitect/" },
       { label: "HeDude", href: "hedude/" }
     ]
@@ -49,7 +50,7 @@ export const projectOverview = [
   {
     title: "Leerpretpark",
     description: "Het lopende kerninitiatief van Bijbrengen: een innovatieve leerpret-engine waarin spel, ICT, AI en onderwijs samenkomen in een actieve ontwikkelfase.",
-    href: "projecten/#leerpretpark",
+    href: "leerpretpark/",
     image: "media/logos/leerpretpark.svg",
     status: "active",
     statusLabel: "Lopend"
@@ -98,5 +99,11 @@ export const serviceOverview = [
     description: "AI-ondersteuning en technische sparring voor gepersonaliseerd, vrij en ondernemend leren.",
     href: "hedude/",
     image: "media/photos/hedude_logo.jpg"
+  },
+  {
+    title: "Leerbox",
+    description: "Kant-en-klare leerboxen voor ondernemend, spelend en ontdekkend leren — direct inzetbaar in de klas of thuis.",
+    href: "https://www.leerbox.nl/",
+    image: "media/logos/leerbox.svg"
   }
 ];

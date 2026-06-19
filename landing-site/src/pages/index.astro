@@ -74,29 +74,33 @@ const base = import.meta.env.BASE_URL;
               Deze diensten ondersteunen mensen, scholen en makers bij persoonlijke groei, onderwijsontwerp en het slim inzetten van technologie.
             </p>
           </div>
-          <ul class="overview-grid overview-grid--services" role="list">
-            {serviceOverview.map((service) => (
-              <li class="overview-card">
-                <a href={`${base}${service.href}`}>
-                  <div class="overview-card__media">
-                    {service.image ? (
-                    <img
-                      src={`${base}${service.image}`}
-                      alt=""
-                      width="240"
-                      height="120"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                    ) : (
-                      <span>{service.title}</span>
-                    )}
-                  </div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </a>
-              </li>
-            ))}
+          <ul class="overview-grid" role="list">
+            {serviceOverview.map((service) => {
+              const isExternal = service.href.startsWith('http');
+              const href = isExternal ? service.href : `${base}${service.href}`;
+              return (
+                <li class="overview-card">
+                  <a href={href} target={isExternal ? "_blank" : undefined} rel={isExternal ? "noopener noreferrer" : undefined}>
+                    <div class="overview-card__media">
+                      {service.image ? (
+                      <img
+                        src={`${base}${service.image}`}
+                        alt=""
+                        width="240"
+                        height="120"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      ) : (
+                        <span>{service.title}</span>
+                      )}
+                    </div>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>
