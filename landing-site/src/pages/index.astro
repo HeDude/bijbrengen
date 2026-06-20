@@ -21,7 +21,44 @@ const base = import.meta.env.BASE_URL;
   <body>
     <div class="page-shell">
       <Header />
+
+      <!-- Actuele highlight / call to action -->
+      <section class="highlight-cta">
+        <div class="highlight-cta__inner">
+
+          <!-- CTA-kern -->
+          <div class="highlight-cta__top">
+            <div class="highlight-cta__headline">
+              <span class="badge badge--active">Nu bezig</span>
+              <h2>Doe mee aan ons leerarchetypen-onderzoek</h2>
+            </div>
+            <div class="highlight-cta__action">
+              <a href="mailto:info@bijbrengen.nl?subject=Aanmelding archetypen vragenlijst" class="btn btn--primary highlight-cta__btn">
+                Aanmelden
+              </a>
+              <a href={`${base}leerpretpark/`} class="btn btn--secondary">
+                Meer over Leerpretpark
+              </a>
+            </div>
+          </div>
+
+          <!-- Uitleg -->
+          <div class="highlight-cta__detail">
+            <p>
+              Leerpretpark bouwt een engine die leerpret meetbaar maakt. Daarvoor kalibreren we
+              leerarchetypen: de manier waarop jij je verhoudt tot uitdaging, resultaat en
+              onzekerheid in een leeromgeving. Je vult een reeks korte leercasussen in op een
+              paar dimensies — zo'n 15 minuten. Na aanmelding via
+              <a href="mailto:info@bijbrengen.nl?subject=Aanmelding archetypen vragenlijst">info@bijbrengen.nl</a>
+              ontvang je een persoonlijke link.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
       <Hero />
+
       <SubsidyNotice />
       
       <section class="overview-section" aria-labelledby="projecten-heading">
@@ -109,3 +146,94 @@ const base = import.meta.env.BASE_URL;
     </div>
   </body>
 </html>
+
+<style>
+  .highlight-cta {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-bottom: 1px solid #bbf7d0;
+    padding: 7rem 1.25rem 3rem;
+  }
+
+  @media (min-width: 720px) {
+    .highlight-cta {
+      padding-top: 9rem;
+    }
+  }
+
+  .highlight-cta__inner {
+    max-width: 72rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* Bovenste rij: kop + knoppen naast elkaar */
+  .highlight-cta__top {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .highlight-cta__headline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .highlight-cta__headline h2 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 720;
+    line-height: 1.2;
+  }
+
+  .highlight-cta__action {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .highlight-cta__btn {
+    background: var(--color-bijbrengen-forest);
+    border-color: var(--color-bijbrengen-forest);
+  }
+
+  .highlight-cta__btn:hover {
+    background: #14532d;
+  }
+
+  /* Uitlegtekst eronder */
+  .highlight-cta__detail {
+    border-top: 1px solid rgb(22 101 52 / 0.2);
+    padding-top: 1rem;
+  }
+
+  .highlight-cta__detail p {
+    margin: 0;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    max-width: 64rem;
+  }
+
+  .highlight-cta__detail a {
+    color: var(--color-bijbrengen-forest);
+    font-weight: 600;
+  }
+
+  @media (min-width: 720px) {
+    .highlight-cta__top {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .highlight-cta__action {
+      flex-shrink: 0;
+    }
+  }
+</style>
