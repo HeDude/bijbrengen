@@ -65,10 +65,12 @@ const docsByCategory = allDocs.reduce((acc: Record<string, DocFile[]>, file: Doc
 
 // Category names mapping for user display
 const categoryNames: Record<string, string> = {
+  background: "Achtergrond",
   book: "Boeken & Handleidingen",
   brochure: "Brochures & Flyers",
   curriculum: "Curriculum & Programma's",
   design: "Ontwerp & Methodiek",
+  icon: "Icoontjes",
   news: "Nieuwsbrieven Archief",
   press: "Persberichten & Artikelen",
   reference: "Referentiekaders",
@@ -250,12 +252,12 @@ const quotes = [
   {
     title: "Het Kind",
     text: "<b>Je kunt echt je passie leven</b><br>....Het Entreprenasium werpt vruchten af: 'Ik heb meer geleerd dan in mijn hele schoolcarrière tot nu toe'....",
-    image: "media/photos/entreprenasium.webp"
+    image: "media/photos/entreprenasium_cosmicus college.png"
   },
   {
     title: "Dagblad van het Noorden",
     text: "<b>School van ondernemende mensen</b><br>....Op het entreprenasium mogen jongeren voor een belangrijk deel hun eigen leertraject bepalen. Het vervangen van reguliere schoolvakken met een leerzame excursiereis is daar een voorbeeld van....",
-    image: "media/photos/leerparadijs.webp"
+    image: "media/photos/entreprenasium_minister.png"
   }
 ];
 
@@ -298,13 +300,9 @@ const stats = [
             
             <!-- Prominent Wiki Links at the Top -->
             <div class="wiki-quicklinks" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-              <a href="https://nl.wikipedia.org/wiki/Entreprenasium" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn-wiki" style="border-color: #5CA048; color: #172026; display: flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, border-color 0.2s;">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikipedia.svg" alt="Wikipedia logo" style="width: 16px; height: 16px; object-fit: contain;" />
-                Wikipedia: Entreprenasium
-              </a>
               <a href="https://nl.wikibooks.org/wiki/Entreprenasium" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn-wiki" style="border-color: #662D91; color: #172026; display: flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, border-color 0.2s;">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikibooks.svg" alt="Wikibooks logo" style="width: 16px; height: 16px; object-fit: contain;" />
-                Wikibooks: Entreprenasium Handboek
+                Wikibooks
               </a>
             </div>
           </div>
@@ -341,7 +339,7 @@ const stats = [
         <!-- Waarom, Wie, Hoe, Waar Core Pillars Grid (Static grid based on user feedback) -->
         <section class="about-section" style="padding: 4rem 1.25rem; border-bottom: 1px solid #e5e7eb;">
           <div class="about-section__inner" style="max-width: 68rem;">
-            <h2 class="text-center" style="margin-bottom: 3rem; font-size: 1.75rem;">Kernprincipes & Methodiek</h2>
+            <h2 class="text-center" style="margin-bottom: 3rem; font-size: 1.75rem;">Methodiek</h2>
             
             <div class="core-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
               <!-- Waarom? -->
@@ -443,14 +441,14 @@ const stats = [
               <div class="general-links" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
                 <a href="https://nl.wikipedia.org/wiki/Entreprenasium" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
                   <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikipedia.svg" alt="Wikipedia logo" style="width: 16px; height: 16px; object-fit: contain;" />
-                  Entreprenasium op Wikipedia
+                  Wikipedia
                 </a>
                 <a href="https://nl.wikibooks.org/wiki/Entreprenasium" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
                   <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/wikibooks.svg" alt="Wikibooks logo" style="width: 16px; height: 16px; object-fit: contain;" />
-                  Entreprenasium op Wikibooks
+                  Wikibooks
                 </a>
                 <a href="https://www.youtube.com/user/entreprenasium/videos" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
-                  <span style="color: #ff0000; font-weight: bold;">▶</span> YouTube-kanaal
+                  <span style="color: #ff0000; font-weight: bold;">▶</span> YouTube
                 </a>
               </div>
             </div>
@@ -569,7 +567,7 @@ const stats = [
               {allNews.length > 0 && (
                 <div class="accordion-item js-accordion-item" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; background: #ffffff;">
                   <button class="accordion-header js-accordion-header" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; font-size: 1.1rem; font-weight: 700; background: #fafafa; border: none; cursor: pointer; text-align: left; transition: background 0.2s;">
-                    <span>📰 Nieuwsbrieven ({allNews.length} bestanden)</span>
+                    <span>📰 Nieuwsbrieven</span>
                     <span class="accordion-icon" style="transition: transform 0.2s; font-size: 0.8rem;">▼</span>
                   </button>
                   <div class="accordion-content js-accordion-content" style="display: none; padding: 1.5rem; border-top: 1px solid #e5e7eb; background: #ffffff;">
@@ -592,7 +590,7 @@ const stats = [
                 return (
                   <div class="accordion-item js-accordion-item" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; background: #ffffff;">
                     <button class="accordion-header js-accordion-header" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; font-size: 1.1rem; font-weight: 700; background: #fafafa; border: none; cursor: pointer; text-align: left; transition: background 0.2s;">
-                      <span>📁 {catName} ({files.length} bestanden)</span>
+                      <span>📁 {catName}</span>
                       <span class="accordion-icon" style="transition: transform 0.2s; font-size: 0.8rem;">▼</span>
                     </button>
                     <div class="accordion-content js-accordion-content" style="display: none; padding: 1.5rem; border-top: 1px solid #e5e7eb; background: #ffffff;">
