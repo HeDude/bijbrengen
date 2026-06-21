@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import PageCta from "../components/PageCta.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
@@ -148,6 +149,21 @@ const documents = [
   <body class="leerparadijs-page">
     <div class="page-shell">
       <Header />
+
+      <PageCta
+        eyebrow="Projecthistorie"
+        title="Ontdek wat passend leren mogelijk maakt"
+        primaryHref="#portfolio"
+        primaryLabel="Bekijk portfolio"
+        secondaryHref="https://nl.wikibooks.org/wiki/Leerparadijs"
+        secondaryLabel="Lees Wikibooks"
+      >
+        <p>
+          Leerparadijs laat zien hoe zorg, onderwijs en ondernemend leren elkaar
+          kunnen versterken voor jongeren die anders leren. Bekijk de voorbeelden,
+          documenten en publieke kennis die uit dit project zijn voortgekomen.
+        </p>
+      </PageCta>
 
       <main class="leerparadijs-main">
         <section id="intro" class="lp-hero" style={`--lp-hero-image: url("${base}leerparadijs/images/hero.jpg")`}>

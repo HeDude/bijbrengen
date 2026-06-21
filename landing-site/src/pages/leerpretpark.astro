@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import PageCta from "../components/PageCta.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
@@ -60,6 +61,21 @@ const artikelen = [
   <body class="leerpretpark-page">
     <div class="page-shell">
       <Header />
+
+      <PageCta
+        eyebrow="Vrijwilligers en stagiaires gezocht"
+        title="Zet je expertise in voor het Leerpretpark"
+        primaryHref="mailto:info@bijbrengen.nl?subject=Meedoen met Leerpretpark"
+        primaryLabel="Meld je aan"
+        secondaryHref="https://www.leerpretpark.nl/"
+        secondaryLabel="Naar leerpretpark.nl"
+      >
+        <p>
+          We zoeken mensen die hun expertise in leren, leisure, marketing,
+          netwerken, ICT of mentale zorg willen inzetten voor dit actieve project.
+          Help mee om leerpret meetbaar, deelbaar en groter te maken.
+        </p>
+      </PageCta>
 
       <main class="lpp-main">
 

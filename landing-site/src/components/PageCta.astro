@@ -1,0 +1,152 @@
+---
+const {
+  eyebrow = "Nu bezig",
+  title,
+  primaryHref,
+  primaryLabel,
+  secondaryHref,
+  secondaryLabel
+} = Astro.props;
+
+const opensInNewTab = (href?: string) => href?.startsWith("http");
+---
+
+<section class="page-cta">
+  <div class="page-cta__inner">
+    <div class="page-cta__top">
+      <div class="page-cta__headline">
+        <span class="page-cta__eyebrow">{eyebrow}</span>
+        <h2>{title}</h2>
+      </div>
+      <div class="page-cta__action">
+        {primaryHref && primaryLabel && (
+          <a
+            href={primaryHref}
+            class="btn btn--primary page-cta__btn"
+            target={opensInNewTab(primaryHref) ? "_blank" : undefined}
+            rel={opensInNewTab(primaryHref) ? "noopener noreferrer" : undefined}
+          >
+            {primaryLabel}
+          </a>
+        )}
+        {secondaryHref && secondaryLabel && (
+          <a
+            href={secondaryHref}
+            class="btn btn--secondary"
+            target={opensInNewTab(secondaryHref) ? "_blank" : undefined}
+            rel={opensInNewTab(secondaryHref) ? "noopener noreferrer" : undefined}
+          >
+            {secondaryLabel}
+          </a>
+        )}
+      </div>
+    </div>
+
+    <div class="page-cta__detail">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  .page-cta {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-bottom: 1px solid #bbf7d0;
+    padding: 8.5rem 1.25rem 3rem;
+  }
+
+  .page-cta__inner {
+    max-width: 72rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .page-cta__top {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .page-cta__headline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .page-cta__eyebrow {
+    display: inline-flex;
+    width: min(100%, 42rem);
+    min-height: 1.7rem;
+    align-items: center;
+    border-radius: 999px;
+    background: rgb(22 101 52 / 0.12);
+    color: var(--color-bijbrengen-forest);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    padding: 0.28rem 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .page-cta__headline h2 {
+    margin: 0;
+    color: #111827;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 720;
+    line-height: 1.2;
+  }
+
+  .page-cta__action {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .page-cta__btn {
+    background: var(--color-bijbrengen-forest);
+    border-color: var(--color-bijbrengen-forest);
+  }
+
+  .page-cta__btn:hover {
+    background: #14532d;
+  }
+
+  .page-cta__detail {
+    border-top: 1px solid rgb(22 101 52 / 0.2);
+    padding-top: 1rem;
+  }
+
+  .page-cta__detail :global(p) {
+    max-width: 64rem;
+    margin: 0;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .page-cta__detail :global(a) {
+    color: var(--color-bijbrengen-forest);
+    font-weight: 700;
+  }
+
+  @media (min-width: 720px) {
+    .page-cta {
+      padding-top: 9rem;
+    }
+
+    .page-cta__top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      gap: 2rem;
+    }
+
+    .page-cta__action {
+      justify-content: flex-end;
+    }
+  }
+</style>

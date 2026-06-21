@@ -1,6 +1,7 @@
 ---
 // @ts-nocheck
 import Header from "../components/Header.astro";
+import PageCta from "../components/PageCta.astro";
 import Footer from "../components/Footer.astro";
 import fs from "node:fs";
 import path from "node:path";
@@ -284,6 +285,21 @@ const stats = [
   <body>
     <div class="page-shell">
       <Header />
+
+      <PageCta
+        eyebrow="Vrij beschikbaar"
+        title="Gebruik de Entreprenasium-materialen"
+        primaryHref="#frontpage-course-list"
+        primaryLabel="Bekijk aanbod"
+        secondaryHref="#doc-library"
+        secondaryLabel="Open documentatie"
+      >
+        <p>
+          Stichting Bijbrengen stelt de kennis, cursussen en documenten rond
+          ondernemend leren vrij beschikbaar. Gebruik ze in je school, klas of
+          project en bouw verder op wat het Entreprenasium heeft opgeleverd.
+        </p>
+      </PageCta>
 
       <main class="main-content">
         <!-- Page Intro & Header Wiki Links -->

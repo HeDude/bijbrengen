@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import PageCta from "../components/PageCta.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
@@ -95,6 +96,21 @@ const gallery = [
   <body>
     <div class="page-shell">
       <Header />
+
+      <PageCta
+        eyebrow="Mens, natuur en leren"
+        title="Leer van de Humanature-aanpak"
+        primaryHref={`${base}humanature/docs/humanature-white-paper.pdf`}
+        primaryLabel="Open whitepaper"
+        secondaryHref="https://nl.wikibooks.org/wiki/Humanature"
+        secondaryLabel="Lees Wikibooks"
+      >
+        <p>
+          Humanature verbindt natuur, zorg, filosofie en leren. Gebruik de
+          projectervaringen en het whitepaper als inspiratie voor wie de menselijke
+          natuur, leefomgeving en onderwijs dichter bij elkaar wil brengen.
+        </p>
+      </PageCta>
 
       <main class="main-content humanature-page">
         <section class="humanature-hero" style={`--humanature-hero: url('${base}humanature/images/view.jpg')`}>

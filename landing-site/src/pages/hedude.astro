@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import PageCta from "../components/PageCta.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
@@ -62,6 +63,21 @@ const modules = [
   <body>
     <div class="page-shell">
       <Header />
+
+      <PageCta
+        eyebrow="AI en techniek"
+        title="Bouw mee aan leerpret-technologie"
+        primaryHref="mailto:info@bijbrengen.nl?subject=Technisch meedenken met HeDude"
+        primaryLabel="Bespreek een prototype"
+        secondaryHref="https://github.com/HeDude"
+        secondaryLabel="Bekijk GitHub"
+      >
+        <p>
+          HeDude ontwikkelt de technische bouwblokken achter gepersonaliseerd leren:
+          leerregels, games, dashboards, AI-coaching en digitale twins. Denk mee,
+          test mee of breng een leeridee naar een werkend prototype.
+        </p>
+      </PageCta>
 
       <main class="main-content hedude-page">
         <section class="hedude-hero" style={`--hedude-bg: url('${base}hedude/images/hedude_bg.png')`}>

@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import PageCta from "../components/PageCta.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
@@ -76,6 +77,21 @@ const partners = [
   <body>
     <div class="page-shell">
       <Header />
+
+      <PageCta
+        eyebrow="Specialisatie in ontwikkeling"
+        title="Denk mee over de Leerpretarchitect"
+        primaryHref="mailto:info@bijbrengen.nl?subject=Meedenken over de Leerpretarchitect"
+        primaryLabel="Denk mee"
+        secondaryHref={`${base}leerpretpark/`}
+        secondaryLabel="Lees over Leerpretpark"
+      >
+        <p>
+          We ontwikkelen de specialisatie Leerpretarchitect om nauwer aan te sluiten
+          op onze missie: niet alleen onderwijs ondersteunen, maar vooral leerpret
+          bevorderen. Wetenschappers en ervaringsdeskundigen zijn welkom om mee te denken.
+        </p>
+      </PageCta>
 
       <main class="main-content">
 

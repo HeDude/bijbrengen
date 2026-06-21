@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import PageCta from "../components/PageCta.astro";
 import SubsidyNotice from "../components/SubsidyNotice.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -22,6 +23,21 @@ const base = import.meta.env.BASE_URL;
   <body>
     <div class="page-shell">
       <Header />
+
+      <PageCta
+        eyebrow="Samen leerpret vergroten"
+        title="Word partner van het Leerpretpark"
+        primaryHref="mailto:info@bijbrengen.nl?subject=Partner worden van Leerpretpark"
+        primaryLabel="Partner worden"
+        secondaryHref={`${base}leerpretpark/`}
+        secondaryLabel="Bekijk Leerpretpark"
+      >
+        <p>
+          Leerpretpark wil uitgroeien tot een netwerkorganisatie van scholen, makers,
+          onderzoekers, zorgprofessionals en ondernemers die elkaar helpen om leerpret
+          bij elkaar en voor elkaar te vergroten.
+        </p>
+      </PageCta>
 
       <main class="main-content">
         <section class="page-intro">

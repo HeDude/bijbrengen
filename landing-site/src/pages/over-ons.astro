@@ -1,7 +1,10 @@
 ---
 import Header from "../components/Header.astro";
+import PageCta from "../components/PageCta.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -16,6 +19,21 @@ import "../styles/global.css";
   <body>
     <div class="page-shell">
       <Header />
+
+      <PageCta
+        eyebrow="Samenwerken"
+        title="Werk mee aan de missie van Bijbrengen"
+        primaryHref="#contact"
+        primaryLabel="Neem contact op"
+        secondaryHref={`${base}projecten/`}
+        secondaryLabel="Bekijk projecten"
+      >
+        <p>
+          Stichting Bijbrengen brengt mensen, kennis en initiatieven bij elkaar.
+          Zoek je samenwerking rond leren, zorg, coaching, technologie of leerpret?
+          Leg je vraag bij ons neer, dan kijken we waar we elkaar kunnen versterken.
+        </p>
+      </PageCta>
       
       <main class="main-content">
         <section class="page-intro">
